@@ -87,7 +87,7 @@ export default function BonusPlusLanding() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-8 text-red-900">What Our Customers Say</h2>
           <blockquote className="text-xl italic text-gray-700 mb-8">
-            "Bonus+ has transformed the way I save. The rewards and higher interest rates have helped me reach my savings goals much faster than I ever thought possible!"
+            &apos;Bonus+ has transformed the way I save. The rewards and higher interest rates have helped me reach my savings goals much faster than I ever thought possible!&apos;
           </blockquote>
           <p className="font-semibold text-red-600">- Sarah L., Bonus+ Member since 2022</p>
         </div>
