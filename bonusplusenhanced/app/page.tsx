@@ -5,6 +5,7 @@ import { Gift, Lightbulb, MoreHorizontal, QrCode } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { useRouter } from 'next/navigation';
+import { ExpandIcon, NotificationIcon } from "@/components/icon-components"
 
 export default function Component() {
   const router = useRouter();
@@ -23,6 +24,10 @@ export default function Component() {
           objectFit="cover"        // Ensures the image covers the entire container
           className="brightness-75" // Adjust brightness if needed
         />
+        <div className="absolute top-4 flex justify-between w-full px-4 z-10">
+          <ExpandIcon/>
+          <NotificationIcon/>
+        </div>
         <div className="absolute bottom-4 right-4 text-white">
           <div className="flex items-center gap-2">
             <span className="text-sm">🪔</span>
