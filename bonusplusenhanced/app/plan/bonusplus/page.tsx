@@ -3,7 +3,6 @@
 import { ArrowRight, Check, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
 import Image from "next/image"
 import { BottomNav } from "@/components/bottom-nav"
 
@@ -37,7 +36,7 @@ export default function BonusPlusLandingComponent() {
           {[
             { title: "Big-Purchase Cashback", description: "Earn extra cashback on major expenses" },
             { title: "Milestone Rewards", description: "Unlock exclusive rewards as you reach savings goals" },
-            { title: "Tailored Offers", description: "Get personalized deals for lifes big purchases" }
+            { title: "Tailored Offers", description: "Get personalized deals for life&apos;s big purchases" }
           ].map((feature, index) => (
             <Card key={index} className="bg-blue-50">
               <CardContent className="p-6">
