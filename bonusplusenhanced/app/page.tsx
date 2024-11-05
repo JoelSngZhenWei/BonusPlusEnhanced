@@ -7,7 +7,6 @@ import { Card } from "@/components/ui/card"
 import { useRouter } from 'next/navigation';
 // import { ExpandIcon, NotificationIcon } from "@/components/icon-components"
 import { QrCodeScannerIcon,NotificationIcon  } from "@/components/icon-buttons"
-import Test from "./test"
 
 export default function Component() {
   const router = useRouter();

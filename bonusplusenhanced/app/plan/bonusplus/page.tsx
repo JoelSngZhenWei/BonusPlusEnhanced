@@ -37,7 +37,7 @@ export default function BonusPlusLandingComponent() {
           {[
             { title: "Big-Purchase Cashback", description: "Earn extra cashback on major expenses" },
             { title: "Milestone Rewards", description: "Unlock exclusive rewards as you reach savings goals" },
-            { title: "Tailored Offers", description: "Get personalized deals for life's big purchases" }
+            { title: "Tailored Offers", description: "Get personalized deals for lifes big purchases" }
           ].map((feature, index) => (
             <Card key={index} className="bg-blue-50">
               <CardContent className="p-6">
@@ -91,7 +91,7 @@ export default function BonusPlusLandingComponent() {
             <div className="flex space-x-8 pb-4">
               {[
                 { name: "Sarah L.", quote: "Bonus+ helped me save for my dream wedding. The cashback rewards were a great bonus!" },
-                { name: "Michael T.", quote: "I love how Bonus+ gamifies saving. It's made putting money aside actually fun." },
+                { name: "Michael T.", quote: "I love how Bonus+ gamifies saving. It&apos;s made putting money aside actually fun." },
                 { name: "Emily W.", quote: "The tailored offers have saved me so much on big purchases. Highly recommend!" },
                 { name: "David K.", quote: "Bonus+ made saving for a house deposit so much easier. Great features and rewards!" }
               ].map((testimonial, index) => (
