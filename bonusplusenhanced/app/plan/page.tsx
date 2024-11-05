@@ -57,82 +57,85 @@ export default function Plan() {
 
         {/* Track and Invest Cards */}
         <div className="grid grid-cols-2 gap-4">
-        <Card className="p-6 border shadow overflow-hidden relative">
-            <CardHeader>
-              <CardTitle className="text-base font-medium">TRACK</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-2">
-              <p>Money in (SGD)</p>
-              <p>Money out (SGD)</p>
-              <div className="relative h-40 mt-4">
-                <Image
-                  src="/moneybulb.png"
-                  alt="Lightbulb with money, representing financial tracking"
-                  width={3840}
-                  height={2160}
-                  className="absolute bottom-[-20%] right-[-10%] w-[60%] h-auto object-contain"
-                />
-              </div>
-            </CardContent>
-          </Card>
-          <Card className="p-6 border  shadow" >
-            <CardHeader>
-              <CardTitle className="text-base font-medium">INVEST</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p>Check out our products and insights</p>
-              <Link href="/invest" className="text-blue-600 hover:underline block mt-2">
-                Start investing
-              </Link>
-              <div className="h-[150px] relative">
+        <Card className="pt-6 px-6 border shadow overflow-hidden relative">
+          <CardHeader>
+            <CardTitle className="text-base font-medium">TRACK</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-2">
+            <p>Money in (SGD)</p>
+            <p>Money out (SGD)</p>
+            <div className="relative h-40 mt-4">
               <Image
-                src="/moneysprout.png"
-                alt="Hand holding a purse, representing savings"
-                layout="fill"
-                objectFit="cover"
+                src="/moneybulb.png"
+                alt="Lightbulb with money, representing financial tracking"
+                width={3840}
+                height={2160}
+                className="absolute bottom-[-20%] right-[-10%] w-[60%] h-auto object-contain"
               />
             </div>
-            </CardContent>
-          </Card>
+          </CardContent>
+        </Card>
+        <Card className="p-6 border shadow overflow-hidden relative">
+          <CardHeader>
+            <CardTitle className="text-base font-medium">INVEST</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-2">
+            <p>Check out our products and insights</p>
+            <Link href="/invest" className="text-blue-600 hover:underline block mt-2">
+              Start investing
+            </Link>
+            <div className="relative h-40 mt-4">
+              <Image
+                src="/moneysprout.png"
+                alt="Money growing from a plant, representing investment growth"
+                width={1920}
+                height={1080}
+                className="absolute bottom-[-10%] right-[-5%] w-[70%] h-auto object-contain"
+              />
+            </div>
+          </CardContent>
+        </Card>
         </div>
 
         {/* Goals and Insure Cards */}
         <div className="grid grid-cols-2 gap-4">
-          <Card className="p-6 border  shadow" >
-            <CardHeader>
-              <CardTitle className="text-base font-medium">GOALS</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p>Save regularly for your needs and wants</p>
-              <Link href="/goals" className="text-blue-600 hover:underline block mt-2">
-                Create new goal
-              </Link>
-              <div className="h-[150px] relative">
+        <Card className="p-6 border shadow overflow-hidden relative">
+          <CardHeader>
+            <CardTitle className="text-base font-medium">GOALS</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-2">
+            <p>Save regularly for your needs and wants</p>
+            <Link href="/goals" className="text-blue-600 hover:underline block mt-2">
+              Create new goal
+            </Link>
+            <div className="relative h-40 mt-4">
               <Image
                 src="/savings.png"
-                alt="Hand holding a purse, representing savings"
-                layout="fill"
-                objectFit="cover"
+                alt="Piggy bank and coins, representing savings goals"
+                width={1920}
+                height={1080}
+                className="absolute bottom-[-10%] right-[-5%] w-[70%] h-auto object-contain"
               />
             </div>
-            </CardContent>
-          </Card>
-          <Card className="p-6 border  shadow" >
-            <CardHeader>
-              <CardTitle className="text-base font-medium">INSURE</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p>Find policies to fill the gaps in your insurance</p>
-              <div className="h-[150px] relative">
+          </CardContent>
+        </Card>
+        <Card className="p-6 border shadow overflow-hidden relative">
+          <CardHeader>
+            <CardTitle className="text-base font-medium">INSURE</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-2">
+            <p>Find policies to fill the gaps in your insurance</p>
+            <div className="relative h-40 mt-4">
               <Image
                 src="/rainumbrella.png"
-                alt="Hand holding a purse, representing savings"
-                layout="fill"
-                objectFit="cover"
+                alt="Umbrella protecting from rain, representing insurance coverage"
+                width={3840}
+                height={2160}
+                className="absolute bottom-[-20%] right-[-10%] w-[60%] h-auto object-contain"
               />
             </div>
-            </CardContent>
-          </Card>
+          </CardContent>
+        </Card>
         </div>
       </section>
 
