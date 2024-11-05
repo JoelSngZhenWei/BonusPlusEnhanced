@@ -19,13 +19,13 @@ export default function Component() {
   return (
     <div className="min-h-screen bg-ocbc-white pb-16">
       {/* Hero Section */}
-      <div className="relative h-[280px]">
+      <div className="relative">
         <Image
           src="/BG_Home.png"
           alt="Background decoration"
-          width={800}
-          height={280}
-          className="object-cover w-full h-full"
+          width={1206}
+          height={1601}
+          className="w-full h-auto"
         />
         <div className="absolute top-0 left-0 w-full p-4">
           <div className="flex justify-between items-center">
@@ -48,7 +48,7 @@ export default function Component() {
       </div>
 
       {/* Quick Actions and Promotional Banner Card */}
-      <Card className="mx-4 -mt-6 relative z-10 mb-4 bg-white">
+      <Card className="mx-4 -mt-20 relative z-10 mb-4 bg-white">
         <CardContent className="">
           {/* Quick Actions */}
           <div className="grid grid-cols-3 gap-4 mb-4 px-6 pt-6">
