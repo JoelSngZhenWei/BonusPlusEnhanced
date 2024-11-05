@@ -11,7 +11,7 @@ export function BottomNav() {
   const navigation = [
     { name: 'Home', href: '/home', icon: Home },
     { name: 'Plan', href: '/plan', icon: Sprout },
-    { name: 'Pay & Transfer', href: '/pay', icon: ArrowLeftRight },
+    { name: 'Pay', href: '/pay', icon: ArrowLeftRight },
     { name: 'Rewards', href: '/rewards', icon: Gift },
     { name: 'More', href: '/more', icon: Grid },
   ]

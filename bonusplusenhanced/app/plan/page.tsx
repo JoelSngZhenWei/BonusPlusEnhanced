@@ -140,92 +140,92 @@ export default function Plan() {
       </section>
 
       {/* Financial Summary Section */}
-      <section className="p-4 space-y-4">
+      <section className="p-4 space-y-4 text-xs">
       <div className="flex justify-between items-center">
         <div>
-          <h2 className="text-2xl font-semibold">Your financial summary</h2>
+          <h2 className="text-lg font-semibold">Your financial summary</h2>
           <p className="text-muted-foreground">Take control of your financial health.</p>
         </div>
       </div>
 
-      <ScrollArea className="w-full whitespace-nowrap">
-        <div className="flex w-full gap-4">
-          <Card className="w-[300px] flex-none border shadow overflow-hidden">
-            <div className="p-6">
-              <CardHeader>
-                <CardTitle className="text-lg font-bold uppercase tracking-wide">INCOME SAVED</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <h3 className="font-semibold mb-2">You spent more than your income last month</h3>
-                <p className="text-sm text-muted-foreground">We recommend that you save at least 10% of your monthly income, after CPF contributions.</p>
-                <Link href="/save" className="text-blue-600 hover:underline text-sm block mt-4">
-                  See how you can save more
-                </Link>
-              </CardContent>
-            </div>
-            <div className="h-[150px] relative overflow-hidden">
-              <Image
-                src="/handpursesavings.png"
-                alt="Hand holding a purse, representing savings"
-                layout="fill"
-                objectFit="cover"
-              />
-            </div>
-          </Card>
-          <Card className="w-[300px] flex-none border shadow overflow-hidden">
-            <div className="p-6">
-              <CardHeader>
-                <CardTitle className="text-lg font-bold uppercase tracking-wide">INVESTMENT PORTFOLIO</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <h3 className="font-semibold mb-2">Your portfolio needs diversification</h3>
-                <p className="text-sm text-muted-foreground">Consider spreading your investments across different asset classes to reduce risk.</p>
-                <Link href="/diversify" className="text-blue-600 hover:underline text-sm block mt-4">
-                  Learn about diversification
-                </Link>
-              </CardContent>
-            </div>
-            <div className="h-[150px] relative">
-              <Image
-                src="/handpursesavings.png"
-                alt="Hand holding a purse, representing investment diversification"
-                layout="fill"
-                objectFit="cover"
-              />
-            </div>
-          </Card>
-          <Card className="w-[300px] flex-none border shadow overflow-hidden">
-            <div className="p-6">
-              <CardHeader>
-                <CardTitle className="text-lg font-bold uppercase tracking-wide">RETIREMENT PLANNING</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <h3 className="font-semibold mb-2">Start planning for retirement early</h3>
-                <p className="text-sm text-muted-foreground">The power of compound interest works best over long periods. Start your retirement planning now.</p>
-                <Link href="/retirement" className="text-blue-600 hover:underline text-sm block mt-4">
-                  Begin retirement planning
-                </Link>
-              </CardContent>
-            </div>
-            <div className="h-[150px] relative">
-              <Image
-                src="/handpursesavings.png"
-                alt="Hand holding a purse, representing retirement savings"
-                layout="fill"
-                objectFit="cover"
-              />
-            </div>
-          </Card>
-        </div>
-        <ScrollBar orientation="horizontal" />
-      </ScrollArea>
+      <ScrollArea className="w-full">
+      <div className="flex w-full gap-4 pb-4">
+        <Card className="w-[300px] flex-none border shadow overflow-hidden">
+          <div className="p-6">
+            <CardHeader className="p-0 mb-4">
+              <CardTitle className="text-xs font-bold text-muted-foreground uppercase tracking-wide">Income Saved</CardTitle>
+            </CardHeader>
+            <CardContent className="p-0 space-y-4">
+              <h3 className="text-lg font-semibold">You spent more than your income last month</h3>
+              <p className="text-sm text-muted-foreground">We recommend that you save at least 10% of your monthly income, after CPF contributions.</p>
+              <Link href="/save" className="text-blue-600 hover:underline text-sm block">
+                See how you can save more
+              </Link>
+            </CardContent>
+          </div>
+          <div className="h-[150px] relative overflow-hidden">
+            <Image
+              src="/handpursesavings.png"
+              alt="Hand holding a purse, representing savings"
+              layout="fill"
+              objectFit="cover"
+            />
+          </div>
+        </Card>
+        <Card className="w-[300px] flex-none border shadow overflow-hidden">
+          <div className="p-6">
+            <CardHeader className="p-0 mb-4">
+              <CardTitle className="text-xs font-bold text-muted-foreground uppercase tracking-wide">Investment Portfolio</CardTitle>
+            </CardHeader>
+            <CardContent className="p-0 space-y-4">
+              <h3 className="text-lg font-semibold">Your portfolio needs diversification</h3>
+              <p className="text-sm text-muted-foreground">Consider spreading your investments across different asset classes to reduce risk.</p>
+              <Link href="/diversify" className="text-blue-600 hover:underline text-sm block">
+                Learn about diversification
+              </Link>
+            </CardContent>
+          </div>
+          <div className="h-[150px] relative overflow-hidden">
+            <Image
+              src="/handpursesavings.png"
+              alt="Hand holding a purse, representing investment diversification"
+              layout="fill"
+              objectFit="cover"
+            />
+          </div>
+        </Card>
+        <Card className="w-[300px] flex-none border shadow overflow-hidden">
+          <div className="p-6">
+            <CardHeader className="p-0 mb-4">
+              <CardTitle className="text-xs font-bold text-muted-foreground uppercase tracking-wide">Retirement Planning</CardTitle>
+            </CardHeader>
+            <CardContent className="p-0 space-y-4">
+              <h3 className="text-lg font-semibold">Start planning for retirement early</h3>
+              <p className="text-sm text-muted-foreground">The power of compound interest works best over long periods. Start your retirement planning now.</p>
+              <Link href="/retirement" className="text-blue-600 hover:underline text-sm block">
+                Begin retirement planning
+              </Link>
+            </CardContent>
+          </div>
+          <div className="h-[150px] relative overflow-hidden">
+            <Image
+              src="/handpursesavings.png"
+              alt="Hand holding a purse, representing retirement savings"
+              layout="fill"
+              objectFit="cover"
+            />
+          </div>
+        </Card>
+      </div>
+      <ScrollBar orientation="horizontal" />
+    </ScrollArea>
     </section>
 
       {/* Wealth Insights Section */}
-      <section className="p-4 space-y-4 mb-4">
+      <section className="p-4 space-y-4 mb-4 text-xs">
         <div className="flex justify-between items-center">
           <div>
-            <h2 className="text-2xl font-semibold">Wealth Insights</h2>
+            <h2 className="text-lg font-semibold">Wealth Insights</h2>
             <p className="text-muted-foreground">Discover wealth-related articles that we have curated exclusively for you.</p>
           </div>
           <Link href="/insights" className="text-blue-600 hover:underline">
