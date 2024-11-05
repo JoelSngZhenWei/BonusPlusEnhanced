@@ -27,9 +27,9 @@ export default function Plan() {
         </div>
 
         {/* Net Worth Card */}
-        <Card className="p-6 border  shadow">
+        <Card className="p-6 border  shadow text-xs">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-base font-medium">NET WORTH</CardTitle>
+            <CardTitle className="font-bold uppercase tracking-wide">NET WORTH</CardTitle>
             <Button variant="ghost" size="icon">
               <Info className="h-4 w-4" />
             </Button>
@@ -42,11 +42,11 @@ export default function Plan() {
             <div className="space-y-2">
               <div className="flex justify-between">
                 <span className="text-muted-foreground">What you have (SGD)</span>
-                <span className="text-lg font-bold tracking-wide">$ 98&apos;722.91</span>
+                <span className=" font-bold tracking-wide">$ 98&apos;722.91</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-muted-foreground">What you owe (SGD)</span>
-                <span className="text-lg font-bold tracking-wide">$ 12&apos;309.10</span>
+                <span className="font-bold tracking-wide">$ 12&apos;309.10</span>
               </div>
             </div>
             <Link href="/calculate" className="text-blue-600 hover:underline text-sm block mt-4">
@@ -59,9 +59,9 @@ export default function Plan() {
         <div className="grid grid-cols-2 gap-4">
         <Card className="pt-6 px-6 border shadow overflow-hidden relative">
           <CardHeader>
-            <CardTitle className="text-lg font-bold uppercase tracking-wide">TRACK</CardTitle>
+            <CardTitle className="text-xs font-bold uppercase tracking-wide">TRACK</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-2">
+          <CardContent className="space-y-2 text-xs">
             <p>Money in (SGD)</p>
             <p>Money out (SGD)</p>
             <div className="relative aspect-[16/9] w-full">
@@ -77,9 +77,9 @@ export default function Plan() {
         </Card>
         <Card className="p-6 border shadow overflow-hidden relative">
           <CardHeader>
-            <CardTitle className="text-lg font-bold uppercase tracking-wide">INVEST</CardTitle>
+            <CardTitle className="text-xs font-bold uppercase tracking-wide">INVEST</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-2">
+          <CardContent className="space-y-2 text-xs">
             <p>Check out our products and insights</p>
             <Link href="/invest" className="text-blue-600 hover:underline block mt-2">
               Start investing
@@ -101,9 +101,9 @@ export default function Plan() {
         <div className="grid grid-cols-2 gap-4">
         <Card className="p-6 border shadow overflow-hidden relative">
           <CardHeader>
-            <CardTitle className="text-lg font-bold uppercase tracking-wide">GOALS</CardTitle>
+            <CardTitle className="text-xs font-bold uppercase tracking-wide">GOALS</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-2">
+          <CardContent className="space-y-2 text-xs">
             <p>Save regularly for your needs and wants</p>
             <Link href="/goals" className="text-blue-600 hover:underline block mt-2">
               Create new goal
@@ -121,9 +121,9 @@ export default function Plan() {
         </Card>
         <Card className="p-6 border shadow overflow-hidden relative">
           <CardHeader>
-            <CardTitle className="text-lg font-bold uppercase tracking-wide">INSURE</CardTitle>
+            <CardTitle className="text-xs font-bold uppercase tracking-wide">INSURE</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-2">
+          <CardContent className="space-y-2 text-xs">
             <p>Find policies to fill the gaps in your insurance</p>
             <div className="relative aspect-[16/9] w-full">
               <Image
