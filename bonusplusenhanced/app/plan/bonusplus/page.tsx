@@ -15,7 +15,7 @@ export default function BonusPlusLandingComponent() {
       {/* Hero Section */}
       <section className="relative min-h-[400px] flex items-center justify-center overflow-hidden">
         <Image
-          src="/placeholder.svg?height=1080&width=1920"
+          src="/family.jpg"
           alt="OCBC Bonus+ hero image"
           layout="fill"
           objectFit="cover"
@@ -84,8 +84,8 @@ export default function BonusPlusLandingComponent() {
                   ].map((item, index) => (
                     <div key={index} className="flex flex-col items-center">
                       {/* <Parallax speed={5}> */}
-                      <div className="w-24 h-24 bg-white rounded-full overflow-hidden flex items-center justify-center">
-                        <Parallax className="w-28 h-28 relative" speed={-2}>
+                      <div className="w-28 h-28 bg-white rounded-full overflow-hidden flex items-center justify-center">
+                        <Parallax className="w-32 h-32 relative" speed={-1.5}>
                           <Image 
                             src={item.src} 
                             alt={item.name} 
@@ -106,14 +106,29 @@ export default function BonusPlusLandingComponent() {
         </div>
       </section>
 
-      {/* Testimonial Section */}
-      <section className="py-20 px-4 md:px-8 bg-gray-100">
+      {/* Redeem Rewards and Points Section */}
+      <section className="py-10 px-4 bg-gray-100">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-red-900">What Our Customers Say</h2>
-          <blockquote className="text-xl italic text-graay-700 mb-8">
-            &apos;Bonus+ has transformed the way I save. The rewards and higher interest rates have helped me reach my savings goals much faster than I ever thought possible!&apos;
-          </blockquote>
-          <p className="font-semibold text-red-600">- Sarah L., Bonus+ Member since 2022</p>
+          <h2 className="text-3xl font-bold mb-8 text-red-900">Redeem Rewards and Points</h2>
+          <p className="text-xl mb-8">
+            Turn your savings into exciting rewards! With Bonus+, you can redeem your points for a wide range of benefits:
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+            {[
+              { title: "Travel Vouchers", description: "Fund your next adventure" },
+              { title: "Cashback", description: "Get cash rewards directly to your account" },
+              { title: "Exclusive Deals", description: "Discounts on your favourite brands" }
+            ].map((reward, index) => (
+              <div key={index} className="bg-white p-6 rounded-lg shadow-md">
+                <h3 className="text-lg font-semibold text-red-600 mb-2">{reward.title}</h3>
+                <p className="text-gray-600">{reward.description}</p>
+              </div>
+            ))}
+          </div>
+          <Button className="mt-10 bg-red-600 text-white hover:bg-red-700 text-base font-semibold py-3 px-6 rounded-full shadow-lg transition-all duration-300 hover:scale-105">
+            Explore All Rewards
+            <ChevronRightIcon className="ml-2 h-5 w-5" />
+          </Button>
         </div>
       </section>
 
