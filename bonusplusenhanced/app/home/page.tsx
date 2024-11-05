@@ -48,7 +48,7 @@ export default function Component() {
       </div>
 
       {/* Quick Actions and Promotional Banner Card */}
-      <Card className="mx-6 -mt-60 relative z-10 mb-4 bg-white">
+      <Card className="mx-6 -mt-48 relative z-10 mb-4 bg-white">
         <CardContent className="">
           {/* Quick Actions */}
           <div className="grid grid-cols-3 gap-4 mb-4 px-6 pt-6">
