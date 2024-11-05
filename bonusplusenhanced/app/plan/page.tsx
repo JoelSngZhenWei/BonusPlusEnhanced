@@ -27,7 +27,7 @@ export default function Plan() {
         </div>
 
         {/* Net Worth Card */}
-        <Card className="p-2 border  shadow text-xs">
+        <Card className="p-3 border  shadow text-xs">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="font-bold uppercase tracking-wide">NET WORTH</CardTitle>
             <Button variant="ghost" size="icon">
