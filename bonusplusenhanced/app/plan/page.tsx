@@ -9,10 +9,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 // import { Toggle } from "@radix-ui/react-toggle"
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
 import { BottomNav } from "@/components/bottom-nav"
+import Image from "next/image"
 
 export default function Plan() {
   return (
-    <div className="min-h-screen bg-gray-50 pb-16">
+    <div className="min-h-screen bg-gray-50 pb-16 pt-6">
       {/* Plan your finances section */}
       <section className="p-4 space-y-4">
         <div className="flex justify-between items-center">
@@ -117,16 +118,17 @@ export default function Plan() {
 
       {/* Financial Summary Section */}
       <section className="p-4 space-y-4">
-        <div className="flex justify-between items-center">
-          <div>
-            <h2 className="text-2xl font-semibold">Your financial summary</h2>
-            <p className="text-muted-foreground">Take control of your financial health.</p>
-          </div>
+      <div className="flex justify-between items-center">
+        <div>
+          <h2 className="text-2xl font-semibold">Your financial summary</h2>
+          <p className="text-muted-foreground">Take control of your financial health.</p>
         </div>
+      </div>
 
-        <ScrollArea className="w-full whitespace-nowrap">
-          <div className="flex w-full gap-4">
-            <Card className="w-[300px] flex-none border p-6  shadow">
+      <ScrollArea className="w-full whitespace-nowrap">
+        <div className="flex w-full gap-4">
+          <Card className="w-[300px] flex-none border shadow overflow-hidden">
+            <div className="p-6">
               <CardHeader>
                 <CardTitle className="text-base font-medium">INCOME SAVED</CardTitle>
               </CardHeader>
@@ -137,8 +139,18 @@ export default function Plan() {
                   See how you can save more
                 </Link>
               </CardContent>
-            </Card>
-            <Card className="w-[300px] flex-none p-6 border  shadow">
+            </div>
+            <div className="h-[150px] relative overflow-hidden">
+              <Image
+                src="/handpursesavings.png"
+                alt="Hand holding a purse, representing savings"
+                layout="fill"
+                objectFit="cover"
+              />
+            </div>
+          </Card>
+          <Card className="w-[300px] flex-none border shadow overflow-hidden">
+            <div className="p-6">
               <CardHeader>
                 <CardTitle className="text-base font-medium">INVESTMENT PORTFOLIO</CardTitle>
               </CardHeader>
@@ -149,8 +161,18 @@ export default function Plan() {
                   Learn about diversification
                 </Link>
               </CardContent>
-            </Card>
-            <Card className="w-[300px] flex-none p-6 border  shadow">
+            </div>
+            <div className="h-[150px] relative">
+              <Image
+                src="/handpursesavings.png"
+                alt="Hand holding a purse, representing investment diversification"
+                layout="fill"
+                objectFit="cover"
+              />
+            </div>
+          </Card>
+          <Card className="w-[300px] flex-none border shadow overflow-hidden">
+            <div className="p-6">
               <CardHeader>
                 <CardTitle className="text-base font-medium">RETIREMENT PLANNING</CardTitle>
               </CardHeader>
@@ -161,14 +183,23 @@ export default function Plan() {
                   Begin retirement planning
                 </Link>
               </CardContent>
-            </Card>
-          </div>
-          <ScrollBar orientation="horizontal" />
-        </ScrollArea>
-      </section>
+            </div>
+            <div className="h-[150px] relative">
+              <Image
+                src="/handpursesavings.png"
+                alt="Hand holding a purse, representing retirement savings"
+                layout="fill"
+                objectFit="cover"
+              />
+            </div>
+          </Card>
+        </div>
+        <ScrollBar orientation="horizontal" />
+      </ScrollArea>
+    </section>
 
       {/* Wealth Insights Section */}
-      <section className="p-4 space-y-4">
+      <section className="p-4 space-y-4 mb-4">
         <div className="flex justify-between items-center">
           <div>
             <h2 className="text-2xl font-semibold">Wealth Insights</h2>
@@ -181,27 +212,72 @@ export default function Plan() {
 
         <ScrollArea className="w-full whitespace-nowrap">
           <div className="flex w-full gap-4">
-            <Card className="w-[300px] flex-none p-6 border  shadow">
+            <Card className="w-[300px] flex-none border overflow-hidden">
               <CardContent className="p-0">
-                <img src="/placeholder.svg?height=200&width=300" alt="Investment strategies" className="w-full h-40 object-cover" />
+                <img src="/rainyday.png" alt="Wealth insight" className="w-full h-40 object-cover object-center" />
                 <div className="p-4">
                   <p className="text-sm text-muted-foreground">28 OCT 2024</p>
                   <h3 className="font-semibold mt-2">Essential Investment Strategies for Beginners</h3>
                 </div>
               </CardContent>
             </Card>
-            <Card className="w-[300px] flex-none p-6 border  shadow">
+            <Card className="w-[300px] flex-none border overflow-hidden">
               <CardContent className="p-0">
-                <img src="/placeholder.svg?height=200&width=300" alt="Market trends" className="w-full h-40 object-cover" />
+                <img src="/rainyday.png" alt="Wealth insight" className="w-full h-40 object-cover object-center" />
                 <div className="p-4">
                   <p className="text-sm text-muted-foreground">29 OCT 2024</p>
                   <h3 className="font-semibold mt-2">Understanding Current Market Trends</h3>
                 </div>
               </CardContent>
             </Card>
-            <Card className="w-[300px] flex-none p-6 border shadow">
+            <Card className="w-[300px] flex-none  border overflow-hidden">
               <CardContent className="p-0">
-                <img src="/placeholder.svg?height=200&width=300" alt="Retirement planning" className="w-full h-40 object-cover" />
+                <img src="/rainyday.png" alt="Wealth insight" className="w-full h-40 object-cover object-center" />
+                <div className="p-4">
+                  <p className="text-sm text-muted-foreground">30 OCT 2024</p>
+                  <h3 className="font-semibold mt-2">Smart Retirement Planning Tips</h3>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="w-[300px] flex-none  border overflow-hidden">
+              <CardContent className="p-0">
+                <img src="/rainyday.png" alt="Wealth insight" className="w-full h-40 object-cover object-center" />
+                <div className="p-4">
+                  <p className="text-sm text-muted-foreground">30 OCT 2024</p>
+                  <h3 className="font-semibold mt-2">Smart Retirement Planning Tips</h3>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="w-[300px] flex-none  border overflow-hidden">
+              <CardContent className="p-0">
+                <img src="/rainyday.png" alt="Wealth insight" className="w-full h-40 object-cover object-center" />
+                <div className="p-4">
+                  <p className="text-sm text-muted-foreground">30 OCT 2024</p>
+                  <h3 className="font-semibold mt-2">Smart Retirement Planning Tips</h3>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="w-[300px] flex-none  border overflow-hidden">
+              <CardContent className="p-0">
+                <img src="/rainyday.png" alt="Wealth insight" className="w-full h-40 object-cover object-center" />
+                <div className="p-4">
+                  <p className="text-sm text-muted-foreground">30 OCT 2024</p>
+                  <h3 className="font-semibold mt-2">Smart Retirement Planning Tips</h3>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="w-[300px] flex-none  border overflow-hidden">
+              <CardContent className="p-0">
+                <img src="/rainyday.png" alt="Wealth insight" className="w-full h-40 object-cover object-center" />
+                <div className="p-4">
+                  <p className="text-sm text-muted-foreground">30 OCT 2024</p>
+                  <h3 className="font-semibold mt-2">Smart Retirement Planning Tips</h3>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="w-[300px] flex-none  border overflow-hidden">
+              <CardContent className="p-0">
+                <img src="/rainyday.png" alt="Wealth insight" className="w-full h-40 object-cover object-center" />
                 <div className="p-4">
                   <p className="text-sm text-muted-foreground">30 OCT 2024</p>
                   <h3 className="font-semibold mt-2">Smart Retirement Planning Tips</h3>
