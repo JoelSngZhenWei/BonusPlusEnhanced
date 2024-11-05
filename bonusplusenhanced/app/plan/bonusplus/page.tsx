@@ -31,7 +31,7 @@ export default function BonusPlusLandingComponent() {
 
       {/* Key Features Section */}
       <section className="py-16 px-4 md:px-8 max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-12">Key Features of Bonus+</h2>
+        <h2 className="text-3xl font-bold text-center mb-12">Key Features of Bonus</h2>
         <div className="grid grid-cols-3 md:grid-cols-3 gap-8">
           {[
             { title: "Big-Purchase Cashback", description: "Earn extra cashback on major expenses" },
@@ -52,7 +52,7 @@ export default function BonusPlusLandingComponent() {
       {/* How It Works Section */}
       <section className="bg-gray-100 py-16 px-4 md:px-8">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">How Bonus+ Works</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">How Bonus Works</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               {[
@@ -86,7 +86,7 @@ export default function BonusPlusLandingComponent() {
       <section className="bg-blue-600 text-white py-16 px-4 md:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Supercharge Your Savings?</h2>
-          <p className="text-xl mb-8">Join Bonus+ today and start your journey towards financial success.</p>
+          <p className="text-xl mb-8">Join Bonus today and start your journey towards financial success.</p>
           <Button className="bg-white text-blue-600 hover:bg-blue-50 text-lg font-semibold py-6 px-8">
             Open Your Bonus+ Account
             <ChevronRight className="ml-2 h-5 w-5" />
