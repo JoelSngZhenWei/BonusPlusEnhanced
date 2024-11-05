@@ -13,7 +13,7 @@ import Image from "next/image"
 
 export default function Plan() {
   return (
-    <div className="min-h-screen bg-gray-50 pb-16 pt-8">
+    <div className="min-h-screen bg-gray-50 pb-16 pt-4">
       {/* Plan your finances section */}
       <section className="p-4 space-y-4">
         <div className="flex justify-between items-center">
@@ -92,6 +92,7 @@ export default function Plan() {
                 layout="fill"
                 objectFit="contain"
                 objectPosition="right bottom"
+                className="ml-8"
               />
             </div>
           </CardContent>
@@ -133,6 +134,7 @@ export default function Plan() {
                 layout="fill"
                 objectFit="contain"
                 objectPosition="right bottom"
+                className="ml-2 my-6"
               />
             </div>
           </CardContent>
