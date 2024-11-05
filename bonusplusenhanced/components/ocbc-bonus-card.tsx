@@ -17,10 +17,10 @@ export function OcbcBonusCard() {
     <Card className="overflow-hidden border shadow">
 
       <CardHeader className="bg-gradient-to-r from-red-600 via-red-500 to-red-400 p-3 pt-4">
-        <Parallax speed={-0.75}>
+        {/* <Parallax speed={-0.75}> */}
           <CardTitle className="text-base font-extrabold uppercase tracking-wide text-white">OCBC Bonus+</CardTitle>
           <p className="text-white font-bold text-xs">Supercharge your savings</p>
-        </Parallax>
+        {/* </Parallax> */}
       </CardHeader>
 
 
@@ -45,12 +45,12 @@ export function OcbcBonusCard() {
             <span>Exclusive offers and rewards</span>
           </li>
         </ul>
-        <Parallax speed={-0.75}>
+        {/* <Parallax speed={-0.75}> */}
         <Button className="w-full bg-red-600 hover:bg-red-700 text-white text-sm" onClick={handleClick}>
           Start saving for your goals
           <ArrowRight className="ml-2 h-4 w-4" />
         </Button>
-        </Parallax>
+        {/* </Parallax> */}
       </CardContent>
     </Card>
   )
