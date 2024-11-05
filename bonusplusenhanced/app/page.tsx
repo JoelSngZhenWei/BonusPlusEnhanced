@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { useRouter } from 'next/navigation';
 import { ExpandIcon, NotificationIcon } from "@/components/icon-components"
-import { useState, useEffect } from 'react'
+// import { useState, useEffect } from 'react'
 import { subscribeUser, unsubscribeUser, sendNotification } from './actions'
 import { PushNotificationManager } from "@/components/push_manager"
 
