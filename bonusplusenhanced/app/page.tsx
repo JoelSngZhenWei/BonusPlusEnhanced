@@ -6,9 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { useRouter } from 'next/navigation';
 import { ExpandIcon, NotificationIcon } from "@/components/icon-components"
-// import { useState, useEffect } from 'react'
-// import { subscribeUser, unsubscribeUser, sendNotification } from './actions'
-import { PushNotificationManager } from "@/components/push_manager"
+// import { PushNotificationManager } from "@/components/push_manager"
 
 // function urlBase64ToUint8Array(base64String: string) {
 //   const padding = '='.repeat((4 - (base64String.length % 4)) % 4)
@@ -33,7 +31,7 @@ export default function Component() {
   };
   return (
     <div className="min-h-screen bg-background">
-      <PushNotificationManager/>
+      {/* <PushNotificationManager/> */}
       <div className="relative">
       <div className="relative h-screen"> {/* Use h-screen to make it fill the viewport height */}
         <Image
