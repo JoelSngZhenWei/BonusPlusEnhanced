@@ -17,7 +17,7 @@ export function BottomNav() {
   ]
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 border-t bg-background">
+    <nav className="fixed bottom-0 left-0 right-0 border-t bg-background pb-4">
       <div className="relative">
         <div className="flex h-16">
           {navigation.map((item) => {
@@ -40,9 +40,6 @@ export function BottomNav() {
                 <span className="text-xs font-medium">
                   {item.name}
                 </span>
-                {isActive && (
-                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-red-600" />
-                )}
               </Link>
             )
           })}
