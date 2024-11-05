@@ -51,7 +51,7 @@ export default function Component() {
       <Card className="mx-6 -mt-40 relative z-10 mb-4 bg-white shadow">
         <CardContent className="">
           {/* Quick Actions */}
-          <div className="grid grid-cols-3 gap-4 mb-4 px-6 pt-6">
+          <div className="grid grid-cols-3 gap-4 mb-4 px-6 pt-6 text-center">
             <div className="flex flex-col items-center gap-2">
               <div className="p-3 rounded-xl bg-gray-50">
                 <svg
