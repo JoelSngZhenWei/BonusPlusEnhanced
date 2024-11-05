@@ -21,7 +21,7 @@ export function BonusPlusLandingComponent() {
         <div className="absolute inset-0 bg-blue-900/70 z-10"></div>
         <div className="relative z-20 text-center text-white px-4">
           <h1 className="text-5xl md:text-6xl font-bold mb-4">OCBC Bonus+</h1>
-          <p className="text-xl md:text-2xl mb-8">Supercharge your savings for life's big milestones</p>
+          <p className="text-xl md:text-2xl mb-8">Supercharge your savings for life&apos;s big milestones</p>
           <Button className="bg-white text-blue-600 hover:bg-blue-50 text-lg font-semibold py-6 px-8">
             Get Started Now
             <ArrowRight className="ml-2 h-5 w-5" />
@@ -96,7 +96,7 @@ export function BonusPlusLandingComponent() {
               ].map((testimonial, index) => (
                 <Card key={index} className="w-[300px] flex-none">
                   <CardContent className="p-6">
-                    <p className="italic mb-4">"{testimonial.quote}"</p>
+                    <p className="italic mb-4">{testimonial.quote}</p>
                     <p className="font-semibold">{testimonial.name}</p>
                   </CardContent>
                 </Card>
