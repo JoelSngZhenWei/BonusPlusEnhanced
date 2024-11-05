@@ -1,7 +1,9 @@
 'use client'
 
 import { Expand, Bell, LogOut } from "lucide-react"
+import { QrCode } from "lucide-react"
 import Link from "next/link"
+
 
 interface IconButtonProps {
   isDark?: boolean
@@ -11,9 +13,9 @@ export function ExpandIcon({ isDark = false }: IconButtonProps) {
   return (
     <button 
       aria-label="Expand" 
-      className={`p-2 rounded-full ${isDark ? 'bg-gray-800 text-white' : 'bg-black/20 text-white'} hover:bg-black/30 transition-colors`}
+      className={`p-2 ${isDark ? 'text-white' : 'text-black'} hover:opacity-70 transition-opacity`}
     >
-      <Expand className="h-6 w-6" />
+      <QrCode className="h-6 w-6" />
     </button>
   )
 }
@@ -22,7 +24,7 @@ export function NotificationIcon({ isDark = false }: IconButtonProps) {
   return (
     <button 
       aria-label="Notifications" 
-      className={`p-2 rounded-full ${isDark ? 'bg-gray-800 text-white' : 'bg-black/20 text-white'} hover:bg-black/30 transition-colors`}
+      className={`p-2 rounded-full ${isDark ? 'bg-gray-800 text-white' : 'bg-black/20 text-black'} hover:bg-black/30 transition-colors`}
     >
       <Bell className="h-6 w-6" />
     </button>

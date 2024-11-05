@@ -9,9 +9,7 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent } from "@/components/ui/card"
 import { useState } from "react"
 import { BottomNav } from "@/components/bottom-nav"
-import { NotificationIcon } from "@/components/icon-components"
-import { ExpandIcon } from "@/components/icon-components"
-import { LogoutButton } from "@/components/icon-components"
+import { QrCodeScannerIcon,NotificationIcon,LogoutButton  } from "@/components/icon-buttons"
 
 export default function Component() {
   const [showBalance, setShowBalance] = useState(true)
@@ -29,13 +27,13 @@ export default function Component() {
         />
         <div className="absolute top-0 left-0 w-full p-4">
           <div className="flex justify-between items-center">
-            <ExpandIcon isDark={true} />
+          <QrCodeScannerIcon isDark={true} />
             <div className="flex items-center gap-4">
-              <NotificationIcon isDark={true} />
+            <NotificationIcon isDark={true} />        
               {/* <Link href="/" className="text-blue-500 font-medium">
                 Logout
               </Link> */}
-              <LogoutButton/>
+              <LogoutButton isDark={false}/>
             </div>
           </div>
           <div className="mt-8 mx-8">

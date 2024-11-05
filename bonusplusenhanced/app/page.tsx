@@ -5,7 +5,8 @@ import { Gift, Lightbulb, MoreHorizontal, QrCode } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { useRouter } from 'next/navigation';
-import { ExpandIcon, NotificationIcon } from "@/components/icon-components"
+// import { ExpandIcon, NotificationIcon } from "@/components/icon-components"
+import { QrCodeScannerIcon,NotificationIcon,LogoutButton  } from "@/components/icon-buttons"
 
 export default function Component() {
   const router = useRouter();
@@ -25,7 +26,7 @@ export default function Component() {
             // className="brightness-75"
           />
           <div className="absolute top-4 flex justify-between w-full px-4 z-10">
-            <ExpandIcon />
+            <QrCodeScannerIcon isDark={false} />
             <NotificationIcon />
           </div>
           <div className="absolute bottom-24 right-6 text-slate-700 text-right"> {/* Moved up to overlap */}
