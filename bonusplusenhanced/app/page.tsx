@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import { Bell, Expand, Gift, Lightbulb, MoreHorizontal, QrCode } from "lucide-react"
+import { Gift, Lightbulb, MoreHorizontal, QrCode } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { NotificationIcon } from "@/components/icon-components"
