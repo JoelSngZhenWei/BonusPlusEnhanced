@@ -149,13 +149,13 @@ export default function Plan() {
       </div>
 
       <ScrollArea className="w-full">
-      <div className="flex w-full gap-4 pb-4">
+      <div className="flex w-full gap-4 pb-2">
         <Card className="w-[300px] flex-none border shadow overflow-hidden">
-          <div className="p-6">
-            <CardHeader className="p-0 mb-4">
+          <div className="p-4">
+            <CardHeader className="p-0 mb-2">
               <CardTitle className="text-xs font-bold text-muted-foreground uppercase tracking-wide">Income Saved</CardTitle>
             </CardHeader>
-            <CardContent className="p-0 space-y-4">
+            <CardContent className="p-0 space-y-2">
               <h3 className="text-lg font-semibold">You spent more than your income last month</h3>
               <p className="text-sm text-muted-foreground">We recommend that you save at least 10% of your monthly income, after CPF contributions.</p>
               <Link href="/save" className="text-blue-600 hover:underline text-sm block">
@@ -173,11 +173,11 @@ export default function Plan() {
           </div>
         </Card>
         <Card className="w-[300px] flex-none border shadow overflow-hidden">
-          <div className="p-6">
-            <CardHeader className="p-0 mb-4">
+          <div className="p-4">
+            <CardHeader className="p-0 mb-2">
               <CardTitle className="text-xs font-bold text-muted-foreground uppercase tracking-wide">Investment Portfolio</CardTitle>
             </CardHeader>
-            <CardContent className="p-0 space-y-4">
+            <CardContent className="p-0 space-y-2">
               <h3 className="text-lg font-semibold">Your portfolio needs diversification</h3>
               <p className="text-sm text-muted-foreground">Consider spreading your investments across different asset classes to reduce risk.</p>
               <Link href="/diversify" className="text-blue-600 hover:underline text-sm block">
@@ -195,11 +195,11 @@ export default function Plan() {
           </div>
         </Card>
         <Card className="w-[300px] flex-none border shadow overflow-hidden">
-          <div className="p-6">
-            <CardHeader className="p-0 mb-4">
+          <div className="p-4">
+            <CardHeader className="p-0 mb-2">
               <CardTitle className="text-xs font-bold text-muted-foreground uppercase tracking-wide">Retirement Planning</CardTitle>
             </CardHeader>
-            <CardContent className="p-0 space-y-4">
+            <CardContent className="p-0 space-y-2">
               <h3 className="text-lg font-semibold">Start planning for retirement early</h3>
               <p className="text-sm text-muted-foreground">The power of compound interest works best over long periods. Start your retirement planning now.</p>
               <Link href="/retirement" className="text-blue-600 hover:underline text-sm block">
