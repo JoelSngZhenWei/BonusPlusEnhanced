@@ -13,12 +13,12 @@ import Image from "next/image"
 
 export default function Plan() {
   return (
-    <div className="min-h-screen bg-gray-50 pb-16 pt-6">
+    <div className="min-h-screen bg-gray-50 pb-16 pt-12">
       {/* Plan your finances section */}
       <section className="p-4 space-y-4">
         <div className="flex justify-between items-center">
           <div>
-            <h2 className="text-md font-semibold">Plan your finances</h2>
+            <h2 className="text-lg font-semibold">Plan your finances</h2>
             <p className="text-xs text-muted-foreground">Manage, protect, build and grow your wealth.</p>
           </div>
           <Link href="/learn-more" className="text-xs text-blue-600 hover:underline">
