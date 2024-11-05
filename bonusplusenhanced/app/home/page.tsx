@@ -145,46 +145,50 @@ export default function Component() {
 
         {/* Account Details */}
         <div className="p-4">
-          <Link href="/account" className="flex items-center gap-4 mb-6">
-            <div className="h-12 w-12 rounded-full bg-[#F8E4D8] flex items-center justify-center text-lg">
-              FRA
-            </div>
-            <div className="flex-1">
-              <h3 className="font-semibold">FRANK Account</h3>
-            </div>
-            <ChevronRight className="h-5 w-5 text-gray-400" />
-          </Link>
+          <Card className="bg-gray-100 mb-4">
+            <CardContent className="p-4">
+              <Link href="/account" className="flex items-center gap-4">
+                <div className="h-12 w-12 rounded-full bg-[#F8E4D8] flex items-center justify-center text-lg">
+                  FRA
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-semibold">FRANK Account</h3>
+                </div>
+                <ChevronRight className="h-5 w-5 text-gray-400" />
+              </Link>
 
-          <div className="space-y-4">
-            <div className="flex justify-between items-center">
-              <span className="text-gray-600">Available balance</span>
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => setShowBalance(!showBalance)}
-              >
-                {showBalance ? (
-                  <Eye className="h-5 w-5" />
-                ) : (
-                  <EyeOff className="h-5 w-5" />
-                )}
-                <span className="sr-only">
-                  {showBalance ? "Hide" : "Show"} balance
-                </span>
-              </Button>
-            </div>
-            <div className="flex justify-between items-center">
-              <span className="text-xl font-semibold">
-                {showBalance ? "SGD" : "••••"}
-              </span>
-            </div>
-            <div className="pt-2">
-              <span className="text-gray-600">Debit card no.</span>
-              <div className="text-gray-900">
-                {showBalance ? "•••• •••• •••• 1234" : "•••• •••• •••• ••••"}
+              <div className="space-y-4 mt-4">
+                <div className="flex justify-between items-center">
+                  <span className="text-gray-600">Available balance</span>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={() => setShowBalance(!showBalance)}
+                  >
+                    {showBalance ? (
+                      <Eye className="h-5 w-5" />
+                    ) : (
+                      <EyeOff className="h-5 w-5" />
+                    )}
+                    <span className="sr-only">
+                      {showBalance ? "Hide" : "Show"} balance
+                    </span>
+                  </Button>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-xl font-semibold">
+                    {showBalance ? "SGD $86'413.81" : "••••"}
+                  </span>
+                </div>
+                <div className="pt-2">
+                  <span className="text-gray-600">Debit card no.</span>
+                  <div className="text-gray-900">
+                    {showBalance ? "•••• •••• •••• 1234" : "•••• •••• •••• ••••"}
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
+            </CardContent>
+          </Card>
         </div>
 
         {/* Goals Section */}

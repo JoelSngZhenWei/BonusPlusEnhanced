@@ -23,7 +23,7 @@ export default function BonusPlusLandingComponent() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-red-900/80 to-red-600/80 z-10"></div>
         <div className="relative z-20 text-center text-white px-4 max-w-4xl mx-auto">
-          <h1 className="text-2xl font-extrabold mb-6">OCBC Bonus+</h1>
+          <h1 className="text-3xl font-extrabold mb-6">OCBC Bonus+</h1>
           <p className="text-xl font-semibold mb-8">Reach your goals faster, earn rewards, and enjoy exclusive benefits</p>
           <Button className="bg-white text-red-600 hover:bg-red-50 text-lg font-semibold py-6 px-8 rounded-full shadow-lg transition-all duration-300 hover:scale-105">
             Get Started Now
