@@ -83,31 +83,6 @@ export default function BonusPlusLandingComponent() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-16 px-4 md:px-8">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">What Our Customers Say</h2>
-          <ScrollArea className="w-full whitespace-nowrap">
-            <div className="flex space-x-8 pb-4">
-              {[
-                { name: "Sarah L.", quote: "Bonus+ helped me save for my dream wedding. The cashback rewards were a great bonus!" },
-                { name: "Michael T.", quote: "I love how Bonus+ gamifies saving. It&apos;s made putting money aside actually fun." },
-                { name: "Emily W.", quote: "The tailored offers have saved me so much on big purchases. Highly recommend!" },
-                { name: "David K.", quote: "Bonus+ made saving for a house deposit so much easier. Great features and rewards!" }
-              ].map((testimonial, index) => (
-                <Card key={index} className="w-[300px] flex-none">
-                  {/* <CardContent className="p-6">
-                    <p className="italic mb-4">{testimonial.quote}</p>
-                    <p className="font-semibold">{testimonial.name}</p>
-                  </CardContent> */}
-                </Card>
-              ))}
-            </div>
-            <ScrollBar orientation="horizontal" />
-          </ScrollArea>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="bg-blue-600 text-white py-16 px-4 md:px-8">
         <div className="max-w-4xl mx-auto text-center">
