@@ -7,7 +7,6 @@ import { Card } from "@/components/ui/card"
 import { useRouter } from 'next/navigation';
 // import { ExpandIcon, NotificationIcon } from "@/components/icon-components"
 import { QrCodeScannerIcon,NotificationIcon  } from "@/components/icon-buttons"
-import Test from "./test"
 
 export default function Component() {
   const router = useRouter();
@@ -39,6 +38,7 @@ export default function Component() {
             </div>
           </div>
         </div>
+        
         <Card className="mx-4 -mt-20 relative z-10 p-3 grid gap-4 ocbc-white-bg"> {/* Increased negative margin for overlap */}
           <div className="grid grid-cols-3 gap-4">
             <div className="flex flex-col items-center gap-2">

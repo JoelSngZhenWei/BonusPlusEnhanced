@@ -10,6 +10,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
 import { BottomNav } from "@/components/bottom-nav"
 import Image from "next/image"
+import { OcbcBonusCard } from "@/components/ocbc-bonus-card"
 
 export default function Plan() {
   return (
@@ -27,7 +28,7 @@ export default function Plan() {
         </div>
 
         {/* Net Worth Card */}
-        <Card className="p-3 border  shadow text-sm">
+        <Card className="p-3 border shadow text-sm">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="font-bold uppercase tracking-wide">NET WORTH</CardTitle>
             <Button variant="ghost" size="icon">
@@ -54,6 +55,10 @@ export default function Plan() {
             </Link>
           </CardContent>
         </Card>
+
+        {/* OCBC Bonus+ Card */}
+        <OcbcBonusCard />
+
 
         {/* Track and Invest Cards */}
         <div className="grid grid-cols-2 gap-4">
