@@ -1,20 +1,21 @@
-'use client'
-
+"use client"
 import Image from "next/image"
 import Link from "next/link"
 import { Bell, ChevronRight, Expand, Eye, EyeOff, QrCode} from "lucide-react"
+// import Settings from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Card, CardContent } from "@/components/ui/card"
 import { useState } from "react"
 import { BottomNav } from "@/components/bottom-nav"
 
-export default function HomePage() {
+export default function Component() {
   const [showBalance, setShowBalance] = useState(true)
 
   return (
-    <div className="min-h-screen bg-background pb-16">
+    <div className="min-h-screen bg-gray-100 pb-16">
       {/* Hero Section */}
-      <div className="relative h-[280px] overflow-hidden">
+      <div className="relative h-[280px]">
         <Image
           src="/BG_Home.png"
           alt="Background decoration"
@@ -41,74 +42,75 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* Quick Actions */}
-      <div className="bg-white rounded-t-3xl -mt-6 relative z-10">
-        <div className="grid grid-cols-3 gap-4 p-6">
-          <div className="flex flex-col items-center gap-2">
-            <div className="p-3 rounded-xl bg-gray-50">
-              <svg
-                className="h-6 w-6"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+      {/* Quick Actions and Promotional Banner Card */}
+      <Card className="mx-4 -mt-6 relative z-10 mb-4 bg-white">
+        <CardContent className="">
+          {/* Quick Actions */}
+          <div className="grid grid-cols-3 gap-4 mb-4 px-6 pt-6">
+            <div className="flex flex-col items-center gap-2">
+              <div className="p-3 rounded-xl bg-gray-50">
+                <svg
+                  className="h-6 w-6"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
+              <span className="text-sm">PayNow</span>
             </div>
-            <span className="text-sm">PayNow</span>
-          </div>
-          <div className="flex flex-col items-center gap-2">
-            <div className="p-3 rounded-xl bg-gray-50">
-              <QrCode className="h-6 w-6" />
+            <div className="flex flex-col items-center gap-2">
+              <div className="p-3 rounded-xl bg-gray-50">
+                <QrCode className="h-6 w-6" />
+              </div>
+              <span className="text-sm">Scan & Pay</span>
             </div>
-            <span className="text-sm">Scan & Pay</span>
-          </div>
-          <div className="flex flex-col items-center gap-2">
-            <div className="p-3 rounded-xl bg-gray-50">
-              <svg
-                className="h-6 w-6"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M20 12V8H6a2 2 0 0 1-2-2c0-1.1.9-2 2-2h12v4"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M4 6v12c0 1.1.9 2 2 2h14v-4"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M18 12a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4v-4h-4z"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+            <div className="flex flex-col items-center gap-2">
+              <div className="p-3 rounded-xl bg-gray-50">
+                <svg
+                  className="h-6 w-6"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20 12V8H6a2 2 0 0 1-2-2c0-1.1.9-2 2-2h12v4"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M4 6v12c0 1.1.9 2 2 2h14v-4"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M18 12a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4v-4h-4z"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
+              <span className="text-sm">Foreign Exchange</span>
             </div>
-            <span className="text-sm">Foreign Exchange</span>
           </div>
-        </div>
 
-        {/* Promotional Banner */}
-        <div className="mx-4 mb-6">
+          {/* Promotional Banner */}
           <Link
             href="/deals"
-            className="flex items-center justify-between p-4 bg-gray-50 rounded-xl"
+            className="flex items-center justify-between p-4 bg-pink-100 rounded-b-xl"
           >
             <div className="flex items-center gap-2">
               <span role="img" aria-label="celebration">🎉</span>
@@ -118,8 +120,11 @@ export default function HomePage() {
             </div>
             <ChevronRight className="h-5 w-5 text-gray-400" />
           </Link>
-        </div>
+        </CardContent>
+      </Card>
 
+      {/* White Background Section */}
+      <div className="bg-white w-full">
         {/* Account Tabs */}
         <Tabs defaultValue="accounts" className="w-full">
           <TabsList className="w-full justify-start px-4 h-12 bg-transparent">
@@ -180,14 +185,14 @@ export default function HomePage() {
         </div>
 
         {/* Goals Section */}
-        {/* <div className="p-4 space-y-4">
+        <div className="p-4 space-y-4">
           <div className="bg-[#FFF5F5] p-4 rounded-xl">
             <span className="text-sm text-gray-600">SAVINGS GOAL</span>
             <h3 className="font-semibold mt-1">
               Stay on track and make your dreams a reality
             </h3>
           </div>
-        </div> */}
+        </div>
       </div>
 
       {/* Bottom Navigation */}
