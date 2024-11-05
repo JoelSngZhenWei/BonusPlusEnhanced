@@ -17,7 +17,7 @@ export function BottomNav() {
   ]
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 border-t bg-background pb-4">
+    <nav className="fixed bottom-0 left-0 right-0 border-t bg-background pb-2">
       <div className="relative">
         <div className="flex h-16">
           {navigation.map((item) => {

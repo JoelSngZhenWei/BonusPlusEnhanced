@@ -13,7 +13,7 @@ import Image from "next/image"
 
 export default function Plan() {
   return (
-    <div className="min-h-screen bg-gray-50 pb-16 pt-12">
+    <div className="min-h-screen bg-gray-50 pb-16 pt-8">
       {/* Plan your finances section */}
       <section className="p-4 space-y-4">
         <div className="flex justify-between items-center">
