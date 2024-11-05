@@ -38,17 +38,17 @@ export default function Component() {
               <LogoutButton/>
             </div>
           </div>
-          <div className="mt-8">
-            <h1 className="text-4xl font-bold text-gray-800">Hello!</h1>
+          <div className="mt-8 mx-8">
+            <h1 className="text-2xl font-bold text-gray-800">Hello!</h1>
             <p className="mt-2 text-gray-700 max-w-[250px]">
-              We are here to meet your banking needs - for now, and beyond.
+              We are here to meet your<br/>banking needs - for now, and<br/>beyond.
             </p>
           </div>
         </div>
       </div>
 
       {/* Quick Actions and Promotional Banner Card */}
-      <Card className="mx-6 -mt-48 relative z-10 mb-4 bg-white">
+      <Card className="mx-6 -mt-40 relative z-10 mb-4 bg-white shadow">
         <CardContent className="">
           {/* Quick Actions */}
           <div className="grid grid-cols-3 gap-4 mb-4 px-6 pt-6">
