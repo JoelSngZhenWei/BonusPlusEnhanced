@@ -13,7 +13,7 @@ export default function Component() {
   const [showBalance, setShowBalance] = useState(true)
 
   return (
-    <div className="min-h-screen bg-gray-100 pb-16">
+    <div className="min-h-screen bg-ocbc-white pb-16">
       {/* Hero Section */}
       <div className="relative h-[280px]">
         <Image
@@ -28,7 +28,7 @@ export default function Component() {
             <Expand className="h-6 w-6 text-white" />
             <div className="flex items-center gap-4">
               <Bell className="h-6 w-6 text-white" />
-              <Link href="/logout" className="text-blue-500 font-medium">
+              <Link href="/" className="text-blue-500 font-medium">
                 Logout
               </Link>
             </div>
