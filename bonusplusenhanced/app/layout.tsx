@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { NotificationIcon } from "@/components/icon-components"
+import { ExpandIcon } from "@/components/icon-components"
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,6 +30,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <div className="absolute top-4 flex justify-between w-full px-4 z-10">
+          <ExpandIcon/>
+          <NotificationIcon/>
+        </div>
         {children}
       </body>
     </html>
