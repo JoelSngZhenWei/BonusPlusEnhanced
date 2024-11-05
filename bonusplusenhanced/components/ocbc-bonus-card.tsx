@@ -46,7 +46,7 @@ export function OcbcBonusCard() {
           </li>
         </ul>
         <Parallax speed={-0.75}>
-        <Button className="w-full bg-red-500 hover:bg-red-700 text-white text-sm" onClick={handleClick}>
+        <Button className="w-full bg-red-600 hover:bg-red-700 text-white text-sm" onClick={handleClick}>
           Start saving for your goals
           <ArrowRight className="ml-2 h-4 w-4" />
         </Button>

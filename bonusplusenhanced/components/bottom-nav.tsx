@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils"
 
 export function BottomNav() {
   const pathname = usePathname()
+  const activeSegment = '/' + pathname.split('/')[1]
 
   const navigation = [
     { name: 'Home', href: '/home', icon: Home },
@@ -17,15 +18,16 @@ export function BottomNav() {
   ]
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 border-t bg-background pb-2">
+    <nav className="fixed bottom-0 left-0 right-0 border-t border-gray-200 bg-background pb-2">
       <div className="relative">
         <div className="flex h-16">
           {navigation.map((item) => {
-            const isActive = pathname === item.href
+            const isActive = activeSegment === item.href
             return (
               <Link
                 key={item.name}
                 href={item.href}
+                aria-current={isActive ? "page" : undefined}
                 className={cn(
                   "flex-1 flex flex-col items-center justify-center gap-1 relative",
                   isActive && "text-red-600"

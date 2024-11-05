@@ -5,13 +5,12 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
 import Image from "next/image"
-import { BottomNav } from "@/components/bottom-nav"
 
-export default function BonusPlusLandingComponent() {
+export function BonusPlusLandingComponent() {
   return (
-    <div className="min-h-screen ocbc-white-bg">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative min-h-[400px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden">
         <Image
           src="/placeholder.svg?height=1080&width=1920"
           alt="OCBC Bonus+ hero image"
@@ -22,7 +21,7 @@ export default function BonusPlusLandingComponent() {
         <div className="absolute inset-0 bg-blue-900/70 z-10"></div>
         <div className="relative z-20 text-center text-white px-4">
           <h1 className="text-5xl md:text-6xl font-bold mb-4">OCBC Bonus+</h1>
-          <p className="text-xl md:text-2xl mb-8">Supercharge your savings for life&apos;s big milestones</p>
+          <p className="text-xl md:text-2xl mb-8">Supercharge your savings for life's big milestones</p>
           <Button className="bg-white text-blue-600 hover:bg-blue-50 text-lg font-semibold py-6 px-8">
             Get Started Now
             <ArrowRight className="ml-2 h-5 w-5" />
@@ -33,7 +32,7 @@ export default function BonusPlusLandingComponent() {
       {/* Key Features Section */}
       <section className="py-16 px-4 md:px-8 max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold text-center mb-12">Key Features of Bonus+</h2>
-        <div className="grid grid-cols-3 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
             { title: "Big-Purchase Cashback", description: "Earn extra cashback on major expenses" },
             { title: "Milestone Rewards", description: "Unlock exclusive rewards as you reach savings goals" },
@@ -97,7 +96,7 @@ export default function BonusPlusLandingComponent() {
               ].map((testimonial, index) => (
                 <Card key={index} className="w-[300px] flex-none">
                   <CardContent className="p-6">
-                    <p className="italic mb-4">{testimonial.quote}</p>
+                    <p className="italic mb-4">"{testimonial.quote}"</p>
                     <p className="font-semibold">{testimonial.name}</p>
                   </CardContent>
                 </Card>
@@ -119,7 +118,20 @@ export default function BonusPlusLandingComponent() {
           </Button>
         </div>
       </section>
-      <BottomNav/>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-8 px-4 md:px-8">
+        <div className="max-w-6xl mx-auto flex flex-wrap justify-between items-center">
+          <div className="w-full md:w-auto text-center md:text-left mb-4 md:mb-0">
+            <p>&copy; 2024 OCBC Bank. All rights reserved.</p>
+          </div>
+          <div className="w-full md:w-auto text-center md:text-right">
+            <a href="#" className="text-blue-300 hover:text-blue-100 mx-2">Terms & Conditions</a>
+            <a href="#" className="text-blue-300 hover:text-blue-100 mx-2">Privacy Policy</a>
+            <a href="#" className="text-blue-300 hover:text-blue-100 mx-2">Contact Us</a>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }
