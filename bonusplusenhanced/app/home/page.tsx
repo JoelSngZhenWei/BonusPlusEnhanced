@@ -24,7 +24,7 @@ export default function Component() {
           src="/BG_Home.png"
           alt="Background decoration"
           width={1206}
-          height={1601}
+          height={1174}
           className="w-full h-auto"
         />
         <div className="absolute top-0 left-0 w-full p-4">
