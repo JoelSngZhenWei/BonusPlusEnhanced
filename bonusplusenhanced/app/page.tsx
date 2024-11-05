@@ -6,22 +6,6 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { useRouter } from 'next/navigation';
 import { ExpandIcon, NotificationIcon } from "@/components/icon-components"
-// import { PushNotificationManager } from "@/components/push_manager"
-
-// function urlBase64ToUint8Array(base64String: string) {
-//   const padding = '='.repeat((4 - (base64String.length % 4)) % 4)
-//   const base64 = (base64String + padding)
-//     .replace(/\\-/g, '+')
-//     .replace(/_/g, '/')
- 
-//   const rawData = window.atob(base64)
-//   const outputArray = new Uint8Array(rawData.length)
- 
-//   for (let i = 0; i < rawData.length; ++i) {
-//     outputArray[i] = rawData.charCodeAt(i)
-//   }
-//   return outputArray
-// }
 
 export default function Component() {
   const router = useRouter();
@@ -31,32 +15,30 @@ export default function Component() {
   };
   return (
     <div className="min-h-screen bg-background">
-      {/* <PushNotificationManager/> */}
       <div className="relative">
-      <div className="relative h-screen"> {/* Use h-screen to make it fill the viewport height */}
-        <Image
-          src="/deepavali.png"
-          alt="Deepavali celebration background"
-          layout="fill"           // Use `layout="fill"` to make it occupy the entire div
-          objectFit="cover"        // Ensures the image covers the entire container
-          className="brightness-75" // Adjust brightness if needed
-        />
-        <div className="absolute top-4 flex justify-between w-full px-4 z-10">
-          <ExpandIcon/>
-          <NotificationIcon/>
-        </div>
-        <div className="absolute bottom-4 right-4 text-white">
-          <div className="flex items-center gap-2">
-            <span className="text-sm">🪔</span>
-            <div>
-              <div className="text-sm font-medium">OCBC Singapore</div>
-              <div className="text-lg font-bold">Happy Deepavali!</div>
+        <div className="relative w-full" style={{ height:'1601px'}}> {/* Reduced height to allow overlap */}
+          <Image
+            src="/deepavali.png"
+            alt="Deepavali celebration background"
+            layout="fill"
+            objectFit="cover"
+            className="brightness-75"
+          />
+          <div className="absolute top-4 flex justify-between w-full px-4 z-10">
+            <ExpandIcon />
+            <NotificationIcon />
+          </div>
+          <div className="absolute bottom-28 right-4 text-white"> {/* Moved up to overlap */}
+            <div className="flex items-center gap-2">
+              <div >
+                <div className="text-sm font-medium">OCBC Singapore</div>
+                <div className="text-lg font-bold">🪔 Happy Deepavali!</div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
         
-        <Card className="mx-4 -mt-6 relative z-10 p-6 grid gap-8 ocbc-white-bg">
+        <Card className="mx-4 -mt-20 relative z-10 p-6 grid gap-8 bg-white shadow-lg"> {/* Increased negative margin for overlap */}
           <div className="grid grid-cols-3 gap-8">
             <div className="flex flex-col items-center gap-2">
               <div className="p-3 bg-primary/10 rounded-lg">
@@ -125,7 +107,7 @@ export default function Component() {
           </div>
           
           <div className="space-y-4">
-            <Button className="w-full py-6 text-lg bg-slate-700	" variant="default" onClick={handleClick}>
+            <Button className="w-full py-6 text-lg bg-slate-700" variant="default" onClick={handleClick}>
               Log in to OCBC Singapore
             </Button>
             <p className="text-sm text-muted-foreground">
