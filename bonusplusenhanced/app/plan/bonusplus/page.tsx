@@ -7,6 +7,7 @@ import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
 import Image from "next/image"
 import { BottomNav } from "@/components/bottom-nav"
 import { ArrowRightIcon, ChevronRightIcon } from "@radix-ui/react-icons"
+import { Parallax } from 'react-scroll-parallax';
 
 export default function BonusPlusLandingComponent() {
   return (
@@ -72,21 +73,28 @@ export default function BonusPlusLandingComponent() {
               ))}
             </div>
             <div className="mt-8">
-              <h3 className="text-lg font-semibold mb-4">Big Ticket Expenses Bonus+ Supports</h3>
+              <h3 className="text-xl font-semibold mb-4">Big Ticket Purchases</h3>
               <ScrollArea className="w-full whitespace-nowrap rounded-md border border-red-400">
                 <div className="flex space-x-4 p-4">
                   {[
-                    { name: "House", src: "/placeholder.svg?height=100&width=100" },
-                    { name: "Car", src: "/placeholder.svg?height=100&width=100" },
-                    { name: "Wedding", src: "/placeholder.svg?height=100&width=100" },
-                    { name: "Education", src: "/placeholder.svg?height=100&width=100" },
-                    { name: "Travel", src: "/placeholder.svg?height=100&width=100" },
-                    { name: "Home Renovation", src: "/placeholder.svg?height=100&width=100" }
+                    { name: "BTO", src: "/bto.jpg" },
+                    { name: "Car", src: "/car.jpg" },
+                    { name: "Wedding", src: "/wedding.jpg" },
+                    { name: "Recurring Payments", src: "/payments.jpg" }
                   ].map((item, index) => (
                     <div key={index} className="flex flex-col items-center">
-                      <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center mb-2">
-                        <Image src={item.src} alt={item.name} layout="fill" objectFit="cover" />
+                      {/* <Parallax speed={5}> */}
+                      <div className="w-24 h-24 bg-white rounded-full overflow-hidden flex items-center justify-center">
+                        <Parallax className="w-28 h-28 relative" speed={-2}>
+                          <Image 
+                            src={item.src} 
+                            alt={item.name} 
+                            fill
+                            objectFit="cover"
+                          />
+                        </Parallax>
                       </div>
+                      {/* </Parallax> */}
                       <span className="text-sm">{item.name}</span>
                     </div>
                   ))}
@@ -102,7 +110,7 @@ export default function BonusPlusLandingComponent() {
       <section className="py-20 px-4 md:px-8 bg-gray-100">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-8 text-red-900">What Our Customers Say</h2>
-          <blockquote className="text-xl italic text-gray-700 mb-8">
+          <blockquote className="text-xl italic text-graay-700 mb-8">
             &apos;Bonus+ has transformed the way I save. The rewards and higher interest rates have helped me reach my savings goals much faster than I ever thought possible!&apos;
           </blockquote>
           <p className="font-semibold text-red-600">- Sarah L., Bonus+ Member since 2022</p>
