@@ -39,8 +39,8 @@ export default function Component() {
             </div>
           </div>
           <div className="mt-8 mx-8">
-            <h1 className="text-2xl font-bold text-gray-800">Hello!</h1>
-            <p className="mt-2 text-gray-700 max-w-[250px]">
+            <h1 className="text-3xl font-bold text-gray-800">Hello!</h1>
+            <p className="mt-1 text-gray-700 max-w-[250px]">
               We are here to meet your<br/>banking needs - for now, and<br/>beyond.
             </p>
           </div>

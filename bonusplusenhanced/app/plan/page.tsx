@@ -18,10 +18,10 @@ export default function Plan() {
       <section className="p-4 space-y-4">
         <div className="flex justify-between items-center">
           <div>
-            <h2 className="text-lg font-semibold">Plan your finances</h2>
-            <p className="text-xs text-muted-foreground">Manage, protect, build and grow your wealth.</p>
+            <h2 className="text-2xl font-semibold">Plan your finances</h2>
+            <p className="text-sm text-muted-foreground">Manage, protect, build and grow your wealth.</p>
           </div>
-          <Link href="/learn-more" className="text-xs text-blue-600 hover:underline">
+          <Link href="/learn-more" className="text-sm text-blue-600 hover:underline">
             Learn more
           </Link>
         </div>
@@ -59,9 +59,9 @@ export default function Plan() {
         <div className="grid grid-cols-2 gap-4">
         <Card className="pt-6 px-6 border shadow overflow-hidden relative">
           <CardHeader>
-            <CardTitle className="text-xs font-bold uppercase tracking-wide">TRACK</CardTitle>
+            <CardTitle className="text-sm font-bold uppercase tracking-wide">TRACK</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-2 text-xs">
+          <CardContent className="space-y-2 text-sm">
             <p>Money in (SGD)</p>
             <p>Money out (SGD)</p>
             <div className="relative aspect-[16/9] w-full">
@@ -77,9 +77,9 @@ export default function Plan() {
         </Card>
         <Card className="p-6 border shadow overflow-hidden relative">
           <CardHeader>
-            <CardTitle className="text-xs font-bold uppercase tracking-wide">INVEST</CardTitle>
+            <CardTitle className="text-sm font-bold uppercase tracking-wide">INVEST</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-2 text-xs">
+          <CardContent className="space-y-2 text-sm">
             <p>Check out our products and insights</p>
             <Link href="/invest" className="text-blue-600 hover:underline block mt-2">
               Start investing
@@ -101,9 +101,9 @@ export default function Plan() {
         <div className="grid grid-cols-2 gap-4">
         <Card className="p-6 border shadow overflow-hidden relative">
           <CardHeader>
-            <CardTitle className="text-xs font-bold uppercase tracking-wide">GOALS</CardTitle>
+            <CardTitle className="text-sm font-bold uppercase tracking-wide">GOALS</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-2 text-xs">
+          <CardContent className="space-y-2 text-sm">
             <p>Save regularly for your needs and wants</p>
             <Link href="/goals" className="text-blue-600 hover:underline block mt-2">
               Create new goal
@@ -121,9 +121,9 @@ export default function Plan() {
         </Card>
         <Card className="p-6 border shadow overflow-hidden relative">
           <CardHeader>
-            <CardTitle className="text-xs font-bold uppercase tracking-wide">INSURE</CardTitle>
+            <CardTitle className="text-sm font-bold uppercase tracking-wide">INSURE</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-2 text-xs">
+          <CardContent className="space-y-2 text-sm">
             <p>Find policies to fill the gaps in your insurance</p>
             <div className="relative aspect-[16/9] w-full">
               <Image
@@ -140,10 +140,10 @@ export default function Plan() {
       </section>
 
       {/* Financial Summary Section */}
-      <section className="p-4 space-y-4 text-xs">
+      <section className="p-4 space-y-4 text-sm">
       <div className="flex justify-between items-center">
         <div>
-          <h2 className="text-lg font-semibold">Your financial summary</h2>
+          <h2 className="text-2xl font-semibold">Your financial summary</h2>
           <p className="text-muted-foreground">Take control of your financial health.</p>
         </div>
       </div>
@@ -153,7 +153,7 @@ export default function Plan() {
         <Card className="w-[300px] flex-none border shadow overflow-hidden">
           <div className="p-4">
             <CardHeader className="p-0 mb-2">
-              <CardTitle className="text-xs font-bold text-muted-foreground uppercase tracking-wide">Income Saved</CardTitle>
+              <CardTitle className="text-sm font-bold text-muted-foreground uppercase tracking-wide">Income Saved</CardTitle>
             </CardHeader>
             <CardContent className="p-0 space-y-2">
               <h3 className="text-lg font-semibold">You spent more than your income last month</h3>
@@ -175,7 +175,7 @@ export default function Plan() {
         <Card className="w-[300px] flex-none border shadow overflow-hidden">
           <div className="p-4">
             <CardHeader className="p-0 mb-2">
-              <CardTitle className="text-xs font-bold text-muted-foreground uppercase tracking-wide">Investment Portfolio</CardTitle>
+              <CardTitle className="text-sm font-bold text-muted-foreground uppercase tracking-wide">Investment Portfolio</CardTitle>
             </CardHeader>
             <CardContent className="p-0 space-y-2">
               <h3 className="text-lg font-semibold">Your portfolio needs diversification</h3>
@@ -197,7 +197,7 @@ export default function Plan() {
         <Card className="w-[300px] flex-none border shadow overflow-hidden">
           <div className="p-4">
             <CardHeader className="p-0 mb-2">
-              <CardTitle className="text-xs font-bold text-muted-foreground uppercase tracking-wide">Retirement Planning</CardTitle>
+              <CardTitle className="text-sm font-bold text-muted-foreground uppercase tracking-wide">Retirement Planning</CardTitle>
             </CardHeader>
             <CardContent className="p-0 space-y-2">
               <h3 className="text-lg font-semibold">Start planning for retirement early</h3>
@@ -222,10 +222,10 @@ export default function Plan() {
     </section>
 
       {/* Wealth Insights Section */}
-      <section className="p-4 space-y-4 mb-4 text-xs">
+      <section className="p-4 space-y-4 mb-4 text-sm">
         <div className="flex justify-between items-center">
           <div>
-            <h2 className="text-lg font-semibold">Wealth Insights</h2>
+            <h2 className="text-2xl font-semibold">Wealth Insights</h2>
             <p className="text-muted-foreground">Discover wealth-related articles that we have curated exclusively for you.</p>
           </div>
           <Link href="/insights" className="text-blue-600 hover:underline">
