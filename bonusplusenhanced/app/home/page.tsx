@@ -1,13 +1,17 @@
 "use client"
 import Image from "next/image"
 import Link from "next/link"
-import { Bell, ChevronRight, Expand, Eye, EyeOff, QrCode} from "lucide-react"
+import { ChevronRight, Eye, EyeOff, QrCode} from "lucide-react"
+// import {Bell, Expand} from 'lucide-react'
 // import Settings from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent } from "@/components/ui/card"
 import { useState } from "react"
 import { BottomNav } from "@/components/bottom-nav"
+import { NotificationIcon } from "@/components/icon-components"
+import { ExpandIcon } from "@/components/icon-components"
+import { LogoutButton } from "@/components/icon-components"
 
 export default function Component() {
   const [showBalance, setShowBalance] = useState(true)
@@ -25,12 +29,13 @@ export default function Component() {
         />
         <div className="absolute top-0 left-0 w-full p-4">
           <div className="flex justify-between items-center">
-            <Expand className="h-6 w-6 text-white" />
+            <ExpandIcon isDark={true} />
             <div className="flex items-center gap-4">
-              <Bell className="h-6 w-6 text-white" />
-              <Link href="/" className="text-blue-500 font-medium">
+              <NotificationIcon isDark={true} />
+              {/* <Link href="/" className="text-blue-500 font-medium">
                 Logout
-              </Link>
+              </Link> */}
+              <LogoutButton/>
             </div>
           </div>
           <div className="mt-8">

@@ -1,16 +1,13 @@
 'use client'
 
 import Link from "next/link"
-import { Info, Umbrella, Wallet } from "lucide-react"
-// import { ChevronRight, Plant } from "lucide-react"
+import { ChevronRight, Info, Plant, Umbrella, Wallet } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-// import { Toggle } from "@/components/ui/toggle"
-// import { Toggle } from "@radix-ui/react-toggle"
+import { Toggle } from "@/components/ui/toggle"
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
-import { BottomNav } from "@/components/bottom-nav"
 
-export default function Plan() {
+export function Plan() {
   return (
     <div className="min-h-screen bg-gray-50 pb-16">
       {/* Plan your finances section */}
@@ -26,7 +23,7 @@ export default function Plan() {
         </div>
 
         {/* Net Worth Card */}
-        <Card className="p-6 border  shadow">
+        <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-base font-medium">NET WORTH</CardTitle>
             <Button variant="ghost" size="icon">
@@ -56,7 +53,7 @@ export default function Plan() {
 
         {/* Track and Invest Cards */}
         <div className="grid grid-cols-2 gap-4">
-          <Card className="p-6 border  shadow" >
+          <Card>
             <CardHeader>
               <CardTitle className="text-base font-medium">TRACK</CardTitle>
             </CardHeader>
@@ -68,7 +65,7 @@ export default function Plan() {
               </div>
             </CardContent>
           </Card>
-          <Card className="p-6 border  shadow" >
+          <Card>
             <CardHeader>
               <CardTitle className="text-base font-medium">INVEST</CardTitle>
             </CardHeader>
@@ -78,8 +75,7 @@ export default function Plan() {
                 Start investing
               </Link>
               <div className="mt-4">
-                {/* <Plant className="h-16 w-16 text-green-600" /> */}
-                Plant placeholder
+                <Plant className="h-16 w-16 text-green-600" />
               </div>
             </CardContent>
           </Card>
@@ -87,7 +83,7 @@ export default function Plan() {
 
         {/* Goals and Insure Cards */}
         <div className="grid grid-cols-2 gap-4">
-          <Card className="p-6 border  shadow" >
+          <Card>
             <CardHeader>
               <CardTitle className="text-base font-medium">GOALS</CardTitle>
             </CardHeader>
@@ -101,7 +97,7 @@ export default function Plan() {
               </div>
             </CardContent>
           </Card>
-          <Card className="p-6 border  shadow" >
+          <Card>
             <CardHeader>
               <CardTitle className="text-base font-medium">INSURE</CardTitle>
             </CardHeader>
@@ -126,7 +122,7 @@ export default function Plan() {
 
         <ScrollArea className="w-full whitespace-nowrap">
           <div className="flex w-full gap-4">
-            <Card className="w-[300px] flex-none border p-6  shadow">
+            <Card className="w-[300px] flex-none">
               <CardHeader>
                 <CardTitle className="text-base font-medium">INCOME SAVED</CardTitle>
               </CardHeader>
@@ -138,7 +134,7 @@ export default function Plan() {
                 </Link>
               </CardContent>
             </Card>
-            <Card className="w-[300px] flex-none p-6 border  shadow">
+            <Card className="w-[300px] flex-none">
               <CardHeader>
                 <CardTitle className="text-base font-medium">INVESTMENT PORTFOLIO</CardTitle>
               </CardHeader>
@@ -150,7 +146,7 @@ export default function Plan() {
                 </Link>
               </CardContent>
             </Card>
-            <Card className="w-[300px] flex-none p-6 border  shadow">
+            <Card className="w-[300px] flex-none">
               <CardHeader>
                 <CardTitle className="text-base font-medium">RETIREMENT PLANNING</CardTitle>
               </CardHeader>
@@ -181,7 +177,7 @@ export default function Plan() {
 
         <ScrollArea className="w-full whitespace-nowrap">
           <div className="flex w-full gap-4">
-            <Card className="w-[300px] flex-none p-6 border  shadow">
+            <Card className="w-[300px] flex-none">
               <CardContent className="p-0">
                 <img src="/placeholder.svg?height=200&width=300" alt="Investment strategies" className="w-full h-40 object-cover" />
                 <div className="p-4">
@@ -190,7 +186,7 @@ export default function Plan() {
                 </div>
               </CardContent>
             </Card>
-            <Card className="w-[300px] flex-none p-6 border  shadow">
+            <Card className="w-[300px] flex-none">
               <CardContent className="p-0">
                 <img src="/placeholder.svg?height=200&width=300" alt="Market trends" className="w-full h-40 object-cover" />
                 <div className="p-4">
@@ -199,7 +195,7 @@ export default function Plan() {
                 </div>
               </CardContent>
             </Card>
-            <Card className="w-[300px] flex-none p-6 border shadow">
+            <Card className="w-[300px] flex-none">
               <CardContent className="p-0">
                 <img src="/placeholder.svg?height=200&width=300" alt="Retirement planning" className="w-full h-40 object-cover" />
                 <div className="p-4">
@@ -212,7 +208,6 @@ export default function Plan() {
           <ScrollBar orientation="horizontal" />
         </ScrollArea>
       </section>
-      <BottomNav/>
     </div>
   )
 }
