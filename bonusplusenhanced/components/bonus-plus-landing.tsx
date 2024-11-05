@@ -8,7 +8,7 @@ import Image from "next/image"
 import { BottomNav } from "@/components/bottom-nav"
 import { ArrowRightIcon, ChevronRightIcon } from "@radix-ui/react-icons"
 
-export default function BonusPlusLandingComponent() {
+export function BonusPlusLandingComponent() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-red-50 to-white">
       {/* Hero Section */}
@@ -72,20 +72,18 @@ export default function BonusPlusLandingComponent() {
               ))}
             </div>
             <div className="mt-8">
-              <h3 className="text-lg font-semibold mb-4">Big Ticket Expenses Bonus+ Supports</h3>
+              <h3 className="text-xl font-semibold mb-4">Big Ticket Purchases</h3>
               <ScrollArea className="w-full whitespace-nowrap rounded-md border border-red-400">
                 <div className="flex space-x-4 p-4">
                   {[
-                    { name: "House", src: "/placeholder.svg?height=100&width=100" },
-                    { name: "Car", src: "/placeholder.svg?height=100&width=100" },
-                    { name: "Wedding", src: "/placeholder.svg?height=100&width=100" },
-                    { name: "Education", src: "/placeholder.svg?height=100&width=100" },
-                    { name: "Travel", src: "/placeholder.svg?height=100&width=100" },
-                    { name: "Home Renovation", src: "/placeholder.svg?height=100&width=100" }
+                    { name: "BTO", src: "/bto.jpg" },
+                    { name: "Car", src: "/car.jpg" },
+                    { name: "Wedding", src: "/wedding.jpg" },
+                    { name: "Recurring Payments", src: "/payments.jpg" }
                   ].map((item, index) => (
                     <div key={index} className="flex flex-col items-center">
-                      <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center mb-2">
-                        <Image src={item.src} alt={item.name} layout="fill" objectFit="cover" />
+                      <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center mb-2 overflow-hidden">
+                        <Image src={item.src} alt={item.name} width={60} height={60} objectFit="cover" />
                       </div>
                       <span className="text-sm">{item.name}</span>
                     </div>
