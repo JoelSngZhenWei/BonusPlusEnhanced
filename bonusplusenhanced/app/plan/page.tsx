@@ -1,7 +1,7 @@
 'use client'
 
 import Link from "next/link"
-import { Info, Umbrella, Wallet } from "lucide-react"
+import { Info, Wallet } from "lucide-react"
 // import { ChevronRight, Plant } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -57,15 +57,21 @@ export default function Plan() {
 
         {/* Track and Invest Cards */}
         <div className="grid grid-cols-2 gap-4">
-          <Card className="p-6 border  shadow" >
+        <Card className="p-6 border shadow overflow-hidden relative">
             <CardHeader>
               <CardTitle className="text-base font-medium">TRACK</CardTitle>
             </CardHeader>
             <CardContent className="space-y-2">
               <p>Money in (SGD)</p>
               <p>Money out (SGD)</p>
-              <div className="mt-4">
-                <img src="/placeholder.svg?height=100&width=100" alt="Money tracking illustration" className="w-16 h-16" />
+              <div className="relative h-40 mt-4">
+                <Image
+                  src="/moneybulb.png"
+                  alt="Lightbulb with money, representing financial tracking"
+                  width={3840}
+                  height={2160}
+                  className="absolute bottom-[-20%] right-[-10%] w-[60%] h-auto object-contain"
+                />
               </div>
             </CardContent>
           </Card>
@@ -78,10 +84,14 @@ export default function Plan() {
               <Link href="/invest" className="text-blue-600 hover:underline block mt-2">
                 Start investing
               </Link>
-              <div className="mt-4">
-                {/* <Plant className="h-16 w-16 text-green-600" /> */}
-                Plant placeholder
-              </div>
+              <div className="h-[150px] relative">
+              <Image
+                src="/moneysprout.png"
+                alt="Hand holding a purse, representing savings"
+                layout="fill"
+                objectFit="cover"
+              />
+            </div>
             </CardContent>
           </Card>
         </div>
@@ -97,9 +107,14 @@ export default function Plan() {
               <Link href="/goals" className="text-blue-600 hover:underline block mt-2">
                 Create new goal
               </Link>
-              <div className="mt-4">
-                <Wallet className="h-16 w-16 text-blue-600" />
-              </div>
+              <div className="h-[150px] relative">
+              <Image
+                src="/savings.png"
+                alt="Hand holding a purse, representing savings"
+                layout="fill"
+                objectFit="cover"
+              />
+            </div>
             </CardContent>
           </Card>
           <Card className="p-6 border  shadow" >
@@ -108,9 +123,14 @@ export default function Plan() {
             </CardHeader>
             <CardContent>
               <p>Find policies to fill the gaps in your insurance</p>
-              <div className="mt-4">
-                <Umbrella className="h-16 w-16 text-purple-600" />
-              </div>
+              <div className="h-[150px] relative">
+              <Image
+                src="/rainumbrella.png"
+                alt="Hand holding a purse, representing savings"
+                layout="fill"
+                objectFit="cover"
+              />
+            </div>
             </CardContent>
           </Card>
         </div>
