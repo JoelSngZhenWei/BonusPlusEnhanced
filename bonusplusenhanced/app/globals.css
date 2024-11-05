@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+/* body {
   font-family: Arial, Helvetica, sans-serif;
-}
+} */
 
 @layer base {
   :root {
@@ -33,6 +33,7 @@ body {
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+    --font-family: 'Nunito Sans', Arial, sans-serif;
   }
   .dark {
     --background: 0 0% 3.9%;
@@ -68,6 +69,7 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-family);
   }
 
 .ocbc-red {

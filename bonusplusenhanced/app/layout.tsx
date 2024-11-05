@@ -12,6 +12,11 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
+const nunitoSans = localFont({
+  src: "./fonts/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf",
+  variable: "--font-nunito-sans",
+  weight: "100 900",  // Adjust based on the weights available in the variable font
+});
 
 import type { Viewport } from "next";
 
@@ -68,7 +73,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${nunitoSans.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
 
         {children}
