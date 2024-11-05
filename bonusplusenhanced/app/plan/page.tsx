@@ -57,12 +57,13 @@ export default function Plan() {
 
         {/* Track and Invest Cards */}
         <div className="grid grid-cols-2 gap-4">
-        <Card className="pt-6 px-6 border shadow overflow-hidden relative">
+        <Card className="pt-6 px-3 border shadow overflow-hidden relative">
           <CardHeader>
             <CardTitle className="text-sm font-bold uppercase tracking-wide">TRACK</CardTitle>
           </CardHeader>
           <CardContent className="space-y-2 text-sm">
             <p>Money in (SGD)</p>
+            <br/>
             <p>Money out (SGD)</p>
             <div className="relative aspect-[16/9] w-full">
               <Image
@@ -75,7 +76,7 @@ export default function Plan() {
             </div>
           </CardContent>
         </Card>
-        <Card className="p-6 border shadow overflow-hidden relative">
+        <Card className="px-3 pt-6 border shadow overflow-hidden relative">
           <CardHeader>
             <CardTitle className="text-sm font-bold uppercase tracking-wide">INVEST</CardTitle>
           </CardHeader>
@@ -99,7 +100,7 @@ export default function Plan() {
 
         {/* Goals and Insure Cards */}
         <div className="grid grid-cols-2 gap-4">
-        <Card className="p-6 border shadow overflow-hidden relative">
+        <Card className="px-3 pt-6 border shadow overflow-hidden relative">
           <CardHeader>
             <CardTitle className="text-sm font-bold uppercase tracking-wide">GOALS</CardTitle>
           </CardHeader>
@@ -119,7 +120,7 @@ export default function Plan() {
             </div>
           </CardContent>
         </Card>
-        <Card className="p-6 border shadow overflow-hidden relative">
+        <Card className="px-3 pt-6 border shadow overflow-hidden relative">
           <CardHeader>
             <CardTitle className="text-sm font-bold uppercase tracking-wide">INSURE</CardTitle>
           </CardHeader>
