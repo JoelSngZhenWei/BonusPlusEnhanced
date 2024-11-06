@@ -17,7 +17,7 @@ export default function BonusPlusAccountComponent() {
       {/* Header */}
       <header className="bg-red-600 text-white p-4">
         <div className="flex items-center gap-4 mb-6">
-          <Link href="/accounts">
+          <Link href="/home">
             <ArrowLeftIcon className="h-6 w-6" />
           </Link>
           <h1 className="text-xl font-semibold">Bonus+ Account</h1>
