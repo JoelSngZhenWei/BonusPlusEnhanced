@@ -24,7 +24,7 @@ export default function BonusPlusLandingComponent() {
         <div className="absolute inset-0 bg-gradient-to-r from-red-900/80 to-red-600/80 z-10"></div>
         <div className="relative z-20 text-center text-white px-4 max-w-4xl mx-auto">
           <h1 className="text-3xl font-extrabold mb-6">OCBC Bonus+</h1>
-          <p className="text-xl font-semibold mb-8">Reach your goals faster, earn rewards, and enjoy exclusive benefits</p>
+          <p className="text-lg font-semibold mb-8">Reach your goals faster, earn rewards, and enjoy exclusive benefits</p>
           <Button className="bg-white text-red-600 hover:bg-red-50 text-lg font-semibold py-6 px-8 rounded-full shadow-lg transition-all duration-300 hover:scale-105">
             Get Started Now
             <ArrowRightIcon className="ml-2 h-5 w-5" />
@@ -34,7 +34,7 @@ export default function BonusPlusLandingComponent() {
 
       {/* Key Features Section */}
       <section className="py-7 px-4 max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-6">Unlock the Power of <span className="text-red-600">Bonus+</span></h2>
+        <h2 className="text-lg font-bold text-center mb-6">Unlock the Power of <span className="text-red-600">Bonus+</span></h2>
         <div className="grid grid-cols-3 gap-2">
           {[
             { title: "Higher Interest Rates", description: "Enjoy competitive interest rates that grow with your balance", icon: TrendingUp },
@@ -73,7 +73,7 @@ export default function BonusPlusLandingComponent() {
               ))}
             </div>
             <div className="mt-8">
-              <h3 className="text-xl font-semibold mb-4">Big Ticket Purchases</h3>
+              <h3 className="text-lg font-semibold mb-4">Big Ticket Purchases</h3>
               <ScrollArea className="w-full whitespace-nowrap rounded-md border border-red-400">
                 <div className="flex space-x-4 p-4">
                   {[
@@ -109,8 +109,8 @@ export default function BonusPlusLandingComponent() {
       {/* Redeem Rewards and Points Section */}
       <section className="py-10 px-4 bg-gray-100">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-8 text-red-900">Redeem Rewards and Points</h2>
-          <p className="text-xl mb-8">
+          <h2 className="text-lg font-bold mb-4 text-red-900">Redeem Rewards and Points</h2>
+          <p className="text-xl mb-4">
             Turn your savings into exciting rewards! With Bonus+, you can redeem your points for a wide range of benefits:
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
