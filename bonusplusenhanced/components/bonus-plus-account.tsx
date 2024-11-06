@@ -21,15 +21,17 @@ export function BonusPlusAccount() {
   const [showBalance, setShowBalance] = useState(true)
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
+    <div className="min-h-screen bg-red-600  pt-14">
+      {/* Fixed Header */}
+      <div className="fixed top-0 left-0 right-0 bg-red-600 text-white p-4 z-50 flex items-center">
+        <Link href="/home">
+          <ArrowLeftIcon className="h-6 w-6 mr-4" />
+        </Link>
+        <h1 className="text-xl font-semibold">Bonus+ Account</h1>
+      </div>
+
+      {/* Main Header */}
       <header className="bg-red-600 text-white p-4">
-        <div className="flex items-center gap-4 mb-6">
-          <Link href="/home">
-            <ArrowLeftIcon className="h-6 w-6" />
-          </Link>
-          <h1 className="text-xl font-semibold">Bonus+ Account</h1>
-        </div>
         <div className="space-y-4">
           <div className="flex justify-between items-center">
             <span className="text-sm opacity-90">Available balance (SGD)</span>
@@ -82,7 +84,7 @@ export function BonusPlusAccount() {
       </header>
 
       {/* Main Content */}
-      <main className="p-4 space-y-4">
+      <main className="p-4 space-y-4 bg-white">
         {/* Quick Actions */}
         <Card className="">
           <CardContent className="p-2 px-4 space-y-2">
