@@ -109,7 +109,7 @@ export default function BonusPlusLandingComponent() {
       {/* Redeem Rewards and Points Section */}
       <section className="py-10 px-4 bg-gray-100">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-lg font-bold mb-4 text-red-900">Redeem Rewards and Points</h2>
+          <h2 className="text-lg font-bold mb-4">Redeem Rewards and Points</h2>
           <p className="text-xl mb-4">
             Turn your savings into exciting rewards! With Bonus+, you can redeem your points for a wide range of benefits:
           </p>
