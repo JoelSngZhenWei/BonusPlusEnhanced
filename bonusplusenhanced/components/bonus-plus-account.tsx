@@ -1,15 +1,23 @@
 "use client"
 
-import { Eye, EyeOff, Wallet, Target, Gift, TrendingUp, ArrowUpRight } from "lucide-react"
+import { Eye, EyeOff, Wallet, Target, Gift, TrendingUp, ArrowUpRight, Info } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Progress } from "@/components/ui/progress"
 import { ScrollArea } from "@/components/ui/scroll-area"
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
 import Link from "next/link"
 import { useState } from "react"
 import { ArrowLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons"
 
-export default function BonusPlusAccountComponent() {
+export function BonusPlusAccount() {
   const [showBalance, setShowBalance] = useState(true)
 
   return (
@@ -46,23 +54,31 @@ export default function BonusPlusAccountComponent() {
             <span className="font-semibold">2,450 pts</span>
           </div>
         </div>
-        <div className="flex items-center gap-2 mt-4">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="w-5 h-5"
-          >
-            <circle cx="12" cy="12" r="10" />
-            <path d="M12 16v-4" />
-            <path d="M12 8h.01" />
-          </svg>
-          <span className="text-sm">How does Bonus+ Work?</span>
-        </div>
+        <Dialog>
+          <DialogTrigger asChild>
+            <div className="flex items-center gap-2 mt-4 cursor-pointer">
+              <Info className="w-5 h-5" />
+              <span className="text-sm">How does Bonus+ Work?</span>
+            </div>
+          </DialogTrigger>
+          <DialogContent className="sm:max-w-[425px]">
+            <DialogHeader>
+              <DialogTitle>How Bonus+ Works</DialogTitle>
+              <DialogDescription>
+                Bonus+ is designed to help you save more and earn more. Here&apos;s how it works:
+              </DialogDescription>
+            </DialogHeader>
+            <div className="py-4">
+              <ul className="list-disc pl-4 space-y-2">
+                <li>Higher interest rates for consistent savings</li>
+                <li>Bonus points for reaching savings milestones</li>
+                <li>Special rewards for big ticket purchases</li>
+                <li>Flexible withdrawals without losing benefits</li>
+                <li>Personalized savings goals and tracking</li>
+              </ul>
+            </div>
+          </DialogContent>
+        </Dialog>
       </header>
 
       {/* Main Content */}
@@ -74,7 +90,32 @@ export default function BonusPlusAccountComponent() {
               Make a Big Ticket Purchase
               <ArrowUpRight className="ml-2 h-4 w-4" />
             </Button>
-            <p className="text-sm text-gray-500 text-center">What counts as a big ticket purchase?</p>
+            <Dialog>
+              <DialogTrigger asChild>
+                <p className="text-sm text-gray-500 text-center cursor-pointer hover:underline">
+                  What counts as a big ticket purchase?
+                </p>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-[425px]">
+                <DialogHeader>
+                  <DialogTitle>Big Ticket Purchases</DialogTitle>
+                  <DialogDescription>
+                    Big ticket purchases are significant expenses that qualify for special rewards in your Bonus+ account.
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="py-4">
+                  <p className="mb-2">Examples of big ticket purchases include:</p>
+                  <ul className="list-disc pl-4 space-y-2">
+                    <li>Home down payment</li>
+                    <li>Wedding expenses</li>
+                    <li>Car purchase</li>
+                    <li>Major home renovations</li>
+                    <li>High-end electronics or appliances</li>
+                  </ul>
+                  <p className="mt-4">Purchases typically need to be $5,000 or more to qualify.</p>
+                </div>
+              </DialogContent>
+            </Dialog>
           </CardContent>
         </Card>
 
