@@ -112,7 +112,7 @@ export default function Component() {
 
           {/* Promotional Banner */}
           <Link
-            href="/deals"
+            href="/home"
             className="flex items-center justify-between p-4 bg-pink-100 rounded-b-xl"
           >
             <div className="flex items-center gap-2">
@@ -185,7 +185,7 @@ export default function Component() {
           </Card>
           <Card className="bg-gray-100 mb-4">
             <CardContent className="p-4">
-              <Link href="/account" className="flex items-center gap-4">
+              <Link href="/home" className="flex items-center gap-4">
                 <div className="h-12 w-12 rounded-full bg-[#F8E4D8] flex items-center justify-center text-lg">
                   FRA
                 </div>
