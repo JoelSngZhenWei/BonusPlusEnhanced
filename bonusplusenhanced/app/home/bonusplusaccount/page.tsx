@@ -51,7 +51,7 @@ export default function BonusPlusAccountComponent() {
       {/* Main Content */}
       <main className="p-4 space-y-6">
         {/* Quick Actions */}
-        <Card className="border shadow p-3">
+        <Card className="">
           <CardContent className="p-4">
             <Button className="w-full bg-red-600 text-white hover:bg-red-700">
               Make a Big Ticket Purchase
@@ -88,7 +88,7 @@ export default function BonusPlusAccountComponent() {
 
         {/* Recent Transactions */}
         <section>
-          <Card className="border shadow">
+          <Card className="border shadow p-3">
             <CardHeader>
               <CardTitle className="text-lg font-semibold">Recent Transactions</CardTitle>
             </CardHeader>
