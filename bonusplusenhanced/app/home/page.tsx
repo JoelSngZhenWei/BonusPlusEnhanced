@@ -46,7 +46,7 @@ export default function Component() {
       </div>
 
       {/* Quick Actions and Promotional Banner Card */}
-      <Card className="mx-4 -mt-40 relative z-10 mb-4 bg-white shadow">
+      <Card className="mx-4 -mt-40 relative z-10 mb-4 bg-white shadow-md">
         <CardContent className="">
           {/* Quick Actions */}
           <div className="grid grid-cols-3 gap-4 mb-4 px-6 pt-6 text-center">
@@ -111,8 +111,7 @@ export default function Component() {
           </div>
 
           {/* Promotional Banner */}
-          <Link
-            href="/home"
+          <div
             className="flex items-center justify-between p-4 bg-pink-100 rounded-b-xl"
           >
             <div className="flex items-center gap-2">
@@ -122,7 +121,7 @@ export default function Component() {
               </span>
             </div>
             <ChevronRight className="h-5 w-5 text-gray-400" />
-          </Link>
+          </div>
         </CardContent>
       </Card>
 
@@ -148,11 +147,11 @@ export default function Component() {
         <Card className="bg-gray-100 mb-4">
             <CardContent className="p-4">
               <Link href="/home/bonusplusaccount" className="flex items-center gap-4">
-                <div className="h-12 w-12 rounded-full bg-red-300 flex items-center justify-center text-lg">
-                  Bo+
+                <div className="h-12 w-12 rounded-full bg-red-300 flex items-center justify-center font-bold tracking-wide text-lg">
+                  B+
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-bold">Bonus+ Account</h3>
+                  <h3 className="font-bold">BonusMax Account</h3>
                 </div>
                 <ChevronRight className="h-5 w-5 text-gray-400" />
               </Link>
@@ -177,7 +176,7 @@ export default function Component() {
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-xl font-semibold">
-                    {showBalance ? "SGD $86'413.81" : "••••"}
+                    {showBalance ? "SGD $86'413.81" : "SGD $•••••••••"}
                   </span>
                 </div>
               </div>
@@ -185,7 +184,7 @@ export default function Component() {
           </Card>
           <Card className="bg-gray-100 mb-4">
             <CardContent className="p-4">
-              <Link href="/home" className="flex items-center gap-4">
+              <div className="flex items-center gap-4">
                 <div className="h-12 w-12 rounded-full bg-[#F8E4D8] flex items-center justify-center text-lg">
                   FRA
                 </div>
@@ -193,7 +192,7 @@ export default function Component() {
                   <h3 className="font-semibold">FRANK Account</h3>
                 </div>
                 <ChevronRight className="h-5 w-5 text-gray-400" />
-              </Link>
+              </div>
 
               <div className="space-y-4 mt-4">
                 <div className="flex justify-between items-center">
@@ -215,7 +214,7 @@ export default function Component() {
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-xl font-semibold">
-                    {showBalance ? "SGD $86'413.81" : "••••"}
+                    {showBalance ? "SGD $22'122.90" : "SGD $•••••••••"}
                   </span>
                 </div>
                 <div className="pt-2">

@@ -18,7 +18,7 @@ export function OcbcBonusCard() {
 
       <CardHeader className="bg-gradient-to-r from-red-600 via-red-500 to-red-400 p-3 pt-4">
         {/* <Parallax speed={-0.75}> */}
-          <CardTitle className="text-base font-extrabold uppercase tracking-wide text-white">OCBC Bonus+</CardTitle>
+          <CardTitle className="text-base font-extrabold tracking-wide text-white">OCBC BonusMax</CardTitle>
           <p className="text-white font-bold text-xs">Supercharge your savings</p>
         {/* </Parallax> */}
       </CardHeader>

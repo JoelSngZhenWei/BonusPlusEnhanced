@@ -154,10 +154,10 @@ export function BonusPlusAccount() {
             <ScrollArea className="h-[300px]">
               <CardContent className="p-4 space-y-4">
                 {[
-                  { date: "22 Nov", desc: "Salary Credit", amount: 5000, type: "credit" },
-                  { date: "20 Nov", desc: "Interest Earned", amount: 12.50, type: "credit" },
-                  { date: "18 Nov", desc: "Points Redemption", amount: -500, type: "debit" },
-                  { date: "15 Nov", desc: "Cashback Reward", amount: 25, type: "credit" }
+                  { date: "25 Oct", desc: "Salary Credit", amount: 1200, type: "credit" },
+                  { date: "25 Sep", desc: "Salary Credit", amount: 1200, type: "debit" },
+                  { date: "25 Sep", desc: "Salary Credit", amount: 1200, type: "credit" },
+                  { date: "25 Aug", desc: "Salary Credit", amount: 1200, type: "credit" },
                 ].map((transaction, index) => (
                   <div key={index} className="flex justify-between items-center py-2 border-b last:border-0">
                     <div>

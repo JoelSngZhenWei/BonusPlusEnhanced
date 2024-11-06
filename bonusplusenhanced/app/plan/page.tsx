@@ -56,7 +56,7 @@ export default function Plan() {
           </CardContent>
         </Card>
 
-        {/* OCBC Bonus+ Card */}
+        {/* OCBC BonusMax Card */}
         <OcbcBonusCard />
 
 

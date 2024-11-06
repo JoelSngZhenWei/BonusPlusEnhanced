@@ -1,8 +1,7 @@
 'use client'
 
-import { Sparkles, Target, TrendingUp } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
 import Image from "next/image"
 import { BottomNav } from "@/components/bottom-nav"
@@ -16,14 +15,14 @@ export default function BonusPlusLandingComponent() {
       <section className="relative min-h-[400px] flex items-center justify-center overflow-hidden">
         <Image
           src="/family.jpg"
-          alt="OCBC Bonus+ hero image"
+          alt="OCBC BonusMax hero image"
           layout="fill"
           objectFit="cover"
           className="absolute inset-0 z-0"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-red-900/80 to-red-600/80 z-10"></div>
         <div className="relative z-20 text-center text-white px-4 max-w-4xl mx-auto">
-          <h1 className="text-3xl font-extrabold mb-6">OCBC Bonus+</h1>
+          <h1 className="text-3xl font-extrabold mb-6">OCBC BonusMax</h1>
           <p className="text-lg font-semibold mb-8">Reach your goals faster, earn rewards, and enjoy exclusive benefits</p>
           <Button className="bg-white text-red-600 hover:bg-red-50 text-lg font-semibold py-6 px-8 rounded-full shadow-lg transition-all duration-300 hover:scale-105">
             Get Started Now
@@ -33,18 +32,20 @@ export default function BonusPlusLandingComponent() {
       </section>
 
       {/* Key Features Section */}
-      <section className="py-7 px-4 max-w-6xl mx-auto">
-        <h2 className="text-lg font-bold text-center mb-6">Unlock the Power of <span className="text-red-600">Bonus+</span></h2>
-        <div className="grid grid-cols-3 gap-2">
+      <section className="py-7 px-2 max-w-6xl mx-auto">
+        <h2 className="text-lg font-bold text-center mb-6">Unlock the Power of <span className="text-red-600">BonusMax</span></h2>
+        <div className="grid grid-cols-3 gap-2 auto-rows-fr">
           {[
-            { title: "Higher Interest Rates", description: "Enjoy competitive interest rates that grow with your balance", icon: TrendingUp },
-            { title: "Bonus Rewards", description: "Earn extra rewards for consistent savings and reaching milestones", icon: Sparkles },
-            { title: "Goal-Based Savings", description: "A savings account meant to help you track and reach your big targets", icon: Target }
+            { title: "Interest Rates", description: "Enjoy competitive interest rates that grow with your balance" },
+            { title: "Bonus Rewards", description: "Earn extra rewards for consistent savings and reaching milestones" },
+            { title: "Goal-Based Savings", description: "A savings account meant to help you track and reach your big targets" }
           ].map((feature, index) => (
-            <Card key={index} className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <CardContent className="p-3 flex flex-col items-center text-center">
-                <h3 className="text-base font-semibold mb-2 text-red-600">{feature.title}</h3>
-                <p className="text-sm text-gray-600">{feature.description}</p>
+            <Card key={index} className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col h-full p-2">
+              <CardHeader className="flex-grow-0">
+                <CardTitle className="text-xs font-semibold text-red-600 text-center">{feature.title}</CardTitle>
+              </CardHeader>
+              <CardContent className="p-4 flex flex-col justify-between flex-grow">
+                <p className="text-xs text-gray-600 text-center">{feature.description}</p>
               </CardContent>
             </Card>
           ))}
@@ -54,11 +55,11 @@ export default function BonusPlusLandingComponent() {
       {/* How It Works Section */}
       <section className="bg-red-900 text-white py-10 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-6">How Bonus+ Works</h2>
+          <h2 className="text-3xl font-bold text-center mb-6">How BonusMax Works</h2>
           <div className="grid grid-cols-1 gap-12 items-center">
             <div className="space-y-8">
               {[
-                "Open your Bonus+ account in minutes",
+                "Open your BonusMax account in minutes",
                 "Make regular deposits to grow your balance",
                 "The longer you save without withdrawing, the higher your interest rate",
                 "Withdraw for big ticket expenses (HDB, wedding, car) to gain points and not lose any interest rate",
@@ -111,7 +112,7 @@ export default function BonusPlusLandingComponent() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-lg font-bold mb-4">Redeem Rewards and Points</h2>
           <p className="text-xl mb-4">
-            Turn your savings into exciting rewards! With Bonus+, you can redeem your points for a wide range of benefits:
+            Turn your savings into exciting rewards! With BonusMax, you can redeem your points for a wide range of benefits:
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
             {[
@@ -136,9 +137,9 @@ export default function BonusPlusLandingComponent() {
       <section className="bg-gradient-to-r from-red-600 to-red-400 text-white py-14 px-4 mb-12">
         <div className="text-center">
           <h2 className="text-lg font-extrabold mb-4">Ready to Boost Your Savings?</h2>
-          <p className="text-base mb-4">Join Bonus+ today and start your journey towards financial success.</p>
+          <p className="text-base mb-4">Join BonusMax today and start your journey towards financial success.</p>
           <Button className="bg-white text-red-600 hover:bg-red-50 text-base font-semibold py-6 px-8 rounded-full shadow-lg transition-all duration-300 hover:scale-105">
-            Open Your Bonus+ Account
+            Open Your BonusMax Account
             <ChevronRightIcon className="ml-2 h-5 w-5" />
           </Button>
         </div>
