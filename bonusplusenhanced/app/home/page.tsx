@@ -16,6 +16,17 @@ export default function Component() {
 
   return (
     <div className="min-h-screen bg-ocbc-white pb-16">
+    <header className="fixed top-0 left-0 w-full z-50 bg-transparent">
+        <div className="">
+          <div className="flex justify-between items-center">
+            <QrCodeScannerIcon isDark={true} />
+            <div className="flex items-center gap-4">
+              <NotificationIcon isDark={true} />
+              <LogoutButton isDark={false} />
+            </div>
+          </div>
+        </div>
+      </header>
       {/* Hero Section */}
       <div className="relative">
         <Image
@@ -25,17 +36,7 @@ export default function Component() {
           height={1174}
           className="w-full h-auto"
         />
-        <div className="absolute top-0 left-0 w-full p-4">
-          <div className="flex justify-between items-center">
-          <QrCodeScannerIcon isDark={true} />
-            <div className="flex items-center gap-4">
-            <NotificationIcon isDark={true} />        
-              {/* <Link href="/" className="text-blue-500 font-medium">
-                Logout
-              </Link> */}
-              <LogoutButton isDark={false}/>
-            </div>
-          </div>
+        <div className="absolute top-0 left-0 w-full p-4 pt-20">
           <div className="mt-8 mx-8">
             <h1 className="text-3xl font-bold text-gray-800">Hello!</h1>
             <p className="mt-1 text-gray-700 max-w-[250px]">
