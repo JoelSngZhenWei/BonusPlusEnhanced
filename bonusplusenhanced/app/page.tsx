@@ -16,6 +16,16 @@ export default function Component() {
   };
   return (
     <div className="min-h-screen ocbc-white-bg">
+          <header className="fixed top-0 left-0 w-full z-50 bg-transparent p-2">
+        <div className="">
+          <div className="flex justify-between items-center">
+            <QrCodeScannerIcon isDark={false} />
+            <div className="flex items-center gap-4">
+              <NotificationIcon isDark={false} />
+            </div>
+          </div>
+        </div>
+      </header>
       <div className="relative">
         <div className="relative w-full" style={{ height:'500px'}}> {/* Reduced height to allow overlap */}
           <Image
@@ -25,10 +35,6 @@ export default function Component() {
             objectFit="cover"
             // className="brightness-75"
           />
-          <div className="absolute top-4 flex justify-between w-full px-4 z-10">
-            <QrCodeScannerIcon isDark={false} />
-            <NotificationIcon />
-          </div>
           <div className="absolute bottom-24 right-6 text-slate-700 text-right"> {/* Moved up to overlap */}
             <div className="flex items-right gap-2">
               <div >

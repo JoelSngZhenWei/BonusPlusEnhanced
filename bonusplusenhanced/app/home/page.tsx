@@ -16,7 +16,7 @@ export default function Component() {
 
   return (
     <div className="min-h-screen bg-ocbc-white pb-16">
-    <header className="fixed top-0 left-0 w-full z-50 bg-transparent">
+    <header className="fixed top-0 left-0 w-full z-50 bg-transparent p-2">
         <div className="">
           <div className="flex justify-between items-center">
             <QrCodeScannerIcon isDark={true} />
