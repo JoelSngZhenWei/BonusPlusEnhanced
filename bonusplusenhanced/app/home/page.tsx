@@ -46,7 +46,7 @@ export default function Component() {
       </div>
 
       {/* Quick Actions and Promotional Banner Card */}
-      <Card className="mx-6 -mt-40 relative z-10 mb-4 bg-white shadow">
+      <Card className="mx-4 -mt-40 relative z-10 mb-4 bg-white shadow">
         <CardContent className="">
           {/* Quick Actions */}
           <div className="grid grid-cols-3 gap-4 mb-4 px-6 pt-6 text-center">
@@ -145,6 +145,44 @@ export default function Component() {
 
         {/* Account Details */}
         <div className="p-4">
+        <Card className="bg-gray-100 mb-4">
+            <CardContent className="p-4">
+              <Link href="/account" className="flex items-center gap-4">
+                <div className="h-12 w-12 rounded-full bg-red-300 flex items-center justify-center text-lg">
+                  Bo+
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-bold">Bonus+ Account</h3>
+                </div>
+                <ChevronRight className="h-5 w-5 text-gray-400" />
+              </Link>
+
+              <div className="space-y-4 mt-4">
+                <div className="flex justify-between items-center">
+                  <span className="text-gray-600">Available balance</span>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={() => setShowBalance(!showBalance)}
+                  >
+                    {showBalance ? (
+                      <Eye className="h-5 w-5" />
+                    ) : (
+                      <EyeOff className="h-5 w-5" />
+                    )}
+                    <span className="sr-only">
+                      {showBalance ? "Hide" : "Show"} balance
+                    </span>
+                  </Button>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-xl font-semibold">
+                    {showBalance ? "SGD $86'413.81" : "••••"}
+                  </span>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
           <Card className="bg-gray-100 mb-4">
             <CardContent className="p-4">
               <Link href="/account" className="flex items-center gap-4">
