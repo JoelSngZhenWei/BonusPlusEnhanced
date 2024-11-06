@@ -10,7 +10,7 @@ export function OcbcBonusCard() {
   const router = useRouter() // Initialize the router
 
   const handleClick = () => {
-    router.push("/plan/bonusplus") // Navigate to /plan/bonusplus
+    router.push("/plan/bonusplusintro") // Navigate to /plan/bonusplus
   }
 
   return (
