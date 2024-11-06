@@ -34,7 +34,7 @@ export default function Component() {
             layout="fill"
             objectFit="cover"
           />
-          <div className="absolute bottom-24 right-6 text-slate-700 text-right"> {/* Moved up to overlap */}
+          <div className="absolute bottom-20 right-6 text-slate-700 text-right"> {/* Moved up to overlap */}
             <div className="flex items-right gap-2">
               <div >
                 <div className="text-sm font-semibold">OCBC Singapore</div>
@@ -43,7 +43,7 @@ export default function Component() {
             </div>
           </div>
         </div>
-        <Card className="mx-4 -mt-20 relative z-10 p-3 grid gap-4 ocbc-white-bg"> {/* Increased negative margin for overlap */}
+        <Card className="mx-4 -mt-14 relative z-10 p-3 grid gap-4 ocbc-white-bg"> {/* Increased negative margin for overlap */}
           <div className="grid grid-cols-3 gap-4">
             <div className="flex flex-col items-center gap-2">
               <div className="p-3 bg-gray-200 rounded-full">
