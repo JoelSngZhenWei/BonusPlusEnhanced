@@ -52,9 +52,9 @@ export default function BonusPlusLandingComponent() {
       </section>
 
       {/* How It Works Section */}
-      <section className="bg-red-900 text-white py-10 px-4 md:px-8">
+      <section className="bg-red-900 text-white py-10 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">How Bonus+ Works</h2>
+          <h2 className="text-3xl font-bold text-center mb-6">How Bonus+ Works</h2>
           <div className="grid grid-cols-1 gap-12 items-center">
             <div className="space-y-8">
               {[
@@ -75,7 +75,7 @@ export default function BonusPlusLandingComponent() {
             <div className="mt-8">
               <h3 className="text-lg font-semibold mb-4">Big Ticket Purchases</h3>
               <ScrollArea className="w-full whitespace-nowrap rounded-md border border-red-400">
-                <div className="flex space-x-4 p-4">
+                <div className="flex space-x-4">
                   {[
                     { name: "BTO", src: "/bto.jpg" },
                     { name: "Car", src: "/car.jpg" },
