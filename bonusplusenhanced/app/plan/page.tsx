@@ -22,9 +22,9 @@ export default function Plan() {
             <h2 className="text-2xl font-semibold">Plan your finances</h2>
             <p className="text-sm text-muted-foreground">Manage, protect, build and grow your wealth.</p>
           </div>
-          <Link href="/learn-more" className="text-sm text-blue-600 hover:underline">
+          <div className="text-sm text-blue-600 hover:underline">
             Learn more
-          </Link>
+          </div>
         </div>
 
         {/* Net Worth Card */}
@@ -50,9 +50,9 @@ export default function Plan() {
                 <span className="font-bold tracking-wide">$ 12&apos;309.10</span>
               </div>
             </div>
-            <Link href="/calculate" className="text-blue-600 hover:underline text-sm block mt-4">
+            <div className="text-blue-600 hover:underline text-sm block mt-4">
               How did we calculate this?
-            </Link>
+            </div>
           </CardContent>
         </Card>
 
@@ -87,9 +87,9 @@ export default function Plan() {
           </CardHeader>
           <CardContent className="space-y-2 text-sm">
             <p>Check out our products and insights</p>
-            <Link href="/invest" className="text-blue-600 hover:underline block mt-2">
+            <div className="text-blue-600 hover:underline block mt-2">
               Start investing
-            </Link>
+            </div>
             <div className="relative aspect-[16/9] w-full">
               <Image
                 src="/moneysprout.png"
@@ -112,9 +112,9 @@ export default function Plan() {
           </CardHeader>
           <CardContent className="space-y-2 text-sm">
             <p>Save regularly for your needs and wants</p>
-            <Link href="/goals" className="text-blue-600 hover:underline block mt-2">
+            <div className="text-blue-600 hover:underline block mt-2">
               Create new goal
-            </Link>
+            </div>
             <div className="relative aspect-[16/9] w-full">
               <Image
                 src="/savings.png"
@@ -166,9 +166,9 @@ export default function Plan() {
             <CardContent className="p-0 space-y-2">
               <h3 className="text-lg font-semibold">You spent more than your income last month</h3>
               <p className="text-sm text-muted-foreground">We recommend that you save at least 10% of your monthly income, after CPF contributions.</p>
-              <Link href="/save" className="text-blue-600 hover:underline text-sm block">
+              <div className="text-blue-600 hover:underline text-sm block">
                 See how you can save more
-              </Link>
+              </div>
             </CardContent>
           </div>
           <div className="h-[150px] relative overflow-hidden">
@@ -188,9 +188,9 @@ export default function Plan() {
             <CardContent className="p-0 space-y-2">
               <h3 className="text-lg font-semibold">Your portfolio needs diversification</h3>
               <p className="text-sm text-muted-foreground">Consider spreading your investments across different asset classes to reduce risk.</p>
-              <Link href="/diversify" className="text-blue-600 hover:underline text-sm block">
+              <div className="text-blue-600 hover:underline text-sm block">
                 Learn about diversification
-              </Link>
+              </div>
             </CardContent>
           </div>
           <div className="h-[150px] relative overflow-hidden">
@@ -210,9 +210,9 @@ export default function Plan() {
             <CardContent className="p-0 space-y-2">
               <h3 className="text-lg font-semibold">Start planning for retirement early</h3>
               <p className="text-sm text-muted-foreground">The power of compound interest works best over long periods. Start your retirement planning now.</p>
-              <Link href="/retirement" className="text-blue-600 hover:underline text-sm block">
+              <div className="text-blue-600 hover:underline text-sm block">
                 Begin retirement planning
-              </Link>
+              </div>
             </CardContent>
           </div>
           <div className="h-[150px] relative overflow-hidden">
@@ -245,7 +245,14 @@ export default function Plan() {
           <div className="flex w-full gap-4">
             <Card className="w-[300px] flex-none border overflow-hidden">
               <CardContent className="p-0">
-                <img src="/rainyday.png" alt="Wealth insight" className="w-full h-40 object-cover object-center" />
+              <Image
+                  src='/rainyday.png'
+                  alt='Wealth insight'
+                  width='300'
+                  height='40'
+                  objectFit="cover"
+                  className="w-full h-40 object-cover object-center"
+                />
                 <div className="p-4">
                   <p className="text-sm text-muted-foreground">28 OCT 2024</p>
                   <h3 className="font-semibold mt-2">Essential Investment Strategies for Beginners</h3>
@@ -254,7 +261,14 @@ export default function Plan() {
             </Card>
             <Card className="w-[300px] flex-none border overflow-hidden">
               <CardContent className="p-0">
-                <img src="/rainyday.png" alt="Wealth insight" className="w-full h-40 object-cover object-center" />
+              <Image
+                  src='/rainyday.png'
+                  alt='Wealth insight'
+                  width='300'
+                  height='40'
+                  objectFit="cover"
+                  className="w-full h-40 object-cover object-center"
+                />
                 <div className="p-4">
                   <p className="text-sm text-muted-foreground">29 OCT 2024</p>
                   <h3 className="font-semibold mt-2">Understanding Current Market Trends</h3>
@@ -263,7 +277,14 @@ export default function Plan() {
             </Card>
             <Card className="w-[300px] flex-none  border overflow-hidden">
               <CardContent className="p-0">
-                <img src="/rainyday.png" alt="Wealth insight" className="w-full h-40 object-cover object-center" />
+              <Image
+                  src='/rainyday.png'
+                  alt='Wealth insight'
+                  width='300'
+                  height='40'
+                  objectFit="cover"
+                  className="w-full h-40 object-cover object-center"
+                />
                 <div className="p-4">
                   <p className="text-sm text-muted-foreground">30 OCT 2024</p>
                   <h3 className="font-semibold mt-2">Smart Retirement Planning Tips</h3>
@@ -272,7 +293,14 @@ export default function Plan() {
             </Card>
             <Card className="w-[300px] flex-none  border overflow-hidden">
               <CardContent className="p-0">
-                <img src="/rainyday.png" alt="Wealth insight" className="w-full h-40 object-cover object-center" />
+              <Image
+                  src='/rainyday.png'
+                  alt='Wealth insight'
+                  width='300'
+                  height='40'
+                  objectFit="cover"
+                  className="w-full h-40 object-cover object-center"
+                />
                 <div className="p-4">
                   <p className="text-sm text-muted-foreground">30 OCT 2024</p>
                   <h3 className="font-semibold mt-2">Smart Retirement Planning Tips</h3>
@@ -281,7 +309,14 @@ export default function Plan() {
             </Card>
             <Card className="w-[300px] flex-none  border overflow-hidden">
               <CardContent className="p-0">
-                <img src="/rainyday.png" alt="Wealth insight" className="w-full h-40 object-cover object-center" />
+              <Image
+                  src='/rainyday.png'
+                  alt='Wealth insight'
+                  width='300'
+                  height='40'
+                  objectFit="cover"
+                  className="w-full h-40 object-cover object-center"
+                />
                 <div className="p-4">
                   <p className="text-sm text-muted-foreground">30 OCT 2024</p>
                   <h3 className="font-semibold mt-2">Smart Retirement Planning Tips</h3>
@@ -290,7 +325,14 @@ export default function Plan() {
             </Card>
             <Card className="w-[300px] flex-none  border overflow-hidden">
               <CardContent className="p-0">
-                <img src="/rainyday.png" alt="Wealth insight" className="w-full h-40 object-cover object-center" />
+              <Image
+                  src='/rainyday.png'
+                  alt='Wealth insight'
+                  width='300'
+                  height='40'
+                  objectFit="cover"
+                  className="w-full h-40 object-cover object-center"
+                />
                 <div className="p-4">
                   <p className="text-sm text-muted-foreground">30 OCT 2024</p>
                   <h3 className="font-semibold mt-2">Smart Retirement Planning Tips</h3>
@@ -299,7 +341,14 @@ export default function Plan() {
             </Card>
             <Card className="w-[300px] flex-none  border overflow-hidden">
               <CardContent className="p-0">
-                <img src="/rainyday.png" alt="Wealth insight" className="w-full h-40 object-cover object-center" />
+              <Image
+                  src='/rainyday.png'
+                  alt='Wealth insight'
+                  width='300'
+                  height='40'
+                  objectFit="cover"
+                  className="w-full h-40 object-cover object-center"
+                />
                 <div className="p-4">
                   <p className="text-sm text-muted-foreground">30 OCT 2024</p>
                   <h3 className="font-semibold mt-2">Smart Retirement Planning Tips</h3>
@@ -308,7 +357,14 @@ export default function Plan() {
             </Card>
             <Card className="w-[300px] flex-none  border overflow-hidden">
               <CardContent className="p-0">
-                <img src="/rainyday.png" alt="Wealth insight" className="w-full h-40 object-cover object-center" />
+                <Image
+                  src='/rainyday.png'
+                  alt='Wealth insight'
+                  width='300'
+                  height='40'
+                  objectFit="cover"
+                  className="w-full h-40 object-cover object-center"
+                />
                 <div className="p-4">
                   <p className="text-sm text-muted-foreground">30 OCT 2024</p>
                   <h3 className="font-semibold mt-2">Smart Retirement Planning Tips</h3>
