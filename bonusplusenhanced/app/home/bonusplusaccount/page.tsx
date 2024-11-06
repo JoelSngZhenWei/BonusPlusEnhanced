@@ -2,7 +2,7 @@
 
 import { Eye, EyeOff, Wallet, Target, Gift, TrendingUp, ArrowUpRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Progress } from "@/components/ui/progress"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import Link from "next/link"
@@ -62,15 +62,17 @@ export default function BonusPlusAccountComponent() {
 
         {/* Savings Goals */}
         <section>
-          <h2 className="text-lg font-semibold mb-4">Your Savings Goals</h2>
-          <div className="space-y-4">
-            {[
-              { name: "House Down Payment", current: 45000, target: 60000 },
-              { name: "Wedding Fund", current: 15000, target: 30000 },
-              { name: "Car Purchase", current: 8000, target: 20000 }
-            ].map((goal, index) => (
-              <Card key={index}>
-                <CardContent className="p-4 space-y-2">
+          <Card className="">
+            <CardHeader>
+              <CardTitle className="text-lg font-semibold">Your Savings Goals</CardTitle>
+            </CardHeader>
+            <CardContent className="p-4 space-y-4">
+              {[
+                { name: "House Down Payment", current: 45000, target: 60000 },
+                { name: "Wedding Fund", current: 15000, target: 30000 },
+                { name: "Car Purchase", current: 8000, target: 20000 }
+              ].map((goal, index) => (
+                <div key={index} className="space-y-2">
                   <div className="flex justify-between items-center">
                     <h3 className="font-medium">{goal.name}</h3>
                     <span className="text-sm text-gray-600">
@@ -78,16 +80,18 @@ export default function BonusPlusAccountComponent() {
                     </span>
                   </div>
                   <Progress value={(goal.current / goal.target) * 100} className="h-2" />
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                </div>
+              ))}
+            </CardContent>
+          </Card>
         </section>
 
         {/* Recent Transactions */}
         <section>
-          <h2 className="text-lg font-semibold mb-4">Recent Transactions</h2>
-          <Card>
+          <Card className="border shadow">
+            <CardHeader>
+              <CardTitle className="text-lg font-semibold">Recent Transactions</CardTitle>
+            </CardHeader>
             <ScrollArea className="h-[300px]">
               <CardContent className="p-4 space-y-4">
                 {[
