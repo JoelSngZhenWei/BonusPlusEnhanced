@@ -34,7 +34,7 @@ export default function Component() {
             layout="fill"
             objectFit="cover"
           />
-          <div className="absolute bottom-20 right-6 text-slate-700 text-right"> {/* Moved up to overlap */}
+          <div className="absolute bottom-16 right-6 text-slate-700 text-right"> {/* Moved up to overlap */}
             <div className="flex items-right gap-2">
               <div >
                 <div className="text-sm font-semibold">OCBC Singapore</div>
