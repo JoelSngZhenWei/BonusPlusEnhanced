@@ -147,7 +147,7 @@ export default function Component() {
         <div className="p-4">
         <Card className="bg-gray-100 mb-4">
             <CardContent className="p-4">
-              <Link href="/account" className="flex items-center gap-4">
+              <Link href="/home/bonusplusaccount" className="flex items-center gap-4">
                 <div className="h-12 w-12 rounded-full bg-red-300 flex items-center justify-center text-lg">
                   Bo+
                 </div>
