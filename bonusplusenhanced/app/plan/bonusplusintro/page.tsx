@@ -32,19 +32,19 @@ export default function BonusPlusLandingComponent() {
       </section>
 
       {/* Key Features Section */}
-      <section className="py-7 px-2 max-w-6xl mx-auto">
-        <h2 className="text-lg font-bold text-center mb-6">Unlock the Power of <span className="text-red-600">BonusMax</span></h2>
+      <section className="py-8 px-2 max-w-6xl mx-auto">
+        <h2 className="text-lg font-bold text-center mb-3">Unlock the Power of <span className="text-red-600">BonusMax</span></h2>
         <div className="grid grid-cols-3 gap-2 auto-rows-fr">
           {[
             { title: "Interest Rates", description: "Enjoy competitive interest rates that grow with your balance" },
             { title: "Bonus Rewards", description: "Earn extra rewards for consistent savings and reaching milestones" },
             { title: "Goal-Based Savings", description: "A savings account meant to help you track and reach your big targets" }
           ].map((feature, index) => (
-            <Card key={index} className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col h-full p-2">
-              <CardHeader className="flex-grow-0">
-                <CardTitle className="text-xs font-semibold text-red-600 text-center">{feature.title}</CardTitle>
+            <Card key={index} className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col h-full p-1">
+              <CardHeader className="flex-grow-0 pt-3">
+                <CardTitle className="text-xs font-bold text-red-600 text-center">{feature.title}</CardTitle>
               </CardHeader>
-              <CardContent className="p-4 flex flex-col justify-between flex-grow">
+              <CardContent className="pb-3 px-1 flex flex-col justify-between flex-grow">
                 <p className="text-xs text-gray-600 text-center">{feature.description}</p>
               </CardContent>
             </Card>
@@ -55,7 +55,7 @@ export default function BonusPlusLandingComponent() {
       {/* How It Works Section */}
       <section className="bg-red-900 text-white py-10 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-6">How BonusMax Works</h2>
+          <h2 className="text-lg font-bold text-center mb-6">How BonusMax Works</h2>
           <div className="grid grid-cols-1 gap-12 items-center">
             <div className="space-y-8">
               {[
@@ -75,7 +75,7 @@ export default function BonusPlusLandingComponent() {
             </div>
             <div className="mt-8">
               <h3 className="text-lg font-semibold mb-4">Big Ticket Purchases</h3>
-              <ScrollArea className="w-full whitespace-nowrap rounded-md border border-red-400">
+              <ScrollArea className="w-full whitespace-nowrap rounded-md border border-red-400 p-2">
                 <div className="flex space-x-4">
                   {[
                     { name: "BTO", src: "/bto.jpg" },
@@ -111,7 +111,7 @@ export default function BonusPlusLandingComponent() {
       <section className="py-10 px-4 bg-gray-100">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-lg font-bold mb-4">Redeem Rewards and Points</h2>
-          <p className="text-xl mb-4">
+          <p className="text-base mb-4">
             Turn your savings into exciting rewards! With BonusMax, you can redeem your points for a wide range of benefits:
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
