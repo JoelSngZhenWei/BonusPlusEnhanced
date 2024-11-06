@@ -135,8 +135,8 @@ export default function BonusPlusLandingComponent() {
       {/* CTA Section */}
       <section className="bg-gradient-to-r from-red-600 to-red-400 text-white py-14 px-4 mb-12">
         <div className="text-center">
-          <h2 className="text-xl font-extrabold mb-4">Ready to Boost Your Savings?</h2>
-          <p className="text-lg mb-4">Join Bonus+ today and start your journey towards financial success.</p>
+          <h2 className="text-lg font-extrabold mb-4">Ready to Boost Your Savings?</h2>
+          <p className="text-base mb-4">Join Bonus+ today and start your journey towards financial success.</p>
           <Button className="bg-white text-red-600 hover:bg-red-50 text-base font-semibold py-6 px-8 rounded-full shadow-lg transition-all duration-300 hover:scale-105">
             Open Your Bonus+ Account
             <ChevronRightIcon className="ml-2 h-5 w-5" />
