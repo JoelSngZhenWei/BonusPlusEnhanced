@@ -43,7 +43,7 @@ export function BonusPlusAccount() {
             </Button>
           </div>
           <div className="text-3xl font-bold">
-            {showBalance ? "$12,345.67" : "$•••••••••"}
+            {showBalance ? "$86,413.81" : "$•••••••••"}
           </div>
           <div className="flex justify-between text-sm">
             <span>Current Interest Rate</span>
