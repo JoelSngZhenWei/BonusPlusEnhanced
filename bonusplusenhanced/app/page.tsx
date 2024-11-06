@@ -33,7 +33,6 @@ export default function Component() {
             alt="Deepavali celebration background"
             layout="fill"
             objectFit="cover"
-            className="-mt-5"
           />
           <div className="absolute bottom-24 right-6 text-slate-700 text-right"> {/* Moved up to overlap */}
             <div className="flex items-right gap-2">
