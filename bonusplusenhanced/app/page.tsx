@@ -26,11 +26,12 @@ export default function Component() {
             layout="fill"
             objectFit="cover"
           />
-          <div className="absolute bottom-16 right-6 text-slate-700 text-right"> {/* Moved up to overlap */}
+          <div className="absolute top-20 right-28 text-slate-700 text-right"> {/* Moved up to overlap */}
             <div className="flex items-right gap-2">
               <div >
+                <div className="text-xl tracking-wide ocbc-red">For <span className="font-black">Now,</span></div>
+                <div className="text-xl tracking-wide ocbc-red">and <span className="font-black">beyond.</span></div>
                 <div className="text-sm font-semibold">OCBC Singapore</div>
-                <div className="text-sm font-semibold">🪔 Happy Deepavali!</div>
               </div>
             </div>
           </div>
