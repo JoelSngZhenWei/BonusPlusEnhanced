@@ -162,7 +162,7 @@ export function BonusPlusAccount() {
 
         {/* Recent Transactions */}
         <section>
-          <Card className="border shadow p-3">
+          <Card className="border shadow p-3 px-6">
             <CardHeader>
               <CardTitle className="text-lg font-semibold">Recent Transactions</CardTitle>
             </CardHeader>

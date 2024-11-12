@@ -6,6 +6,7 @@ import Link from "next/link"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { Button } from "@/components/ui/button"
 import { ScrollArea } from "@/components/ui/scroll-area"
+import { formatDistanceToNow } from "date-fns"
 
 interface IconButtonProps {
   isDark?: boolean
@@ -26,11 +27,19 @@ export function NotificationIcon({ isDark = false }: IconButtonProps) {
   const [isOpen, setIsOpen] = useState(false)
 
   const notifications = [
-    { id: 1, title: "New message", description: "You have a new message from OCBC support." },
-    { id: 2, title: "Payment due", description: "Your credit card payment is due in 3 days." },
-    { id: 3, title: "Interest rate update", description: "The interest rate for your savings account has been updated." },
-    { id: 4, title: "Security alert", description: "A new device has logged into your account." },
-    { id: 5, title: "Promotion", description: "New cashback promotion available for your credit card." },
+    { id: 1, title: "BonusMax, here we come!", description: "You're all set for the upgrade to BonusMax! Let's reach your goals together!", isPriority: true, demoTryMe: true, createdAt: new Date(2023, 4, 25) },
+    // Pre-Transition (6 Months Before)
+    { id: 2, title: "Security alert", description: "A new device has logged into your account.", isPriority: false, createdAt: new Date(2023, 6, 10) },
+    {
+      id: 3,
+      title: "Get Ready for Enhanced Savings!",
+      description: "BonusMax is here to help you achieve your big life goals! Stay tuned for an effortless upgrade!",
+      isPriority: true,
+      demoTryMe: true,
+      createdAt: new Date(2022, 11, 15)
+    },
+    { id: 4, title: "Account statement", description: "Your monthly account statement is now available.", isPriority: false, createdAt: new Date(2023, 0, 15) },
+    { id: 5, title: "Explore BonusMax", description: "Explore BonusMax! Our enhanced savings account offers features designed for your future goals. Learn how your FRANK account can evolve with you.", isPriority: true, createdAt: new Date(2023, 0, 1) },
   ]
 
   return (
@@ -48,15 +57,33 @@ export function NotificationIcon({ isDark = false }: IconButtonProps) {
           )}
         </button>
       </PopoverTrigger>
-      <PopoverContent className="w-80 mr-4">
+      <PopoverContent className="w-80">
         <div className="flex justify-between items-center mb-2">
           <h3 className="font-semibold text-lg">Notifications</h3>
+          <Button variant="ghost" size="sm" onClick={() => setIsOpen(false)}>
+            Close
+          </Button>
         </div>
         <ScrollArea className="h-[300px]">
           {notifications.map((notification) => (
-            <div key={notification.id} className="mb-4 p-3 bg-gray-100 rounded-lg">
-              <h4 className="font-medium">{notification.title}</h4>
+            <div 
+              key={notification.id} 
+              className={`mb-4 p-3 rounded-lg ${
+                notification.isPriority ? 'bg-pink-100' : 'bg-gray-100'
+              }`}
+            >
+              <h4 className={`font-bold ${notification.isPriority ? 'ocbc-red' : ''}`}>
+                {notification.title}
+              </h4>
               <p className="text-sm text-gray-600">{notification.description}</p>
+              <div className="flex justify-between items-center mt-2">
+                <p className="text-xs text-gray-400">
+                  {formatDistanceToNow(notification.createdAt, { addSuffix: true })}
+                </p>
+                {notification.demoTryMe && (
+                  <p className="ocbc-red font-bold text-sm">Demo, try me!</p>
+                )}
+              </div>
             </div>
           ))}
         </ScrollArea>

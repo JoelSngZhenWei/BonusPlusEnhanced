@@ -45,8 +45,8 @@ export default function Component() {
         </div>
         <Card className="mx-4 -mt-14 relative z-10 p-3 grid gap-4 ocbc-white-bg"> {/* Increased negative margin for overlap */}
           <div className="grid grid-cols-3 gap-4">
-            <div className="flex flex-col items-center gap-2">
-              <div className="p-3 bg-gray-200 rounded-full">
+            <div className="flex flex-col items-center gap-2 transition-all duration-300 clickable">
+              <div className="p-3 bg-gray-200 rounded-full ">
                 <svg
                   className="h-6 w-6 text-primary"
                   fill="none"
@@ -66,13 +66,13 @@ export default function Component() {
               </div>
               <span className="text-xs text-center">Foreign Exchange</span>
             </div>
-            <div className="flex flex-col items-center gap-2">
+            <div className="flex flex-col items-center gap-2 transition-all duration-300 clickable">
               <div className="p-3 bg-gray-200 rounded-full">
                 <QrCode className="h-6 w-6 text-primary" />
               </div>
               <span className="text-xs text-center">Scan & Pay</span>
             </div>
-            <div className="flex flex-col items-center gap-2">
+            <div className="flex flex-col items-center gap-2 transition-all duration-300 clickable">
               <div className="p-3 bg-gray-200 rounded-full">
                 <svg
                   className="h-6 w-6 text-primary"
@@ -91,19 +91,19 @@ export default function Component() {
               </div>
               <span className="text-xs text-center">PayNow</span>
             </div>
-            <div className="flex flex-col items-center gap-2">
+            <div className="flex flex-col items-center gap-2 transition-all duration-300 clickable">
               <div className="p-3 bg-gray-200 rounded-full">
                 <Lightbulb className="h-6 w-6 text-primary" />
               </div>
               <span className="text-xs text-center">Wealth Insights</span>
             </div>
-            <div className="flex flex-col items-center gap-2">
+            <div className="flex flex-col items-center gap-2 transition-all duration-300 clickable">
               <div className="p-3 bg-gray-200 rounded-full">
                 <Gift className="h-6 w-6 text-primary" />
               </div>
               <span className="text-xs text-center">Rewards</span>
             </div>
-            <div className="flex flex-col items-center gap-2">
+            <div className="flex flex-col items-center gap-2 transition-all duration-300 clickable">
               <div className="p-3 bg-gray-200 rounded-full">
                 <MoreHorizontal className="h-6 w-6 text-primary" />
               </div>
