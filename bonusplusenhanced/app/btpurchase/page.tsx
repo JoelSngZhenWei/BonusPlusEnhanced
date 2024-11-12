@@ -45,7 +45,7 @@ export default function BlockPage() {
       case "Wedding":
         return "Include details about the vendor and expected wedding date."
       case "Car":
-        return "Specify the car model, vendor, and purchase amount."
+        return "Specify the down payment amount, vendor, and car model."
       case "Renovation":
         return "Describe the renovation project, vendor, and estimated costs."
       default:
