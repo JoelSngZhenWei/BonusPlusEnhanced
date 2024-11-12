@@ -24,7 +24,7 @@ export default function BonusPlusLandingComponent() {
         <div className="relative z-20 text-center text-white px-4 max-w-4xl mx-auto">
           <h1 className="text-3xl font-extrabold mb-6">OCBC BonusMax</h1>
           <p className="text-lg font-semibold mb-8">Reach your goals faster, earn rewards, and enjoy exclusive benefits</p>
-          <Button className="bg-white text-red-600 hover:bg-red-50 text-lg font-semibold py-6 px-8 rounded-full shadow-lg transition-all duration-300 hover:scale-105">
+          <Button className="bg-white text-red-600 hover:bg-red-50 text-lg font-semibold py-6 px-8 rounded-full shadow-lg transition-all duration-300 clickable">
             Get Started Now
             <ArrowRightIcon className="ml-2 h-5 w-5" />
           </Button>
@@ -81,7 +81,7 @@ export default function BonusPlusLandingComponent() {
                     { name: "BTO", src: "/bto.jpg" },
                     { name: "Car", src: "/car.jpg" },
                     { name: "Wedding", src: "/wedding.jpg" },
-                    { name: "Recurring Payments", src: "/payments.jpg" }
+                    { name: "Renovations", src: "/payments.jpg" }
                   ].map((item, index) => (
                     <div key={index} className="flex flex-col items-center">
                       {/* <Parallax speed={5}> */}
@@ -126,7 +126,7 @@ export default function BonusPlusLandingComponent() {
               </div>
             ))}
           </div>
-          <Button className="mt-10 bg-red-600 text-white hover:bg-red-700 text-base font-semibold py-3 px-6 rounded-full shadow-lg transition-all duration-300 hover:scale-105">
+          <Button className="mt-10 bg-red-600 text-white hover:bg-red-700 text-base font-semibold py-3 px-6 rounded-full shadow-lg transition-all duration-300 clickable">
             Explore All Rewards
             <ChevronRightIcon className="ml-2 h-5 w-5" />
           </Button>
@@ -138,7 +138,7 @@ export default function BonusPlusLandingComponent() {
         <div className="text-center">
           <h2 className="text-lg font-extrabold mb-4">Ready to Boost Your Savings?</h2>
           <p className="text-base mb-4">Join BonusMax today and start your journey towards financial success.</p>
-          <Button className="bg-white text-red-600 hover:bg-red-50 text-base font-semibold py-6 px-8 rounded-full shadow-lg transition-all duration-300 hover:scale-105">
+          <Button className="bg-white text-red-600 hover:bg-red-50 text-base font-semibold py-6 px-8 rounded-full shadow-lg transition-all duration-300 clickable">
             Open Your BonusMax Account
             <ChevronRightIcon className="ml-2 h-5 w-5" />
           </Button>

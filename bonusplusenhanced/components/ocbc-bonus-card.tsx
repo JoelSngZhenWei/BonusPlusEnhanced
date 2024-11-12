@@ -30,7 +30,7 @@ export function OcbcBonusCard() {
             <div className="p-1 mr-3">
               <Sparkles className="h-5 w-5 text-red-600" />
             </div>
-            <span>Earn up to ~5% on your savings</span>
+            <span>Earn up to 2.8% on your savings</span>
           </li>
           <li className="flex items-center text-xs">
             <div className="rounded-full p-1 mr-3">
@@ -42,7 +42,7 @@ export function OcbcBonusCard() {
             <div className="rounded-full p-1 mr-3">
               <Sparkles className="h-5 w-5 text-red-600" />
             </div>
-            <span>Exclusive offers and rewards</span>
+            <span>Earn rewards as you save</span>
           </li>
         </ul>
         {/* <Parallax speed={-0.75}> */}

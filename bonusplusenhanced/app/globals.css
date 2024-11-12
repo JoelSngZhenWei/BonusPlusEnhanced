@@ -81,5 +81,13 @@
 .ocbc-white-bg {
   background-color: #f6f6f6;
 }
+
+.clickable {
+  transition: transform 30s ease;
+}
+
+.clickable:active {
+  transform: scale(1.05); /* Adjust the scale as needed */
+}
   
 }

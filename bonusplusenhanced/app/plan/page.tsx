@@ -37,8 +37,8 @@ export default function Plan() {
           </CardHeader>
           <CardContent>
             <div className="flex gap-2 mb-4">
-              <Button variant="destructive" className="rounded-full">OCBC</Button>
-              <Button variant="outline" className="rounded-full">Your Financial OneView</Button>
+              <Button variant="destructive" className="rounded-full transition-all duration-300 clickable">OCBC</Button>
+              <Button variant="outline" className="rounded-full transition-all duration-300 clickable">Your Financial OneView</Button>
             </div>
             <div className="space-y-2">
               <div className="flex justify-between">
@@ -62,7 +62,7 @@ export default function Plan() {
 
         {/* Track and Invest Cards */}
         <div className="grid grid-cols-2 gap-4">
-        <Card className="pt-6 px-3 border shadow overflow-hidden relative">
+        <Card className="pt-6 px-3 border shadow overflow-hidden relative transition-all duration-300 clickable">
           <CardHeader>
             <CardTitle className="text-sm font-bold uppercase tracking-wide">TRACK</CardTitle>
           </CardHeader>
@@ -81,7 +81,7 @@ export default function Plan() {
             </div>
           </CardContent>
         </Card>
-        <Card className="px-3 pt-6 border shadow overflow-hidden relative">
+        <Card className="px-3 pt-6 border shadow overflow-hidden relative transition-all duration-300 clickable">
           <CardHeader>
             <CardTitle className="text-sm font-bold uppercase tracking-wide">INVEST</CardTitle>
           </CardHeader>
@@ -106,7 +106,7 @@ export default function Plan() {
 
         {/* Goals and Insure Cards */}
         <div className="grid grid-cols-2 gap-4">
-        <Card className="px-3 pt-6 border shadow overflow-hidden relative">
+        <Card className="px-3 pt-6 border shadow overflow-hidden relative transition-all duration-300 clickable">
           <CardHeader>
             <CardTitle className="text-sm font-bold uppercase tracking-wide">GOALS</CardTitle>
           </CardHeader>
@@ -126,7 +126,7 @@ export default function Plan() {
             </div>
           </CardContent>
         </Card>
-        <Card className="px-3 pt-6 border shadow overflow-hidden relative">
+        <Card className="px-3 pt-6 border shadow overflow-hidden relative transition-all duration-300 clickable">
           <CardHeader>
             <CardTitle className="text-sm font-bold uppercase tracking-wide">INSURE</CardTitle>
           </CardHeader>
@@ -158,8 +158,8 @@ export default function Plan() {
 
       <ScrollArea className="w-full">
       <div className="flex w-full gap-4 pb-2">
-        <Card className="w-[300px] flex-none border shadow overflow-hidden">
-          <div className="p-4">
+        <Card className="w-[300px] flex-none border shadow overflow-hidden transition-all duration-300 clickable">
+          <div className="p-4 ">
             <CardHeader className="p-0 mb-2">
               <CardTitle className="text-sm font-bold text-muted-foreground uppercase tracking-wide">Income Saved</CardTitle>
             </CardHeader>
@@ -180,7 +180,7 @@ export default function Plan() {
             />
           </div>
         </Card>
-        <Card className="w-[300px] flex-none border shadow overflow-hidden">
+        <Card className="w-[300px] flex-none border shadow overflow-hidden transition-all duration-300 clickable">
           <div className="p-4">
             <CardHeader className="p-0 mb-2">
               <CardTitle className="text-sm font-bold text-muted-foreground uppercase tracking-wide">Investment Portfolio</CardTitle>
@@ -202,7 +202,7 @@ export default function Plan() {
             />
           </div>
         </Card>
-        <Card className="w-[300px] flex-none border shadow overflow-hidden">
+        <Card className="w-[300px] flex-none border shadow overflow-hidden transition-all duration-300 clickable">
           <div className="p-4">
             <CardHeader className="p-0 mb-2">
               <CardTitle className="text-sm font-bold text-muted-foreground uppercase tracking-wide">Retirement Planning</CardTitle>
@@ -236,14 +236,14 @@ export default function Plan() {
             <h2 className="text-2xl font-semibold">Wealth Insights</h2>
             <p className="text-muted-foreground">Discover wealth-related articles that we have curated exclusively for you.</p>
           </div>
-          <Link href="/insights" className="text-blue-600 hover:underline">
+          <Link href="" className="text-blue-600 hover:underline">
             See all
           </Link>
         </div>
 
         <ScrollArea className="w-full whitespace-nowrap">
           <div className="flex w-full gap-4">
-            <Card className="w-[300px] flex-none border overflow-hidden">
+            <Card className="w-[300px] flex-none border overflow-hidden transition-all duration-300 clickable">
               <CardContent className="p-0">
               <Image
                   src='/rainyday.png'
@@ -259,7 +259,7 @@ export default function Plan() {
                 </div>
               </CardContent>
             </Card>
-            <Card className="w-[300px] flex-none border overflow-hidden">
+            <Card className="w-[300px] flex-none border overflow-hidden transition-all duration-300 clickable">
               <CardContent className="p-0">
               <Image
                   src='/rainyday.png'
@@ -275,7 +275,7 @@ export default function Plan() {
                 </div>
               </CardContent>
             </Card>
-            <Card className="w-[300px] flex-none  border overflow-hidden">
+            <Card className="w-[300px] flex-none  border overflow-hidden transition-all duration-300 clickable">
               <CardContent className="p-0">
               <Image
                   src='/rainyday.png'
@@ -291,7 +291,7 @@ export default function Plan() {
                 </div>
               </CardContent>
             </Card>
-            <Card className="w-[300px] flex-none  border overflow-hidden">
+            <Card className="w-[300px] flex-none  border overflow-hidden transition-all duration-300 clickable">
               <CardContent className="p-0">
               <Image
                   src='/rainyday.png'
@@ -307,7 +307,7 @@ export default function Plan() {
                 </div>
               </CardContent>
             </Card>
-            <Card className="w-[300px] flex-none  border overflow-hidden">
+            <Card className="w-[300px] flex-none  border overflow-hidden transition-all duration-300 clickable">
               <CardContent className="p-0">
               <Image
                   src='/rainyday.png'
@@ -323,7 +323,7 @@ export default function Plan() {
                 </div>
               </CardContent>
             </Card>
-            <Card className="w-[300px] flex-none  border overflow-hidden">
+            <Card className="w-[300px] flex-none  border overflow-hidden transition-all duration-300 clickable">
               <CardContent className="p-0">
               <Image
                   src='/rainyday.png'
@@ -339,7 +339,7 @@ export default function Plan() {
                 </div>
               </CardContent>
             </Card>
-            <Card className="w-[300px] flex-none  border overflow-hidden">
+            <Card className="w-[300px] flex-none  border overflow-hidden transition-all duration-300 clickable">
               <CardContent className="p-0">
               <Image
                   src='/rainyday.png'
@@ -355,7 +355,7 @@ export default function Plan() {
                 </div>
               </CardContent>
             </Card>
-            <Card className="w-[300px] flex-none  border overflow-hidden">
+            <Card className="w-[300px] flex-none  border overflow-hidden transition-all duration-300 clickable">
               <CardContent className="p-0">
                 <Image
                   src='/rainyday.png'

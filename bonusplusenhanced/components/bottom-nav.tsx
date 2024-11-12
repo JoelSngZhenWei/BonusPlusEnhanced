@@ -12,9 +12,9 @@ export function BottomNav() {
   const navigation = [
     { name: 'Home', href: '/home', icon: Home },
     { name: 'Plan', href: '/plan', icon: Sprout },
-    { name: 'Pay', href: '/pay', icon: ArrowLeftRight },
-    { name: 'Rewards', href: '/rewards', icon: Gift },
-    { name: 'More', href: '/more', icon: Grid },
+    { name: 'Pay', href: '', icon: ArrowLeftRight },
+    { name: 'Rewards', href: '', icon: Gift },
+    { name: 'More', href: '', icon: Grid },
   ]
 
   return (
@@ -29,7 +29,7 @@ export function BottomNav() {
                 href={item.href}
                 aria-current={isActive ? "page" : undefined}
                 className={cn(
-                  "flex-1 flex flex-col items-center justify-center gap-1 relative",
+                  "flex-1 flex flex-col items-center justify-center gap-1 relative clickable",
                   isActive && "text-red-600"
                 )}
               >

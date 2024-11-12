@@ -51,8 +51,8 @@ export default function Component() {
         <CardContent className="">
           {/* Quick Actions */}
           <div className="grid grid-cols-3 gap-4 mb-4 px-6 pt-6 text-center">
-            <div className="flex flex-col items-center gap-2">
-              <div className="p-3 rounded-xl bg-gray-50">
+            <div className="flex flex-col items-center gap-2 transition-all duration-300 clickable">
+              <div className="p-3 rounded-xl bg-gray-50 ">
                 <svg
                   className="h-6 w-6"
                   viewBox="0 0 24 24"
@@ -70,13 +70,13 @@ export default function Component() {
               </div>
               <span className="text-sm">PayNow</span>
             </div>
-            <div className="flex flex-col items-center gap-2">
+            <div className="flex flex-col items-center gap-2 transition-all duration-300 clickable">
               <div className="p-3 rounded-xl bg-gray-50">
                 <QrCode className="h-6 w-6" />
               </div>
               <span className="text-sm">Scan & Pay</span>
             </div>
-            <div className="flex flex-col items-center gap-2">
+            <div className="flex flex-col items-center gap-2 transition-all duration-300 clickable">
               <div className="p-3 rounded-xl bg-gray-50">
                 <svg
                   className="h-6 w-6"
@@ -133,7 +133,7 @@ export default function Component() {
           <TabsList className="w-full justify-start px-4 h-12 bg-transparent">
             <TabsTrigger
               value="accounts"
-              className="data-[state=active]:bg-red-600 data-[state=active]:text-white rounded-full"
+              className="data-[state=active]:bg-red-600 data-[state=active]:text-white rounded-full transition-all duration-300 clickable"
             >
               Accounts
             </TabsTrigger>
@@ -147,7 +147,7 @@ export default function Component() {
         <div className="p-4">
         <Card className="bg-gray-100 mb-4">
             <CardContent className="p-4">
-              <Link href="/home/bonusplusaccount" className="flex items-center gap-4">
+              <Link href="/home/bonusplusaccount" className="flex items-center gap-4 transition-all duration-300 clickable">
                 <div className="h-12 w-12 rounded-full bg-red-300 flex items-center justify-center font-bold tracking-wide text-lg">
                   B+
                 </div>
@@ -183,9 +183,9 @@ export default function Component() {
               </div>
             </CardContent>
           </Card>
-          <Card className="bg-gray-100 mb-4">
+          <Card className="bg-gray-100 mb-4 transition-all duration-300 clickable">
             <CardContent className="p-4">
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 transition-all duration-300 clickable">
                 <div className="h-12 w-12 rounded-full bg-[#F8E4D8] flex items-center justify-center text-lg">
                   FRA
                 </div>

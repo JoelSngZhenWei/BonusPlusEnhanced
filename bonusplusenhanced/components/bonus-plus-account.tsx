@@ -28,7 +28,7 @@ export function BonusPlusAccount() {
           <Link href="/home">
             <ArrowLeftIcon className="h-6 w-6" />
           </Link>
-          <h1 className="text-xl font-semibold">Bonus+ Account</h1>
+          <h1 className="text-xl font-semibold">BonusMax Account</h1>
         </div>
         <div className="space-y-4">
           <div className="flex justify-between items-center">
@@ -58,14 +58,14 @@ export function BonusPlusAccount() {
           <DialogTrigger asChild>
             <div className="flex items-center gap-2 mt-4 cursor-pointer">
               <Info className="w-5 h-5" />
-              <span className="text-sm">How does Bonus+ Work?</span>
+              <span className="text-sm">How does BonusMax Work?</span>
             </div>
           </DialogTrigger>
           <DialogContent className="sm:max-w-[425px]">
             <DialogHeader>
-              <DialogTitle>How Bonus+ Works</DialogTitle>
+              <DialogTitle>How BonusMax Works</DialogTitle>
               <DialogDescription>
-                Bonus+ is designed to help you save more and earn more. Here&apos;s how it works:
+                BonusMax is designed to help you save more and earn more. Here&apos;s how it works:
               </DialogDescription>
             </DialogHeader>
             <div className="py-4">
@@ -100,7 +100,7 @@ export function BonusPlusAccount() {
                 <DialogHeader>
                   <DialogTitle>Big Ticket Purchases</DialogTitle>
                   <DialogDescription>
-                    Big ticket purchases are significant expenses that qualify for special rewards in your Bonus+ account.
+                    Big ticket purchases are significant expenses that qualify for special rewards in your BonusMax account.
                   </DialogDescription>
                 </DialogHeader>
                 <div className="py-4">

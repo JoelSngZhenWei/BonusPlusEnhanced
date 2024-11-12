@@ -11,7 +11,7 @@ export function QrCodeScannerIcon({ isDark = false }: IconButtonProps) {
   return (
     <button 
       aria-label="Scan QR Code" 
-      className={`p-2 ${isDark ? 'text-black' : 'text-white'} hover:opacity-70 transition-opacity`}
+      className={`p-2 ${isDark ? 'text-black' : 'text-white'} hover:opacity-70 transition-opacity clickable`}
     >
       <QrCode className="h-7 w-7" />
     </button>
@@ -22,7 +22,7 @@ export function NotificationIcon({ isDark = false }: IconButtonProps) {
   return (
     <button 
       aria-label="Notifications" 
-      className={`p-2 ${isDark ? 'text-black' : 'text-white'} hover:opacity-70 transition-opacity`}
+      className={`p-2 ${isDark ? 'text-black' : 'text-white'} hover:opacity-70 transition-opacity clickable`}
     >
       <Bell className="h-7 w-7" />
     </button>
@@ -38,7 +38,7 @@ export function LogoutButton({ isDark = false, className = '' }: LogoutButtonPro
   return (
     <Link 
       href="/" 
-      className={`inline-flex items-center justify-center p-2 ${isDark ? 'text-white' : 'text-black'} hover:opacity-70 transition-opacity ${className}`}
+      className={`inline-flex items-center justify-center p-2 ${isDark ? 'text-white' : 'text-black'} hover:opacity-70 transition-opacity ${className} clickable`}
     >
       <LogOut className="h-6 w-6" />
       <span className="sr-only">Logout</span>
