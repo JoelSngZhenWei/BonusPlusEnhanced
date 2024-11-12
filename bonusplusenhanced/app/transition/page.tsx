@@ -284,10 +284,10 @@ function ConfirmationSection({
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.3 }}
       >
-        By checking this box, you agree to the{' '}
-        <Link href="/terms" className="text-blue-600 hover:underline">
+        By checking this box, you agree to the
+        <div className="text-blue-600 hover:underline">
           full terms and conditions
-        </Link>{' '}
+        </div>
         of the OCBC BonusMax account.
       </motion.p>
       <motion.div 

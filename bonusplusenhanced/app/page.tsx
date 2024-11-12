@@ -21,8 +21,8 @@ export default function Component() {
       <div className="relative">
         <div className="relative w-full" style={{ height:'500px'}}> {/* Reduced height to allow overlap */}
           <Image
-            src="/deepavali.png"
-            alt="Deepavali celebration background"
+            src="/BG-Login2.png"
+            alt="Background Image"
             layout="fill"
             objectFit="cover"
           />
