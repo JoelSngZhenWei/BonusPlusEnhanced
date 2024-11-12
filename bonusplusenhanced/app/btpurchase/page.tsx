@@ -2,40 +2,55 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { ArrowLeftIcon } from "@radix-ui/react-icons"
-import {  Info } from "lucide-react"
+import { ArrowLeftIcon, CalendarIcon } from "@radix-ui/react-icons"
+import { Upload, Info } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { PaymentDetailsProperty } from "@/components/payment_property"
-import { PaymentDetailsWedding } from "@/components/payment_wedding"
-import { PaymentDetailsCar } from "@/components/payment_car"
-import { PaymentDetailsReno } from "@/components/payment_reno"
+import { Textarea } from "@/components/ui/textarea"
+import { Calendar } from "@/components/ui/calendar"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
-// import {
-//   Select,
-//   SelectContent,
-//   SelectItem,
-//   SelectTrigger,
-//   SelectValue,
-// } from "@/components/ui/select"
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import { cn } from "@/lib/utils"
+import { format } from "date-fns"
 
 export default function BlockPage() {
-    
-    const [purchaseCategory, setPurchaseCategory] = useState("Property Downpayment");
+  const [purchaseCategory, setPurchaseCategory] = useState("")
+  const [amount, setAmount] = useState("")
+  const [date, setDate] = useState<Date>()
+  const [additionalDetails, setAdditionalDetails] = useState("")
+  const [unitNumber, setUnitNumber] = useState("")
+  const [street, setStreet] = useState("")
+  const [postalCode, setPostalCode] = useState("")
+  const [vendor, setVendor] = useState("")
+  const [model, setModel] = useState("")
   const [agreed, setAgreed] = useState(false)
-  console.log(purchaseCategory)
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     // Handle form submission logic here
     console.log("Form submitted")
+  }
+
+  const getPurchaseDetailsInfo = () => {
+    switch (purchaseCategory) {
+      case "Property Downpayment":
+        return "Please provide the property details \n and expected downpayment amount."
+      case "Wedding":
+        return "Include details about the vendor and expected wedding date."
+      case "Car":
+        return "Specify the car model, vendor, and purchase amount."
+      case "Renovation":
+        return "Describe the renovation project, vendor, and estimated costs."
+      default:
+        return "Select a purchase category for more information."
+    }
   }
 
   return (
@@ -57,60 +72,200 @@ export default function BlockPage() {
               <CardTitle>Purchase Category</CardTitle>
             </CardHeader>
             <CardContent>
-              <RadioGroup onValueChange={setPurchaseCategory} defaultValue="Property Downpayment" className="flex flex-col space-y-2">
+              <RadioGroup onValueChange={setPurchaseCategory} className="flex flex-col space-y-2">
                 {["Property Downpayment", "Wedding", "Car", "Renovation"].map((category) => (
                   <div key={category} className="flex items-center space-x-2">
                     <RadioGroupItem value={category} id={category} />
                     <Label htmlFor={category}>{category}</Label>
-                    <Popover>
-                      <PopoverTrigger>
-                        <Info className="h-4 w-4 text-gray-500" />
-                      </PopoverTrigger>
-                      <PopoverContent>
-                        {`Required documents for ${category.toLowerCase()}`}
-                      </PopoverContent>
-                    </Popover>
                   </div>
                 ))}
               </RadioGroup>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <div className="flex items-center gap-2 mt-4 cursor-pointer">
+                    <Info className="w-5 h-5" />
+                    <span className="text-sm text-gray-600">How does BonusMax support your purchase?</span>
+                  </div>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-[425px]">
+                  <DialogHeader>
+                    <DialogTitle>How BonusMax Works</DialogTitle>
+                    <DialogDescription>
+                      BonusMax supports you in reaching life&apos;s big goals.
+                    </DialogDescription>
+                  </DialogHeader>
+                  <div className="py-4">
+                    <ul className="list-disc pl-4 space-y-2">
+                      <li>Withdrawals are allowed for select expenses</li>
+                      <li>Property and vehicle downpayments</li>
+                      <li>Wedding and renovation expenses with approved vendors</li>
+                      <li>Earn cashback on these expenses</li>
+                    </ul>
+                  </div>
+                  {/* Centered Rate Line */}
+                  <div className="text-center -mt-1">
+                    Your current rate is: <span className="font-black ocbc-red">2.8%</span>
+                  </div>
+                </DialogContent>
+              </Dialog>
             </CardContent>
           </Card>
 
           {/* Purchase Details Form */}
           <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center justify-between">
+                Purchase Details
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Info className="h-5 w-5 text-gray-500 cursor-pointer" />
+                  </DialogTrigger>
+                  <DialogContent>
+                    <DialogHeader>
+                      <DialogTitle>Purchase Details Information</DialogTitle>
+                      <DialogDescription>
+                      Validating your expense
+                    </DialogDescription>
+                    </DialogHeader>
+                    <p>{getPurchaseDetailsInfo()}</p>
+                  </DialogContent>
+                </Dialog>
+              </CardTitle>
+            </CardHeader>
             <CardContent className="space-y-4">
-              {purchaseCategory && (
+              <div className="space-y-2">
+                <Label htmlFor="amount">Amount (SGD)</Label>
+                <Input
+                  id="amount"
+                  type="number"
+                  value={amount}
+                  onChange={(e) => setAmount(e.target.value)}
+                  placeholder="Enter amount"
+                />
+              </div>
+              <div className="space-y-2">
+                <Label>Expected Payment Date</Label>
+                <Popover>
+                  <PopoverTrigger asChild>
+                    <Button
+                      variant={"outline"}
+                      className={cn(
+                        "w-full justify-start text-left font-normal",
+                        !date && "text-muted-foreground"
+                      )}
+                    >
+                      <CalendarIcon className="mr-2 h-4 w-4" />
+                      {date ? format(date, "PPP") : <span>Pick a date</span>}
+                    </Button>
+                  </PopoverTrigger>
+                  <PopoverContent className="w-auto p-0">
+                    <Calendar
+                      mode="single"
+                      selected={date}
+                      onSelect={setDate}
+                      initialFocus
+                    />
+                  </PopoverContent>
+                </Popover>
+              </div>
+              {purchaseCategory === "Property Downpayment" && (
                 <>
-                  {purchaseCategory === "Property Downpayment" && <PaymentDetailsProperty />}
-                  {purchaseCategory === "Wedding" && <PaymentDetailsWedding />}
-                  {purchaseCategory === "Car" && <PaymentDetailsCar />}
-                  {purchaseCategory === "Renovation" && <PaymentDetailsReno />}
+                  <div className="space-y-2">
+                    <Label htmlFor="unitNumber">Unit Number</Label>
+                    <Input
+                      id="unitNumber"
+                      value={unitNumber}
+                      onChange={(e) => setUnitNumber(e.target.value)}
+                      placeholder="Enter unit number"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="street">Street</Label>
+                    <Input
+                      id="street"
+                      value={street}
+                      onChange={(e) => setStreet(e.target.value)}
+                      placeholder="Enter street name"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="postalCode">Postal Code</Label>
+                    <Input
+                      id="postalCode"
+                      value={postalCode}
+                      onChange={(e) => setPostalCode(e.target.value)}
+                      placeholder="Enter postal code"
+                    />
+                  </div>
                 </>
               )}
+              {(purchaseCategory === "Wedding" || purchaseCategory === "Renovation") && (
+                <div className="space-y-2">
+                  <Label htmlFor="vendor">Vendor</Label>
+                  <Input
+                    id="vendor"
+                    value={vendor}
+                    onChange={(e) => setVendor(e.target.value)}
+                    placeholder="Enter vendor name"
+                  />
+                </div>
+              )}
+              {purchaseCategory === "Car" && (
+                <>
+                  <div className="space-y-2">
+                    <Label htmlFor="vendor">Vendor</Label>
+                    <Input
+                      id="vendor"
+                      value={vendor}
+                      onChange={(e) => setVendor(e.target.value)}
+                      placeholder="Enter vendor name"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="model">Model</Label>
+                    <Input
+                      id="model"
+                      value={model}
+                      onChange={(e) => setModel(e.target.value)}
+                      placeholder="Enter car model"
+                    />
+                  </div>
+                </>
+              )}
+              <div className="space-y-2">
+                <Label htmlFor="details">Additional Details</Label>
+                <Textarea
+                  id="details"
+                  value={additionalDetails}
+                  onChange={(e) => setAdditionalDetails(e.target.value)}
+                  placeholder="Enter any special details"
+                />
+              </div>
             </CardContent>
           </Card>
 
-
-          {/* Validation and Approval Status */}
+          {/* Document Uploads Section */}
           <Card>
             <CardHeader>
-              <CardTitle>Approval Status</CardTitle>
+              <CardTitle>Document Uploads</CardTitle>
             </CardHeader>
-            <CardContent>
-              <div className="flex items-center space-x-2">
-                <div
-                  className={cn(
-                    "h-3 w-3 rounded-full",
-                    status === "Pending" && "bg-yellow-500",
-                    status === "Approved" && "bg-green-500",
-                    status === "Rejected" && "bg-red-500"
-                  )}
-                />
-                <span className="font-medium">{status}</span>
+            <CardContent className="space-y-4">
+              <div className="space-y-2">
+                <Label>Upload Required Documents</Label>
+                <div className="flex items-center space-x-2">
+                  <Input
+                    type="file"
+                    multiple
+                    accept=".pdf,.jpg,.jpeg,.png"
+                  />
+                  <Button type="button" size="icon">
+                    <Upload className="h-4 w-4" />
+                  </Button>
+                </div>
+                <p className="text-sm text-gray-500">
+                  Supported file types: PDF, JPEG, PNG. Max size: 10MB per file.
+                </p>
               </div>
-              <p className="mt-2 text-sm text-gray-600">
-                Bank review note: Your submission is being processed. We&apos;ll update you if any additional information is required.
-              </p>
             </CardContent>
           </Card>
 
@@ -138,7 +293,7 @@ export default function BlockPage() {
 
         {/* Customer Support Link */}
         <div className="text-center">
-          <Link href="/btpurchase" className="text-red-600 hover:underline">
+          <Link href="/support" className="text-red-600 hover:underline">
             Need help? Contact customer support
           </Link>
         </div>
