@@ -16,24 +16,24 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
-// import {
-//   Select,
-//   SelectContent,
-//   SelectItem,
-//   SelectTrigger,
-//   SelectValue,
-// } from "@/components/ui/select"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 import { cn } from "@/lib/utils"
 import { format } from "date-fns"
 import { CalendarIcon } from "@radix-ui/react-icons"
 
-export default function BlockPage() {
+export function BlockPage() {
   const [purchaseCategory, setPurchaseCategory] = useState("")
   const [amount, setAmount] = useState("")
   const [date, setDate] = useState<Date>()
   const [additionalDetails, setAdditionalDetails] = useState("")
-//   const [documents, setDocuments] = useState<File[]>([])
-//   const [status, setStatus] = useState("Pending")
+  const [documents, setDocuments] = useState<File[]>([])
+  const [status, setStatus] = useState("Pending")
   const [agreed, setAgreed] = useState(false)
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -116,7 +116,7 @@ export default function BlockPage() {
                       mode="single"
                       selected={date}
                       onSelect={setDate}
-                      initialfocus="true"
+                      initialFocus
                     />
                   </PopoverContent>
                 </Popover>
