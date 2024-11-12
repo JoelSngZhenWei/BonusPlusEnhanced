@@ -198,9 +198,10 @@ export function BonusPlusAccount() {
                           </div>
                         </div>
                       </DialogTrigger>
-                      <DialogContent className="sm:max-w-[425px] rounded-lg">
+                      <DialogContent className="max-w-[400px] rounded-lg">
                         <DialogHeader>
                           <DialogTitle></DialogTitle>
+                          <DialogDescription></DialogDescription>
                         </DialogHeader>
                         <div className="text-center mb-4">
                           <div className="flex items-baseline justify-center">
