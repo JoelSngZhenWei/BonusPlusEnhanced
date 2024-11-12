@@ -47,11 +47,11 @@ export function BonusPlusAccount() {
           </div>
           <div className="flex justify-between text-sm">
             <span>Current Interest Rate</span>
-            <span className="font-semibold">3.5% p.a.</span>
+            <span className="font-semibold">2.8% p.a.</span>
           </div>
           <div className="flex justify-between text-sm">
-            <span>Points Earned</span>
-            <span className="font-semibold">2,450 pts</span>
+            <span>OCBC$ Earned</span>
+            <span className="font-semibold">OCBC$880</span>
           </div>
         </div>
         <Dialog>
@@ -86,10 +86,12 @@ export function BonusPlusAccount() {
         {/* Quick Actions */}
         <Card className="">
           <CardContent className="p-2 px-4 space-y-2">
-            <Button className="w-full bg-red-600 text-white rounded-full hover:bg-red-700">
-              Make a Big Ticket Purchase
-              <ArrowUpRight className="ml-2 h-4 w-4" />
-            </Button>
+            <Link href="/btpurchase">
+              <Button className="w-full bg-red-600 text-white rounded-full hover:bg-red-700">
+                Make a Big Ticket Purchase
+                <ArrowUpRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
             <Dialog>
               <DialogTrigger asChild>
                 <p className="text-sm text-gray-500 text-center cursor-pointer hover:underline">
@@ -110,9 +112,7 @@ export function BonusPlusAccount() {
                     <li>Wedding expenses</li>
                     <li>Car purchase</li>
                     <li>Major home renovations</li>
-                    <li>High-end electronics or appliances</li>
                   </ul>
-                  <p className="mt-4">Purchases typically need to be $5,000 or more to qualify.</p>
                 </div>
               </DialogContent>
             </Dialog>
@@ -204,15 +204,15 @@ export function BonusPlusAccount() {
           <h2 className="text-lg font-semibold mb-4">Upcoming Benefits</h2>
           <Card>
             <CardContent className="p-4 space-y-4">
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 transition-all duration-300 clickable">
                 <Gift className="h-6 w-6 text-red-600" />
-                <div className="flex-1">
+                <div className="flex-1 ">
                   <h3 className="font-medium">Special Reward Coming Soon</h3>
                   <p className="text-sm text-gray-600">Make a big ticket purchase to unlock 5x points</p>
                 </div>
                 <ChevronRightIcon className="h-5 w-5 text-gray-400" />
               </div>
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 transition-all duration-300 clickable">
                 <Target className="h-6 w-6 text-red-600" />
                 <div className="flex-1">
                   <h3 className="font-medium">Goal Milestone Reward</h3>
