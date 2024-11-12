@@ -56,11 +56,11 @@ export default function Plan() {
               <div className="space-y-2">
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">What you have (SGD)</span>
-                  <span className=" font-bold tracking-wide">$ 98'722.91</span>
+                  <span className=" font-bold tracking-wide">$ 98&apos;722.91</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">What you owe (SGD)</span>
-                  <span className="font-bold tracking-wide">$ 12'309.10</span>
+                  <span className="font-bold tracking-wide">$ 12&apos;309.10</span>
                 </div>
               </div>
               <div className="text-blue-600 hover:underline text-sm block mt-4">

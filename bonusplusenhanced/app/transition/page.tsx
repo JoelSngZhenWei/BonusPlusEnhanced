@@ -127,7 +127,7 @@ function WelcomeSection({ onNext }: { onNext: () => void }) {
         transition={{ duration: 0.5, delay: 0.2 }}
       >
         <p className="text-lg md:text-xl mb-8 text-gray-700">
-          Get ready for an exciting journey with OCBC BonusMax! We're thrilled to enhance your banking experience with powerful features designed to supercharge your savings and rewards.
+          Get ready for an exciting journey with OCBC BonusMax! We&apos;re thrilled to enhance your banking experience with powerful features designed to supercharge your savings and rewards.
         </p>
       </motion.div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
@@ -335,7 +335,7 @@ function CompletionSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.3 }}
       >
-        Your transition is complete! You are now an OCBC BonusMax user. We've sent a confirmation email with details about your enhanced account.
+        Your transition is complete! You are now an OCBC BonusMax user. We&apos;ve sent a confirmation email with details about your enhanced account.
       </motion.p>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
