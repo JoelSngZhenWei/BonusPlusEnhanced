@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { useRouter } from "next/navigation"
 import Link from "next/link"
 import { ArrowLeftIcon, CalendarIcon } from "@radix-ui/react-icons"
 import { Upload, Info } from "lucide-react"
@@ -21,6 +22,7 @@ import { cn } from "@/lib/utils"
 import { format } from "date-fns"
 
 export default function BlockPage() {
+  const router = useRouter()
   const [purchaseCategory, setPurchaseCategory] = useState("")
   const [amount, setAmount] = useState("")
   const [date, setDate] = useState<Date>()
@@ -31,11 +33,11 @@ export default function BlockPage() {
   const [vendor, setVendor] = useState("")
   const [model, setModel] = useState("")
   const [agreed, setAgreed] = useState(false)
+  const [isSubmitDialogOpen, setIsSubmitDialogOpen] = useState(false)
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission logic here
-    console.log("Form submitted")
+    setIsSubmitDialogOpen(true)
   }
 
   const getPurchaseDetailsInfo = () => {
@@ -51,6 +53,11 @@ export default function BlockPage() {
       default:
         return "Select a purchase category for more information."
     }
+  }
+
+  const handleDialogClose = () => {
+    setIsSubmitDialogOpen(false)
+    router.push("/home/bonusplusaccount")
   }
 
   return (
@@ -69,7 +76,7 @@ export default function BlockPage() {
           {/* Purchase Category Selection */}
           <Card>
             <CardHeader>
-              <CardTitle>Purchase Category</CardTitle>
+              <CardTitle className="font-bold my-2">Purchase Category</CardTitle>
             </CardHeader>
             <CardContent>
               <RadioGroup onValueChange={setPurchaseCategory} className="flex flex-col space-y-2">
@@ -89,9 +96,9 @@ export default function BlockPage() {
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-[425px]">
                   <DialogHeader>
-                    <DialogTitle>How BonusMax Works</DialogTitle>
+                    <DialogTitle>How <span className="ocbc-red font-black">BonusMax</span> Works</DialogTitle>
                     <DialogDescription>
-                      BonusMax supports you in reaching life&apos;s big goals.
+                       BonusMax supports you in reaching life&apos;s big goals.
                     </DialogDescription>
                   </DialogHeader>
                   <div className="py-4">
@@ -114,7 +121,7 @@ export default function BlockPage() {
           {/* Purchase Details Form */}
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center justify-between">
+              <CardTitle className="flex items-center justify-between font-bold ">
                 Purchase Details
                 <Dialog>
                   <DialogTrigger asChild>
@@ -281,7 +288,7 @@ export default function BlockPage() {
                   className="h-4 w-4 rounded border-gray-300 text-red-600 focus:ring-red-500"
                 />
                 <Label htmlFor="agreement" className="text-sm">
-                  I agree to the terms and conditions for big-ticket purchases
+                  I agree to the <span className="text-red-600 hover:underline">terms and conditions</span> for big-ticket purchases
                 </Label>
               </div>
               <Button type="submit" className="w-full bg-red-600 hover:bg-red-700" disabled={!agreed}>
@@ -293,11 +300,45 @@ export default function BlockPage() {
 
         {/* Customer Support Link */}
         <div className="text-center">
-          <Link href="/support" className="text-red-600 hover:underline">
+          <div className="text-red-600 hover:underline transition-all duration-300 clickable">
             Need help? Contact customer support
-          </Link>
+          </div>
         </div>
       </main>
+
+      {/* Submission Confirmation Dialog */}
+      <Dialog open={isSubmitDialogOpen} onOpenChange={handleDialogClose}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Purchase Request Submitted</DialogTitle>
+            <DialogDescription>
+              Your big ticket purchase request has been successfully submitted. Here are the details:
+            </DialogDescription>
+          </DialogHeader>
+          <div className="mt-4 space-y-2">
+            <p><strong>Category:</strong> {purchaseCategory}</p>
+            <p><strong>Amount:</strong> SGD {amount}</p>
+            <p><strong>Expected Payment Date:</strong> {date ? format(date, "PPP") : "Not specified"}</p>
+            {purchaseCategory === "Property Downpayment" && (
+              <>
+                <p><strong>Unit Number:</strong> {unitNumber}</p>
+                <p><strong>Street:</strong> {street}</p>
+                <p><strong>Postal Code:</strong> {postalCode}</p>
+              </>
+            )}
+            {(purchaseCategory === "Wedding" || purchaseCategory === "Renovation" || purchaseCategory === "Car") && (
+              <p><strong>Vendor:</strong> {vendor}</p>
+            )}
+            {purchaseCategory === "Car" && (
+              <p><strong>Model:</strong> {model}</p>
+            )}
+            <p><strong>Additional Details:</strong> {additionalDetails || "None provided"}</p>
+          </div>
+          <Button onClick={handleDialogClose} className="mt-4 w-full bg-red-600 hover:bg-red-700">
+            Close
+          </Button>
+        </DialogContent>
+      </Dialog>
     </div>
   )
 }
