@@ -14,7 +14,7 @@ export function OcbcBonusCard() {
   }
 
   return (
-    <Card className="overflow-hidden border shadow">
+    <Card className="overflow-hidden border shadow highlight-glow">
 
       <CardHeader className="bg-gradient-to-r from-red-600 via-red-500 to-red-400 p-3 pt-4">
         {/* <Parallax speed={-0.75}> */}

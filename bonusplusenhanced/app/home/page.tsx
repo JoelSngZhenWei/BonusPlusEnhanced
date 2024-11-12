@@ -18,6 +18,15 @@ export default function Component() {
     animate: { opacity: 1, y: 0 },
     transition: { duration: 0.2 }
   }
+  const [activeButton, setActiveButton] = useState('accounts')
+
+  const handleButtonClick = (buttonName: string) => {
+    setActiveButton(buttonName)
+  }
+
+  const buttonVariants = {
+    tap: { scale: 1.05 }
+  }
 
   return (
     <div className="min-h-screen bg-ocbc-white pb-16">
@@ -64,7 +73,7 @@ export default function Component() {
         <Card className="mx-4 -mt-40 relative z-10 mb-4 bg-white shadow-md">
           <CardContent className="">
             {/* Quick Actions */}
-            <div className="grid grid-cols-3 gap-4 mb-4 px-6 pt-6 text-center">
+            <div className="grid grid-cols-3 gap-4 mb-4 px-6 pt-6 text-center ">
               {[
                 { icon: "PayNow", label: "PayNow" },
                 { icon: <QrCode className="h-6 w-6" />, label: "Scan & Pay" },
@@ -75,9 +84,9 @@ export default function Component() {
                   className="flex flex-col items-center gap-2 transition-all duration-300 clickable"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: 0.1 * index }}
+                  transition={{ duration: 0.6, delay: 0.1 * index }}
                 >
-                  <div className="p-3 rounded-xl bg-gray-50 ">
+                  <div className="p-3 rounded-xl bg-gray-50 transition-all duration-300 clickable">
                     {typeof action.icon === "string" ? (
                       action.icon === "PayNow" ? (
                         <svg
@@ -154,27 +163,33 @@ export default function Component() {
 
       {/* White Background Section */}
       <div className="bg-white w-full">
-        {/* Account Tabs */}
-        <motion.div {...fadeInUp} transition={{ delay: 0.3 }}>
-          <Tabs defaultValue="accounts" className="w-full">
-            <TabsList className="w-full justify-start px-4 h-12 bg-transparent">
-              <TabsTrigger
-                value="accounts"
-                className="data-[state=active]:bg-red-600 data-[state=active]:text-white rounded-full transition-all duration-300 clickable"
-              >
-                Accounts
-              </TabsTrigger>
-              <TabsTrigger value="cards">Cards</TabsTrigger>
-              <TabsTrigger value="investments">Investments</TabsTrigger>
-              <TabsTrigger value="loans">Loans</TabsTrigger>
-            </TabsList>
-          </Tabs>
-        </motion.div>
+      {/* Account Tabs */}
+      <motion.div {...fadeInUp} transition={{ delay: 0.3 }}>
+        <div className="w-full px-4 py-2">
+          <div className="flex space-x-2 overflow-x-auto">
+            {['accounts', 'cards', 'investments', 'loans'].map((buttonName) => (
+              <motion.div key={buttonName} variants={buttonVariants} whileTap="tap">
+                <Button
+                  variant={activeButton === buttonName ? 'default' : 'ghost'}
+                  className={`rounded-full transition-all duration-300 ${
+                    activeButton === buttonName
+                      ? 'bg-red-600 text-white hover:bg-red-700'
+                      : 'text-gray-600 hover:bg-gray-100'
+                  }`}
+                  onClick={() => handleButtonClick(buttonName)}
+                >
+                  {buttonName.charAt(0).toUpperCase() + buttonName.slice(1)}
+                </Button>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </motion.div>
 
         {/* Account Details */}
         <div className="p-4">
           <motion.div {...fadeInUp} transition={{ delay: 0.4 }}>
-            <Card className="bg-gray-100 mb-4">
+            <Card className="bg-gray-100 mb-4 highlight-glow">
               <CardContent className="p-4">
                 <Link href="/home/bonusplusaccount" className="flex items-center gap-4 transition-all duration-300 clickable">
                   <div className="h-12 w-12 rounded-full bg-red-300 flex items-center justify-center font-bold tracking-wide text-lg">
@@ -214,7 +229,7 @@ export default function Component() {
             </Card>
           </motion.div>
           <motion.div {...fadeInUp} transition={{ delay: 0.5 }}>
-            <Card className="bg-gray-100 mb-4 transition-all duration-300 clickable">
+            <Card className="bg-gray-100 mb-4">
               <CardContent className="p-4">
                 <div className="flex items-center gap-4 transition-all duration-300 clickable">
                   <div className="h-12 w-12 rounded-full bg-[#F8E4D8] flex items-center justify-center text-lg">

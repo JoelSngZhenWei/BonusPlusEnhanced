@@ -61,7 +61,7 @@ export default function TransitionPage() {
         >
           <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-4">BonusMax</h1>
           <p className="text-xl">
-            Welcome to OCBC BonusMax! Your FRANK account upgrade will provide enhanced features designed to help you reach your financial goals.
+            Welcome to OCBC BonusMax! Discover features designed to help you reach your financial goals faster and smarter.
           </p>
         </motion.div>
       </header>
@@ -254,7 +254,7 @@ function ConfirmationSection({
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        Seamless Transition Confirmation
+        Confirm Your Account Opening
       </motion.h2>
       <motion.p 
         className="text-center mb-6"
@@ -262,7 +262,7 @@ function ConfirmationSection({
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.1 }}
       >
-        Your transition will be completed with minimal disruption. Account details, including your balance, will transfer automatically, with all your FRANK features and funds fully accessible.
+        Your account will be set up with ease. Start taking advantage of BonusMax&apos;s features right away to boost your savings and rewards.
       </motion.p>
       <motion.div 
         className="flex items-center space-x-2 mb-4"
@@ -304,7 +304,7 @@ function ConfirmationSection({
           disabled={!agreed}
           className="bg-red-600 hover:bg-red-700 disabled:opacity-50 ml-auto"
         >
-          Transition Now
+          Open Now
         </Button>
       </motion.div>
     </div>
@@ -327,7 +327,7 @@ function CompletionSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        Transition Complete!
+        Account Setup Complete!
       </motion.h2>
       <motion.p 
         className="mb-6"
@@ -335,7 +335,7 @@ function CompletionSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.3 }}
       >
-        Your transition is complete! You are now an OCBC BonusMax user. We've sent a confirmation email with details about your enhanced account.
+        Your account is now ready! Welcome to OCBC BonusMax. We've sent a confirmation email with all the details about your new account."
       </motion.p>
       <motion.div
         initial={{ opacity: 0, y: 20 }}

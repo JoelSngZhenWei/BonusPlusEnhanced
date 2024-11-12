@@ -45,7 +45,7 @@ export function NotificationIcon({ isDark = false }: IconButtonProps) {
       <PopoverTrigger asChild>
         <button 
           aria-label="Notifications" 
-          className={`p-2 ${isDark ? 'text-black' : 'text-white'} hover:opacity-70 transition-opacity clickable relative`}
+          className={`p-2 ${isDark ? 'text-black' : 'text-white'} hover:opacity-70 transition-opacity clickable relative highlight-glow`}
         >
           <Bell className="h-7 w-7" />
           {notifications.length > 0 && (

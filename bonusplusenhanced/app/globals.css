@@ -89,8 +89,30 @@
 }
 
 .clickable:active {
-  transform: scale(1.05); /* Adjust the scale as needed */
+  transform: scale(1.1); /* Adjust the scale as needed */
   transition: transform 0.1s ease; /* Quick grow on click */
 }
   
+}
+
+@keyframes subtleGlowingBorder {
+  0% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.1);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+  }
+}
+
+.highlight-glow {
+  animation: subtleGlowingBorder 2s ease-in-out infinite;
+  border-radius: 0.375rem;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.highlight-glow:hover {
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2);
 }
