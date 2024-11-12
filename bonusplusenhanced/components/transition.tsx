@@ -4,15 +4,12 @@ import { useState } from 'react'
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Progress } from "@/components/ui/progress"
-import { ArrowRight, ArrowLeft, CheckCircle, DollarSign, TrendingUp, UserCheck, ArrowLeftIcon } from 'lucide-react'
+import { ArrowRight, ArrowLeft, CheckCircle, DollarSign, TrendingUp, UserCheck } from 'lucide-react'
 import Link from 'next/link'
-import Image from 'next/image'
-
-const textShadowStyle = { textShadow: '1px 1px 2px rgba(0,0,0,0.8)' };
 
 const steps = ['Overview', 'Benefits', 'Confirmation']
 
-export default function TransitionPage() {
+export function Transition() {
   const [currentStep, setCurrentStep] = useState(0)
   const [agreed, setAgreed] = useState(false)
   const [transitionComplete, setTransitionComplete] = useState(false)
@@ -38,15 +35,10 @@ export default function TransitionPage() {
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col">
       {/* Header */}
-      <header className="bg-red-600 text-white p-8 text-center relative">
-        <div className="absolute top-4 left-4">
-          <Link href="/home">
-            <ArrowLeftIcon className="h-6 w-6 text-white" />
-          </Link>
-        </div>
+      <header className="bg-red-600 text-white p-8 text-center">
         <h1 className="text-4xl font-bold mb-4">OCBC BonusMax</h1>
         <p className="text-xl">
-          Welcome to OCBC BonusMax! Your FRANK account upgrade will provide enhanced features designed to help you reach your financial goals.
+          Welcome to OCBC+ BonusMax! Your FRANK account upgrade will provide enhanced features designed to help you reach your financial goals.
         </p>
       </header>
 
@@ -88,7 +80,7 @@ function WelcomeSection({ onNext }: { onNext: () => void }) {
     <div className="text-center">
       <h2 className="text-2xl font-bold mb-4">Welcome & Transition Overview</h2>
       <p className="mb-6">
-        We're excited to upgrade your FRANK account to OCBC BonusMax. This transition will enhance your banking experience with new features and benefits.
+        We're excited to upgrade your FRANK account to OCBC+ BonusMax. This transition will enhance your banking experience with new features and benefits.
       </p>
       <Button onClick={onNext} className="bg-red-600 hover:bg-red-700">
         Next <ArrowRight className="ml-2 h-4 w-4" />
@@ -102,53 +94,20 @@ function BenefitsSection({ onNext, onPrev }: { onNext: () => void; onPrev: () =>
     <div>
       <h2 className="text-2xl font-bold mb-4 text-center">Key Benefits of BonusMax</h2>
       <div className="grid md:grid-cols-3 gap-6 mb-6">
-        <div className="relative rounded-lg shadow-md overflow-hidden h-72">
-          <Image
-            src="/rate.png"
-            alt="Competitive Rates"
-            width={400}
-            height={300}
-            style={{ objectFit: 'cover' }}
-            className="z-0 w-full h-full"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
-          <div className="relative z-20 p-6 text-white h-full flex flex-col justify-end bg-gradient-to-t from-black to-transparent">
-            <DollarSign className="mx-auto h-12 w-12 mb-4" />
-            <h3 className="font-bold mb-2 text-xl" style={textShadowStyle}>Competitive Rates</h3>
-            <p style={textShadowStyle}>Earn up to 2.8% with BonusMax's growing interest rate.</p>
-          </div>
+        <div className="bg-white p-6 rounded-lg shadow-md text-center">
+          <DollarSign className="mx-auto h-12 w-12 text-red-600 mb-4" />
+          <h3 className="font-bold mb-2">Cashback Opportunities</h3>
+          <p>Earn cashback on big-ticket purchases and everyday transactions.</p>
         </div>
-        <div className="relative rounded-lg shadow-md overflow-hidden h-72">
-          <Image
-            src="/buyhouse.png"
-            alt="Supporting You"
-            width={400}
-            height={300}
-            style={{ objectFit: 'cover' }}
-            className="z-0 w-full h-full"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
-          <div className="relative z-20 p-6 text-white h-full flex flex-col justify-end bg-gradient-to-t from-black to-transparent">
-            <DollarSign className="mx-auto h-12 w-12 mb-4" />
-            <h3 className="font-bold mb-2 text-xl" style={textShadowStyle}>Supporting You</h3>
-            <p style={textShadowStyle}>Earn cashback on big-ticket purchases and everyday transactions.</p>
-          </div>
+        <div className="bg-white p-6 rounded-lg shadow-md text-center">
+          <TrendingUp className="mx-auto h-12 w-12 text-red-600 mb-4" />
+          <h3 className="font-bold mb-2">Enhanced Reward Points</h3>
+          <p>Earn more points and enjoy flexible redemption options.</p>
         </div>
-        <div className="relative rounded-lg shadow-md overflow-hidden h-72">
-          <Image
-            src="/rewards.png"
-            alt="Earn Rewards as you Save"
-            width={400}
-            height={300}
-            style={{ objectFit: 'cover' }}
-            className="z-0 w-full h-full"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
-          <div className="relative z-20 p-6 text-white h-full flex flex-col justify-end bg-gradient-to-t from-black to-transparent">
-            <TrendingUp className="mx-auto h-12 w-12 mb-4" />
-            <h3 className="font-bold mb-2 text-xl" style={textShadowStyle}>Earn Rewards as you Save</h3>
-            <p style={textShadowStyle}>Get OCBC$ for monthly deposits and redeem them for attractive rewards.</p>
-          </div>
+        <div className="bg-white p-6 rounded-lg shadow-md text-center">
+          <UserCheck className="mx-auto h-12 w-12 text-red-600 mb-4" />
+          <h3 className="font-bold mb-2">Personalized Insights</h3>
+          <p>Receive tailored financial advice to boost your savings.</p>
         </div>
       </div>
       <div className="flex justify-between">
@@ -194,7 +153,7 @@ function ConfirmationSection({
         <Link href="/terms" className="text-blue-600 hover:underline">
           full terms and conditions
         </Link>{' '}
-        of the OCBC BonusMax account.
+        of the OCBC+ BonusMax account.
       </p>
       <div className="flex justify-between">
         <Button onClick={onPrev} variant="outline" className="border-red-600 text-red-600 hover:bg-red-50">
@@ -218,9 +177,9 @@ function CompletionSection() {
       <CheckCircle className="mx-auto h-16 w-16 text-green-500 mb-4" />
       <h2 className="text-2xl font-bold mb-4">Transition Complete!</h2>
       <p className="mb-6">
-        Your transition is complete! You are now an OCBC BonusMax user. We've sent a confirmation email with details about your enhanced account.
+        Your transition is complete! You are now an OCBC+ BonusMax user. We've sent a confirmation email with details about your enhanced account.
       </p>
-      <Link href="/home">
+      <Link href="/dashboard">
         <Button className="bg-red-600 hover:bg-red-700">Go to Dashboard</Button>
       </Link>
     </div>
