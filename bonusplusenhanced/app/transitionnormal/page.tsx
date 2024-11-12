@@ -335,7 +335,7 @@ function CompletionSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.3 }}
       >
-        Your account is now ready! Welcome to OCBC BonusMax. We&apos;ve sent a confirmation email with all the details about your new account."
+        Your account is now ready! Welcome to OCBC BonusMax. We&apos;ve sent a confirmation email with all the details about your new account.
       </motion.p>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
