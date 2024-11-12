@@ -4,11 +4,10 @@ import { useState } from 'react'
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Progress } from "@/components/ui/progress"
-import { ArrowRight, ArrowLeft, CheckCircle, DollarSign, TrendingUp, UserCheck, ArrowLeftIcon } from 'lucide-react'
+import { ArrowRight, ArrowLeft, CheckCircle, DollarSign, TrendingUp, Gift, ArrowLeftIcon, Sparkles, Rocket, Star } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
-
-const textShadowStyle = { textShadow: '1px 1px 2px rgba(0,0,0,0.8)' };
+import { motion, AnimatePresence } from "framer-motion"
 
 const steps = ['Overview', 'Benefits', 'Confirmation']
 
@@ -67,17 +66,27 @@ export default function TransitionPage() {
         </div>
 
         {/* Content */}
-        {currentStep === 0 && <WelcomeSection onNext={nextStep} />}
-        {currentStep === 1 && <BenefitsSection onNext={nextStep} onPrev={prevStep} />}
-        {currentStep === 2 && !transitionComplete && (
-          <ConfirmationSection
-            agreed={agreed}
-            setAgreed={setAgreed}
-            onTransition={handleTransition}
-            onPrev={prevStep}
-          />
-        )}
-        {transitionComplete && <CompletionSection />}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentStep}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.5 }}
+          >
+            {currentStep === 0 && <WelcomeSection onNext={nextStep} />}
+            {currentStep === 1 && <BenefitsSection onNext={nextStep} onPrev={prevStep} />}
+            {currentStep === 2 && !transitionComplete && (
+              <ConfirmationSection
+                agreed={agreed}
+                setAgreed={setAgreed}
+                onTransition={handleTransition}
+                onPrev={prevStep}
+              />
+            )}
+            {transitionComplete && <CompletionSection />}
+          </motion.div>
+        </AnimatePresence>
       </div>
     </div>
   )
@@ -85,80 +94,126 @@ export default function TransitionPage() {
 
 function WelcomeSection({ onNext }: { onNext: () => void }) {
   return (
-    <div className="text-center">
-      <h2 className="text-2xl font-bold mb-4">Welcome & Transition Overview</h2>
-      <p className="mb-6">
-        We're excited to upgrade your FRANK account to OCBC BonusMax. This transition will enhance your banking experience with new features and benefits.
-      </p>
-      <Button onClick={onNext} className="bg-red-600 hover:bg-red-700">
-        Next <ArrowRight className="ml-2 h-4 w-4" />
-      </Button>
+    <div className="text-center max-w-4xl mx-auto">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-red-600">
+          Welcome to Your Financial Upgrade!
+        </h2>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
+        <p className="text-lg md:text-xl mb-8 text-gray-700">
+          Get ready for an exciting journey with OCBC BonusMax! We're thrilled to enhance your banking experience with powerful features designed to supercharge your savings and rewards.
+        </p>
+      </motion.div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+        {[
+          { icon: Sparkles, text: "Boost Your Savings" },
+          { icon: Rocket, text: "Accelerate Your Rewards" },
+          { icon: Star, text: "Unlock Exclusive Benefits" },
+        ].map((item, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
+            className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center"
+          >
+            <item.icon className="h-12 w-12 text-red-600 mb-4" />
+            <p className="text-lg font-semibold text-gray-800">{item.text}</p>
+          </motion.div>
+        ))}
+      </div>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.7 }}
+      >
+        <Button onClick={onNext} className="bg-red-600 hover:bg-red-700 text-lg px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105">
+          Start Your Upgrade <ArrowRight className="ml-2 h-5 w-5" />
+        </Button>
+      </motion.div>
     </div>
   )
 }
 
 function BenefitsSection({ onNext, onPrev }: { onNext: () => void; onPrev: () => void }) {
+  const benefits = [
+    {
+      title: "Competitive Rates",
+      description: "Earn up to 2.8% with BonusMax's growing interest rate.",
+      icon: DollarSign,
+      image: "/rate.png",
+    },
+    {
+      title: "Supporting You",
+      description: "Earn cashback on big-ticket purchases and everyday transactions.",
+      icon: Gift,
+      image: "/buyhouse.png",
+    },
+    {
+      title: "Earn Rewards as you Save",
+      description: "Get OCBC$ for monthly deposits and redeem them for attractive rewards.",
+      icon: TrendingUp,
+      image: "/rewards.png",
+    },
+  ]
+
   return (
     <div>
-      <h2 className="text-2xl font-bold mb-4 text-center">Key Benefits of BonusMax</h2>
-      <div className="grid md:grid-cols-3 gap-6 mb-6">
-        <div className="relative rounded-lg shadow-md overflow-hidden h-72">
-          <Image
-            src="/rate.png"
-            alt="Competitive Rates"
-            width={400}
-            height={300}
-            style={{ objectFit: 'cover' }}
-            className="z-0 w-full h-full"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
-          <div className="relative z-20 p-6 text-white h-full flex flex-col justify-end bg-gradient-to-t from-black to-transparent">
-            <DollarSign className="mx-auto h-12 w-12 mb-4" />
-            <h3 className="font-bold mb-2 text-xl" style={textShadowStyle}>Competitive Rates</h3>
-            <p style={textShadowStyle}>Earn up to 2.8% with BonusMax's growing interest rate.</p>
-          </div>
-        </div>
-        <div className="relative rounded-lg shadow-md overflow-hidden h-72">
-          <Image
-            src="/buyhouse.png"
-            alt="Supporting You"
-            width={400}
-            height={300}
-            style={{ objectFit: 'cover' }}
-            className="z-0 w-full h-full"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
-          <div className="relative z-20 p-6 text-white h-full flex flex-col justify-end bg-gradient-to-t from-black to-transparent">
-            <DollarSign className="mx-auto h-12 w-12 mb-4" />
-            <h3 className="font-bold mb-2 text-xl" style={textShadowStyle}>Supporting You</h3>
-            <p style={textShadowStyle}>Earn cashback on big-ticket purchases and everyday transactions.</p>
-          </div>
-        </div>
-        <div className="relative rounded-lg shadow-md overflow-hidden h-72">
-          <Image
-            src="/rewards.png"
-            alt="Earn Rewards as you Save"
-            width={400}
-            height={300}
-            style={{ objectFit: 'cover' }}
-            className="z-0 w-full h-full"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
-          <div className="relative z-20 p-6 text-white h-full flex flex-col justify-end bg-gradient-to-t from-black to-transparent">
-            <TrendingUp className="mx-auto h-12 w-12 mb-4" />
-            <h3 className="font-bold mb-2 text-xl" style={textShadowStyle}>Earn Rewards as you Save</h3>
-            <p style={textShadowStyle}>Get OCBC$ for monthly deposits and redeem them for attractive rewards.</p>
-          </div>
-        </div>
+      <motion.h2 
+        className="text-2xl font-bold mb-6 text-center"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        Key Benefits of BonusMax
+      </motion.h2>
+      <div className="grid md:grid-cols-3 gap-6 mb-8">
+        {benefits.map((benefit, index) => (
+          <motion.div 
+            key={index} 
+            className="relative overflow-hidden rounded-lg shadow-lg group"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+          >
+            <Image
+              src={benefit.image}
+              alt={benefit.title}
+              width={400}
+              height={400}
+              className="object-cover w-full h-64 transition-transform duration-300 group-hover:scale-110"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent opacity-80"></div>
+            <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
+              <benefit.icon className="mb-4 h-10 w-10" />
+              <h3 className="text-xl font-bold mb-2">{benefit.title}</h3>
+              <p className="text-sm">{benefit.description}</p>
+            </div>
+          </motion.div>
+        ))}
       </div>
-      <div className="flex justify-between">
+      <motion.div 
+        className="flex justify-between"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+      >
         <Button onClick={onPrev} variant="outline" className="border-red-600 text-red-600 hover:bg-red-50">
           <ArrowLeft className="mr-2 h-4 w-4" /> Back
         </Button>
         <Button onClick={onNext} className="bg-red-600 hover:bg-red-700">
           Next <ArrowRight className="ml-2 h-4 w-4" />
         </Button>
-      </div>
+      </motion.div>
     </div>
   )
 }
@@ -176,11 +231,28 @@ function ConfirmationSection({
 }) {
   return (
     <div>
-      <h2 className="text-2xl font-bold mb-4 text-center">Seamless Transition Confirmation</h2>
-      <p className="text-center mb-6">
+      <motion.h2 
+        className="text-2xl font-bold mb-4 text-center"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        Seamless Transition Confirmation
+      </motion.h2>
+      <motion.p 
+        className="text-center mb-6"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+      >
         Your transition will be completed with minimal disruption. Account details, including your balance, will transfer automatically, with all your FRANK features and funds fully accessible.
-      </p>
-      <div className="flex items-center space-x-2 mb-4">
+      </motion.p>
+      <motion.div 
+        className="flex items-center space-x-2 mb-4"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
         <Checkbox id="terms" checked={agreed} onCheckedChange={(checked) => setAgreed(checked as boolean)} />
         <label
           htmlFor="terms"
@@ -188,15 +260,25 @@ function ConfirmationSection({
         >
           I agree to the terms and conditions of the transition
         </label>
-      </div>
-      <p className="text-sm text-gray-500 mb-6">
+      </motion.div>
+      <motion.p 
+        className="text-sm text-gray-500 mb-6"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+      >
         By checking this box, you agree to the{' '}
         <Link href="/terms" className="text-blue-600 hover:underline">
           full terms and conditions
         </Link>{' '}
         of the OCBC BonusMax account.
-      </p>
-      <div className="flex justify-between">
+      </motion.p>
+      <motion.div 
+        className="flex justify-between"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+      >
         <Button onClick={onPrev} variant="outline" className="border-red-600 text-red-600 hover:bg-red-50">
           <ArrowLeft className="mr-2 h-4 w-4" /> Back
         </Button>
@@ -207,7 +289,7 @@ function ConfirmationSection({
         >
           Transition Now
         </Button>
-      </div>
+      </motion.div>
     </div>
   )
 }
@@ -215,14 +297,38 @@ function ConfirmationSection({
 function CompletionSection() {
   return (
     <div className="text-center">
-      <CheckCircle className="mx-auto h-16 w-16 text-green-500 mb-4" />
-      <h2 className="text-2xl font-bold mb-4">Transition Complete!</h2>
-      <p className="mb-6">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        <CheckCircle className="mx-auto h-16 w-16 text-green-500 mb-4" />
+      </motion.div>
+      <motion.h2 
+        className="text-2xl font-bold mb-4"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
+        Transition Complete!
+      </motion.h2>
+      <motion.p 
+        className="mb-6"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+      >
         Your transition is complete! You are now an OCBC BonusMax user. We've sent a confirmation email with details about your enhanced account.
-      </p>
-      <Link href="/home">
-        <Button className="bg-red-600 hover:bg-red-700">Go to Dashboard</Button>
-      </Link>
+      </motion.p>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+      >
+        <Link href="/home">
+          <Button className="bg-red-600 hover:bg-red-700">Go to Dashboard</Button>
+        </Link>
+      </motion.div>
     </div>
   )
 }
