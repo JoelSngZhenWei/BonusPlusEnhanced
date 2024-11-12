@@ -84,10 +84,13 @@
 
 .clickable {
   transition: transform 30s ease;
+  transition: transform 0.4s ease; /* Slow return on release */
+
 }
 
 .clickable:active {
   transform: scale(1.05); /* Adjust the scale as needed */
+  transition: transform 0.1s ease; /* Quick grow on click */
 }
   
 }
