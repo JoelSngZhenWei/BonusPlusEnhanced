@@ -27,19 +27,16 @@ export function NotificationIcon({ isDark = false }: IconButtonProps) {
   const [isOpen, setIsOpen] = useState(false)
 
   const notifications = [
-    { id: 1, title: "BonusMax, here we come!", description: "You're all set for the upgrade to BonusMax! Let's reach your goals together!", isPriority: true, demoTryMe: true, createdAt: new Date(2023, 4, 25) },
-    // Pre-Transition (6 Months Before)
-    { id: 2, title: "Security alert", description: "A new device has logged into your account.", isPriority: false, createdAt: new Date(2023, 6, 10) },
+    { id: 1, title: "BonusMax, here we come!", description: "You're all set for the upgrade to BonusMax! Let's reach your goals together!", isPriority: true, demoTryMe: true, createdAt: new Date(2024, 10, 10) },
     {
-      id: 3,
+      id: 2,
       title: "Get Ready for Enhanced Savings!",
       description: "BonusMax is here to help you achieve your big life goals! Stay tuned for an effortless upgrade!",
       isPriority: true,
-      demoTryMe: true,
       createdAt: new Date(2022, 11, 15)
     },
+    { id: 3, title: "Explore BonusMax", description: "Explore BonusMax! Our enhanced savings account offers features designed for your future goals. Learn how your FRANK account can evolve with you.", isPriority: true, createdAt: new Date(2023, 0, 1) },
     { id: 4, title: "Account statement", description: "Your monthly account statement is now available.", isPriority: false, createdAt: new Date(2023, 0, 15) },
-    { id: 5, title: "Explore BonusMax", description: "Explore BonusMax! Our enhanced savings account offers features designed for your future goals. Learn how your FRANK account can evolve with you.", isPriority: true, createdAt: new Date(2023, 0, 1) },
   ]
 
   return (
@@ -76,13 +73,19 @@ export function NotificationIcon({ isDark = false }: IconButtonProps) {
                 {notification.title}
               </h4>
               <p className="text-sm text-gray-600">{notification.description}</p>
-              <div className="flex justify-between items-center mt-2">
+              {notification.demoTryMe && (
+                <div className="flex justify-center mt-2 mb-2">
+                  <Link href="/transition">
+                    <Button className="text-lg font-bold bg-red-600 hover:bg-red-700 text-white">
+                      Transition to BonusMax
+                    </Button>
+                  </Link>
+                </div>
+              )}
+              <div className="flex justify-end items-center mt-2">
                 <p className="text-xs text-gray-400">
                   {formatDistanceToNow(notification.createdAt, { addSuffix: true })}
                 </p>
-                {notification.demoTryMe && (
-                  <p className="ocbc-red font-bold text-sm">Demo, try me!</p>
-                )}
               </div>
             </div>
           ))}
