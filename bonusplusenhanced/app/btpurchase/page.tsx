@@ -112,7 +112,7 @@ export default function BigTicketPurchasePage() {
                   <DialogHeader>
                     <DialogTitle className="text-2xl font-bold text-red-600">How BonusMax Works</DialogTitle>
                     <DialogDescription>
-                      BonusMax supports you in reaching life's big goals.
+                      BonusMax supports you in reaching life&apos;s big goals.
                     </DialogDescription>
                   </DialogHeader>
                   <div className="py-4">

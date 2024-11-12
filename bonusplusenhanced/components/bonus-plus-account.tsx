@@ -409,7 +409,7 @@ export function BonusPlusAccount() {
                 <ChevronRightIcon className="h-5 w-5 text-gray-400" />
               </motion.div>
               <motion.div 
-                className="flex items-center gap-4 transition-all duration-300 clickable"
+                className="flex items-center gap-4 transition-all duration-300 clickable "
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
