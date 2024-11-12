@@ -9,6 +9,7 @@ import { BottomNav } from "@/components/bottom-nav"
 import Image from "next/image"
 import { OcbcBonusCard } from "@/components/ocbc-bonus-card"
 import { motion } from "framer-motion"
+import { QrCodeScannerIcon, NotificationIcon, LogoutButton } from "@/components/icon-buttons"
 
 export default function Plan() {
   const fadeInUp = {
@@ -18,7 +19,18 @@ export default function Plan() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-16 pt-4">
+    <div className="min-h-screen bg-gray-50 pb-16 pt-12">
+        <header className="fixed top-0 left-0 w-full z-50 bg-transparent p-2">
+          <div className="">
+            <div className="flex justify-between items-center">
+              <QrCodeScannerIcon isDark={true} />
+              <div className="flex items-center gap-4">
+                <NotificationIcon isDark={true} />
+                <LogoutButton isDark={false} />
+              </div>
+            </div>
+          </div>
+        </header>
       {/* Plan your finances section */}
       <motion.section 
         className="p-4 space-y-4"

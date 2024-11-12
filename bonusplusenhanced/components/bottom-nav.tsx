@@ -1,6 +1,6 @@
 'use client'
 
-import { Home, Sprout, ArrowLeftRight, Gift, Grid } from "lucide-react"
+import { Home, Sprout, ArrowLeftRight, Gift, Grid } from 'lucide-react'
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
@@ -23,6 +23,7 @@ export function BottomNav() {
         <div className="flex h-16">
           {navigation.map((item) => {
             const isActive = activeSegment === item.href
+            const shouldGlow = item.name === 'Home' || item.name === 'Plan'
             return (
               <Link
                 key={item.name}
@@ -30,7 +31,8 @@ export function BottomNav() {
                 aria-current={isActive ? "page" : undefined}
                 className={cn(
                   "flex-1 flex flex-col items-center justify-center gap-1 relative clickable",
-                  isActive && "text-red-600"
+                  isActive && "text-red-600",
+                  shouldGlow && "highlight-glow"
                 )}
               >
                 <item.icon

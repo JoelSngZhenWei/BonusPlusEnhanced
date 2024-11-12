@@ -16,15 +16,7 @@ export default function Component() {
   };
   return (
     <div className="min-h-screen ocbc-white-bg">
-          <header className="fixed top-0 left-0 w-full z-50 bg-transparent p-2">
-        <div className="">
-          <div className="flex justify-between items-center">
-            <QrCodeScannerIcon isDark={false} />
-            <div className="flex items-center gap-4">
-              <NotificationIcon isDark={false} />
-            </div>
-          </div>
-        </div>
+      <header className="fixed top-0 left-0 w-full z-50 bg-transparent p-2">
       </header>
       <div className="relative">
         <div className="relative w-full" style={{ height:'500px'}}> {/* Reduced height to allow overlap */}
@@ -112,7 +104,7 @@ export default function Component() {
           </div>
           
           <div className="space-y-4">
-            <Button className="w-full py-6 text-base bg-slate-700 rounded-sm" variant="default" onClick={handleClick}>
+            <Button className="w-full py-6 text-base bg-slate-700 rounded-sm highlight-glow" variant="default" onClick={handleClick}>
               Log in to OCBC Singapore
             </Button>
             <p className="text-xs text-muted-foreground">

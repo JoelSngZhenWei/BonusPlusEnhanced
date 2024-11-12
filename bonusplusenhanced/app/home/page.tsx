@@ -29,22 +29,17 @@ export default function Component() {
 
   return (
     <div className="min-h-screen bg-ocbc-white pb-16">
-      <motion.header 
-        className="fixed top-0 left-0 w-full z-50 bg-transparent p-2"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.2 }}
-      >
-        <div className="">
-          <div className="flex justify-between items-center">
-            <QrCodeScannerIcon isDark={true} />
-            <div className="flex items-center gap-4">
-              <NotificationIcon isDark={true} />
-              <LogoutButton isDark={false} />
+        <header className="fixed top-0 left-0 w-full z-50 bg-transparent p-2">
+          <div className="">
+            <div className="flex justify-between items-center">
+              <QrCodeScannerIcon isDark={true} />
+              <div className="flex items-center gap-4">
+                <NotificationIcon isDark={true} />
+                <LogoutButton isDark={false} />
+              </div>
             </div>
           </div>
-        </div>
-      </motion.header>
+        </header>
       {/* Hero Section */}
       <div className="relative">
         <Image
