@@ -198,49 +198,20 @@ export function BonusPlusAccount() {
                           </div>
                         </div>
                       </DialogTrigger>
-                      <DialogContent className="sm:max-w-[425px] rounded-lg">
+                      <DialogContent>
                         <DialogHeader>
-                          <DialogTitle></DialogTitle>
+                          <DialogTitle>{transaction.desc}</DialogTitle>
                         </DialogHeader>
-                        <div className="text-center mb-4">
-                          <div className="flex items-baseline justify-center">
-                            <span className="text-xl text-gray-500 mr-1 font-bold">SGD</span>
-                            <span className="text-3xl font-black">
-                              {Math.abs(transaction.amount).toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}
-                            </span>
-                            <span className="text-xl">
-                              .{(Math.abs(transaction.amount) % 1).toFixed(2).slice(2)}
-                            </span>
-                          </div>
-                          <div className="text-xs text-gray-500 mt-1">
-                            {format(new Date(transaction.date), "PPP")}
-                          </div>
-                        </div>
-                        <div className="space-y-4">
-                          <div>
-                            <div className="text-sm font-bold text-gray-500">Description</div>
-                            <div className="text-base">{transaction.desc}</div>
-                          </div>
-                          <div>
-                            <div className="text-sm font-bold text-gray-500">{transaction.type === 'credit' ? 'From' : 'To'}</div>
-                            <div className="text-base">{transaction.type === 'credit' ? transaction.from : transaction.to}</div>
-                          </div>
+                        <div className="space-y-2">
+                          <p><strong>Date:</strong> {format(new Date(transaction.date), "PPP")}</p>
+                          <p><strong>Amount:</strong> {transaction.type === 'credit' ? '' : '-'}${Math.abs(transaction.amount).toLocaleString()}</p>
+                          <p><strong>{transaction.type === 'credit' ? 'From:' : 'To:'}</strong> {transaction.type === 'credit' ? transaction.from : transaction.to}</p>
+                          <p><strong>Status:</strong> {transaction.status.charAt(0).toUpperCase() + transaction.status.slice(1)}</p>
                           {transaction.type === 'debit' && (
                             <>
-                              <div>
-                                <div className="text-sm font-bold text-gray-500">Vendor</div>
-                                <div className="text-base">{transaction.vendor}</div>
-                              </div>
-                              {transaction.model && (
-                                <div>
-                                  <div className="text-sm font-bold text-gray-500">Model</div>
-                                  <div className="text-base">{transaction.model}</div>
-                                </div>
-                              )}
-                              <div>
-                                <div className="text-sm font-bold text-gray-500">Remarks</div>
-                                <div className="text-base">{transaction.remarks}</div>
-                              </div>
+                              <p><strong>Vendor:</strong> {transaction.vendor}</p>
+                              {transaction.model && <p><strong>Model:</strong> {transaction.model}</p>}
+                              <p><strong>Remarks:</strong> {transaction.remarks}</p>
                             </>
                           )}
                         </div>
