@@ -300,7 +300,7 @@ export default function BigTicketPurchasePage() {
           </Card>
 
           {/* User Agreement and Confirmation */}
-          <Card className="shadow-md hover:shadow-lg transition-shadow duration-300">
+          <Card className="shadow-md hover:shadow-lg transition-shadow duration-300 p-3">
             <CardContent className="space-y-4 pt-6">
               <div className="flex items-center space-x-2">
                 <input
