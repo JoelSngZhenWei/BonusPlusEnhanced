@@ -26,7 +26,7 @@ import {
 } from "@/components/ui/select"
 import Link from "next/link"
 import { useState, useMemo } from "react"
-import { ArrowLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons"
+import { ChevronRightIcon } from "@radix-ui/react-icons"
 import { format } from "date-fns"
 import { motion, AnimatePresence } from "framer-motion"
 
