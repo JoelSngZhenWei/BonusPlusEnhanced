@@ -48,9 +48,12 @@ export function NotificationIcon({ isDark = false }: IconButtonProps) {
           )}
         </button>
       </PopoverTrigger>
-      <PopoverContent className="w-80 mr-4">
+      <PopoverContent className="w-80">
         <div className="flex justify-between items-center mb-2">
           <h3 className="font-semibold text-lg">Notifications</h3>
+          <Button variant="ghost" size="sm" onClick={() => setIsOpen(false)}>
+            Close
+          </Button>
         </div>
         <ScrollArea className="h-[300px]">
           {notifications.map((notification) => (
