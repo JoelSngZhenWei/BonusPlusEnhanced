@@ -26,7 +26,7 @@ export default function Component() {
             layout="fill"
             objectFit="cover"
           />
-          <div className="absolute top-20 right-28 text-slate-700 text-right"> {/* Moved up to overlap */}
+          <div className="absolute top-20 right-24 text-slate-700 text-right"> {/* Moved up to overlap */}
             <div className="flex items-right gap-2">
               <div >
                 <div className="text-xl tracking-wide ocbc-red">For <span className="font-black">Now,</span></div>
