@@ -213,21 +213,21 @@ export function BonusPlusAccount() {
                   onValueChange={setTransactionFilter}
                   className="flex space-x-4"
                 >
-                  <div className="flex items-center space-x-2">
+                  <div className="flex items-center space-x-1">
                     <RadioGroupItem value="all" id="all" />
                     <Label htmlFor="all">All</Label>
                   </div>
-                  <div className="flex items-center space-x-2">
+                  <div className="flex items-center space-x-1">
                     <RadioGroupItem value="credit" id="credit" />
                     <Label htmlFor="credit">Credit</Label>
                   </div>
-                  <div className="flex items-center space-x-2">
+                  <div className="flex items-center space-x-1">
                     <RadioGroupItem value="debit" id="debit" />
                     <Label htmlFor="debit">Debit</Label>
                   </div>
                 </RadioGroup>
                 <Select onValueChange={setYearFilter} defaultValue="all">
-                  <SelectTrigger className="w-[120px]">
+                  <SelectTrigger className="w-[100px]">
                     <SelectValue placeholder="Select Year" />
                   </SelectTrigger>
                   <SelectContent>
