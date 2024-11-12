@@ -21,10 +21,12 @@ const nunitoSans = localFont({
 
 import type { Viewport } from "next";
 
-const APP_NAME = "PWA App";
-const APP_DEFAULT_TITLE = "My Awesome PWA App";
-const APP_TITLE_TEMPLATE = "%s - PWA App";
-const APP_DESCRIPTION = "Best PWA app in the world!";
+// Define metadata constants with updated app details
+const APP_NAME = "OCBC BonusMax - Demo";
+const APP_DEFAULT_TITLE = "OCBC BonusMax - Demo";
+const APP_TITLE_TEMPLATE = "%s - OCBC BonusMax Demo";
+const APP_DESCRIPTION = "Explore OCBC BonusMax Demo: see how you can achieve your financial goals with high-yield savings, cashback, and rewards for life's big-ticket expenses.";
+
 
 export const metadata: Metadata = {
   applicationName: APP_NAME,
