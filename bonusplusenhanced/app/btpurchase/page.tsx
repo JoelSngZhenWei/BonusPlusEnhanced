@@ -4,7 +4,7 @@ import { useState } from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
 import { ArrowLeftIcon, CalendarIcon } from "@radix-ui/react-icons"
-import { Upload, Info } from "lucide-react"
+import { Upload, Info, CheckCircle } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -20,8 +20,9 @@ import {
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import { cn } from "@/lib/utils"
 import { format } from "date-fns"
+import { motion } from "framer-motion"
 
-export default function BlockPage() {
+export default function BigTicketPurchasePage() {
   const router = useRouter()
   const [purchaseCategory, setPurchaseCategory] = useState("")
   const [amount, setAmount] = useState("")
@@ -43,7 +44,7 @@ export default function BlockPage() {
   const getPurchaseDetailsInfo = () => {
     switch (purchaseCategory) {
       case "Property Downpayment":
-        return "Please provide the property details \n and expected downpayment amount."
+        return "Please provide the property details and expected downpayment amount."
       case "Wedding":
         return "Include details about the vendor and expected wedding date."
       case "Car":
@@ -61,48 +62,61 @@ export default function BlockPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-b from-red-50 to-white">
       {/* Fixed Header */}
-      <div className="fixed top-0 left-0 right-0 bg-red-600 text-white p-4 z-50 flex items-center">
+      <motion.div 
+        className="fixed top-0 left-0 right-0 bg-gradient-to-r from-red-600 to-red-700 text-white p-4 z-50 flex items-center shadow-md"
+        initial={{ y: -40 }}
+        animate={{ y: 0 }}
+        transition={{ duration:0.2 }}
+      >
         <Link href="/home/bonusplusaccount">
-          <ArrowLeftIcon className="h-6 w-6 mr-4" />
+          <Button variant="ghost" size="icon" className="mr-4 text-white hover:bg-white/20">
+            <ArrowLeftIcon className="h-6 w-6" />
+          </Button>
         </Link>
         <h1 className="text-xl font-semibold">Big Ticket Purchase</h1>
-      </div>
+      </motion.div>
 
       {/* Main Content */}
-      <main className="pt-16 p-4 space-y-4">
-        <form onSubmit={handleSubmit} className="space-y-6">
+      <main className="pt-20 p-4 max-w-2xl mx-auto">
+        <motion.form 
+          onSubmit={handleSubmit} 
+          className="space-y-6"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+        >
           {/* Purchase Category Selection */}
-          <Card>
+          <Card className="shadow-md hover:shadow-lg transition-shadow duration-300 p-3">
             <CardHeader>
-              <CardTitle className="font-bold my-2">Purchase Category</CardTitle>
+              <CardTitle className="font-bold text-lg text-red-600">Purchase Category</CardTitle>
             </CardHeader>
             <CardContent>
-              <RadioGroup onValueChange={setPurchaseCategory} className="flex flex-col space-y-2">
+              <RadioGroup onValueChange={setPurchaseCategory} className="grid grid-cols-2 gap-4">
                 {["Property Downpayment", "Wedding", "Car", "Renovation"].map((category) => (
-                  <div key={category} className="flex items-center space-x-2">
+                  <div key={category} className="flex items-center space-x-2 bg-white p-3 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
                     <RadioGroupItem value={category} id={category} />
-                    <Label htmlFor={category}>{category}</Label>
+                    <Label htmlFor={category} className="font-medium">{category}</Label>
                   </div>
                 ))}
               </RadioGroup>
               <Dialog>
                 <DialogTrigger asChild>
-                  <div className="flex items-center gap-2 mt-4 cursor-pointer">
+                  <div className="flex items-center gap-2 mt-4 cursor-pointer text-red-600 hover:text-red-700 transition-colors duration-300">
                     <Info className="w-5 h-5" />
-                    <span className="text-sm text-gray-600">How does BonusMax support your purchase?</span>
+                    <span className="text-sm font-medium">How does BonusMax support your purchase?</span>
                   </div>
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-[425px]">
                   <DialogHeader>
-                    <DialogTitle>How <span className="ocbc-red font-black">BonusMax</span> Works</DialogTitle>
+                    <DialogTitle className="text-2xl font-bold text-red-600">How BonusMax Works</DialogTitle>
                     <DialogDescription>
-                       BonusMax supports you in reaching life&apos;s big goals.
+                      BonusMax supports you in reaching life's big goals.
                     </DialogDescription>
                   </DialogHeader>
                   <div className="py-4">
-                    <ul className="list-disc pl-4 space-y-2">
+                    <ul className="list-disc pl-4 space-y-2 text-gray-600">
                       <li>Withdrawals are allowed for select expenses</li>
                       <li>Property and vehicle downpayments</li>
                       <li>Wedding and renovation expenses with approved vendors</li>
@@ -110,8 +124,8 @@ export default function BlockPage() {
                     </ul>
                   </div>
                   {/* Centered Rate Line */}
-                  <div className="text-center -mt-1">
-                    Your current rate is: <span className="font-black ocbc-red">2.8%</span>
+                  <div className="text-center text-lg font-semibold">
+                    Your current rate is: <span className="text-red-600">2.8%</span>
                   </div>
                 </DialogContent>
               </Dialog>
@@ -119,45 +133,46 @@ export default function BlockPage() {
           </Card>
 
           {/* Purchase Details Form */}
-          <Card>
+          <Card className="shadow-md hover:shadow-lg transition-shadow duration-300 p-3">
             <CardHeader>
-              <CardTitle className="flex items-center justify-between font-bold ">
+              <CardTitle className="flex items-center justify-between font-bold text-lg text-red-600">
                 Purchase Details
                 <Dialog>
                   <DialogTrigger asChild>
-                    <Info className="h-5 w-5 text-gray-500 cursor-pointer" />
+                    <Info className="h-5 w-5 text-gray-500 cursor-pointer hover:text-red-600 transition-colors duration-300" />
                   </DialogTrigger>
                   <DialogContent>
                     <DialogHeader>
-                      <DialogTitle>Purchase Details Information</DialogTitle>
+                      <DialogTitle className="text-xl font-bold text-red-600">Purchase Details Information</DialogTitle>
                       <DialogDescription>
-                      Validating your expense
-                    </DialogDescription>
+                        Validating your expense
+                      </DialogDescription>
                     </DialogHeader>
-                    <p>{getPurchaseDetailsInfo()}</p>
+                    <p className="text-gray-600">{getPurchaseDetailsInfo()}</p>
                   </DialogContent>
                 </Dialog>
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="amount">Amount (SGD)</Label>
+                <Label htmlFor="amount" className="font-medium">Amount (SGD)</Label>
                 <Input
                   id="amount"
                   type="number"
                   value={amount}
                   onChange={(e) => setAmount(e.target.value)}
                   placeholder="Enter amount"
+                  className="border-gray-300 focus:border-red-500 focus:ring-red-500"
                 />
               </div>
               <div className="space-y-2">
-                <Label>Expected Payment Date</Label>
+                <Label className="font-medium">Expected Payment Date</Label>
                 <Popover>
                   <PopoverTrigger asChild>
                     <Button
                       variant={"outline"}
                       className={cn(
-                        "w-full justify-start text-left font-normal",
+                        "w-full justify-start text-left font-normal border-gray-300 hover:bg-red-50",
                         !date && "text-muted-foreground"
                       )}
                     >
@@ -178,94 +193,102 @@ export default function BlockPage() {
               {purchaseCategory === "Property Downpayment" && (
                 <>
                   <div className="space-y-2">
-                    <Label htmlFor="unitNumber">Unit Number</Label>
+                    <Label htmlFor="unitNumber" className="font-medium">Unit Number</Label>
                     <Input
                       id="unitNumber"
                       value={unitNumber}
                       onChange={(e) => setUnitNumber(e.target.value)}
                       placeholder="Enter unit number"
+                      className="border-gray-300 focus:border-red-500 focus:ring-red-500"
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="street">Street</Label>
+                    <Label htmlFor="street" className="font-medium">Street</Label>
                     <Input
                       id="street"
                       value={street}
                       onChange={(e) => setStreet(e.target.value)}
                       placeholder="Enter street name"
+                      className="border-gray-300 focus:border-red-500 focus:ring-red-500"
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="postalCode">Postal Code</Label>
+                    <Label htmlFor="postalCode" className="font-medium">Postal Code</Label>
                     <Input
                       id="postalCode"
                       value={postalCode}
                       onChange={(e) => setPostalCode(e.target.value)}
                       placeholder="Enter postal code"
+                      className="border-gray-300 focus:border-red-500 focus:ring-red-500"
                     />
                   </div>
                 </>
               )}
               {(purchaseCategory === "Wedding" || purchaseCategory === "Renovation") && (
                 <div className="space-y-2">
-                  <Label htmlFor="vendor">Vendor</Label>
+                  <Label htmlFor="vendor" className="font-medium">Vendor</Label>
                   <Input
                     id="vendor"
                     value={vendor}
                     onChange={(e) => setVendor(e.target.value)}
                     placeholder="Enter vendor name"
+                    className="border-gray-300 focus:border-red-500 focus:ring-red-500"
                   />
                 </div>
               )}
               {purchaseCategory === "Car" && (
                 <>
                   <div className="space-y-2">
-                    <Label htmlFor="vendor">Vendor</Label>
+                    <Label htmlFor="vendor" className="font-medium">Vendor</Label>
                     <Input
                       id="vendor"
                       value={vendor}
                       onChange={(e) => setVendor(e.target.value)}
                       placeholder="Enter vendor name"
+                      className="border-gray-300 focus:border-red-500 focus:ring-red-500"
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="model">Model</Label>
+                    <Label htmlFor="model" className="font-medium">Model</Label>
                     <Input
                       id="model"
                       value={model}
                       onChange={(e) => setModel(e.target.value)}
                       placeholder="Enter car model"
+                      className="border-gray-300 focus:border-red-500 focus:ring-red-500"
                     />
                   </div>
                 </>
               )}
               <div className="space-y-2">
-                <Label htmlFor="details">Additional Details</Label>
+                <Label htmlFor="details" className="font-medium">Additional Details</Label>
                 <Textarea
                   id="details"
                   value={additionalDetails}
                   onChange={(e) => setAdditionalDetails(e.target.value)}
                   placeholder="Enter any special details"
+                  className="border-gray-300 focus:border-red-500 focus:ring-red-500"
                 />
               </div>
             </CardContent>
           </Card>
 
           {/* Document Uploads Section */}
-          <Card>
+          <Card className="shadow-md hover:shadow-lg transition-shadow duration-300 p-3">
             <CardHeader>
-              <CardTitle>Document Uploads</CardTitle>
+              <CardTitle className="font-bold text-lg text-red-600">Document Uploads</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="space-y-2">
-                <Label>Upload Required Documents</Label>
+                <Label className="font-medium">Upload Required Documents</Label>
                 <div className="flex items-center space-x-2">
                   <Input
                     type="file"
                     multiple
                     accept=".pdf,.jpg,.jpeg,.png"
+                    className="border-gray-300 focus:border-red-500 focus:ring-red-500"
                   />
-                  <Button type="button" size="icon">
+                  <Button type="button" size="icon" className="bg-red-600 hover:bg-red-700">
                     <Upload className="h-4 w-4" />
                   </Button>
                 </div>
@@ -277,8 +300,8 @@ export default function BlockPage() {
           </Card>
 
           {/* User Agreement and Confirmation */}
-          <Card>
-            <CardContent className="space-y-4">
+          <Card className="shadow-md hover:shadow-lg transition-shadow duration-300">
+            <CardContent className="space-y-4 pt-6">
               <div className="flex items-center space-x-2">
                 <input
                   type="checkbox"
@@ -288,34 +311,41 @@ export default function BlockPage() {
                   className="h-4 w-4 rounded border-gray-300 text-red-600 focus:ring-red-500"
                 />
                 <Label htmlFor="agreement" className="text-sm">
-                  I agree to the <span className="text-red-600 hover:underline">terms and conditions</span> for big-ticket purchases
+                  I agree to the <span className="text-red-600 hover:underline cursor-pointer">terms and conditions</span> for big-ticket purchases
                 </Label>
               </div>
-              <Button type="submit" className="w-full bg-red-600 hover:bg-red-700" disabled={!agreed}>
+              <Button type="submit" className="w-full bg-red-600 hover:bg-red-700 transition-colors duration-300" disabled={!agreed}>
                 Submit Purchase Request
               </Button>
             </CardContent>
           </Card>
-        </form>
+        </motion.form>
 
         {/* Customer Support Link */}
-        <div className="text-center">
-          <div className="text-red-600 hover:underline transition-all duration-300 clickable">
+        <div className="text-center mt-6">
+          <motion.div 
+            className="text-red-600 hover:underline transition-all duration-300 cursor-pointer inline-block"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
             Need help? Contact customer support
-          </div>
+          </motion.div>
         </div>
       </main>
 
       {/* Submission Confirmation Dialog */}
       <Dialog open={isSubmitDialogOpen} onOpenChange={handleDialogClose}>
-        <DialogContent>
+        <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
-            <DialogTitle>Purchase Request Submitted</DialogTitle>
+            <DialogTitle className="text-2xl font-bold text-red-600 flex items-center">
+              <CheckCircle className="mr-2 h-6 w-6 text-green-500" />
+              Purchase Request Submitted
+            </DialogTitle>
             <DialogDescription>
               Your big ticket purchase request has been successfully submitted. Here are the details:
             </DialogDescription>
           </DialogHeader>
-          <div className="mt-4 space-y-2">
+          <div className="mt-4 space-y-2 text-gray-700">
             <p><strong>Category:</strong> {purchaseCategory}</p>
             <p><strong>Amount:</strong> SGD {amount}</p>
             <p><strong>Expected Payment Date:</strong> {date ? format(date, "PPP") : "Not specified"}</p>
@@ -334,7 +364,7 @@ export default function BlockPage() {
             )}
             <p><strong>Additional Details:</strong> {additionalDetails || "None provided"}</p>
           </div>
-          <Button onClick={handleDialogClose} className="mt-4 w-full bg-red-600 hover:bg-red-700">
+          <Button onClick={handleDialogClose} className="mt-4 w-full bg-red-600 hover:bg-red-700 transition-colors duration-300">
             Close
           </Button>
         </DialogContent>
