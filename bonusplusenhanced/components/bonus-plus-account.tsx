@@ -416,7 +416,7 @@ export function BonusPlusAccount() {
                 <Target className="h-6 w-6 text-red-600" />
                 <div className="flex-1">
                   <h3 className="font-medium">Goal Milestone Reward</h3>
-                  <p className="text-sm text-gray-600">$50 bonus when you reach your next savings goal</p>
+                  <p className="text-sm text-gray-600">You have an upcoming milestone reward on <span className=""></span></p>
                 </div>
                 <ChevronRightIcon className="h-5 w-5 text-gray-400" />
               </motion.div>

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Progress } from "@/components/ui/progress"
@@ -17,43 +17,47 @@ export default function TransitionPage() {
   const [transitionComplete, setTransitionComplete] = useState(false)
   const progressBarRef = useRef<HTMLDivElement>(null)
 
+  const scrollToProgressBar = () => {
+    if (progressBarRef.current) {
+      progressBarRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      })
+    }
+  }
+
   const nextStep = () => {
     if (currentStep < steps.length - 1) {
       setCurrentStep(currentStep + 1)
+      scrollToProgressBar()
     }
   }
 
   const prevStep = () => {
     if (currentStep > 0) {
       setCurrentStep(currentStep - 1)
+      scrollToProgressBar()
     }
   }
 
   const handleTransition = () => {
     setTransitionComplete(true)
+    scrollToProgressBar()
   }
-
-  useEffect(() => {
-    if (progressBarRef.current) {
-      progressBarRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    }
-  }, [currentStep])
 
   const progressPercentage = ((currentStep + 1) / steps.length) * 100
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col">
       {/* Header */}
-      <header className="relative h-[300px] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/family.jpg"
-            alt="OCBC BonusMax hero image"
-            layout="fill"
-            objectFit="cover"
-            priority
-          />
-        </div>
+      <header className="relative min-h-[300px] flex items-center justify-center overflow-hidden">
+        <Image
+          src="/family.jpg"
+          alt="OCBC BonusMax hero image"
+          layout="fill"
+          objectFit="cover"
+          className="absolute inset-0 z-0"
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-red-900/80 to-red-600/80 z-10"></div>
         <div className="absolute top-4 left-4 z-30">
           <Link href="/home">
@@ -69,8 +73,8 @@ export default function TransitionPage() {
           transition={{ duration: 0.4, delay: 0.2 }}
         >
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4">BonusMax</h1>
-          <p className="text-lg">
-            Welcome to the club! Your FRANK account upgrade will provide enhanced features designed to help you reach your financial goals.
+          <p className="text-lg mb-8">
+            Welcome to OCBC BonusMax! Your FRANK account upgrade will provide enhanced features designed to help you reach your financial goals.
           </p>
         </motion.div>
       </header>
@@ -233,7 +237,7 @@ function BenefitsSection({ onNext, onPrev }: { onNext: () => void; onPrev: () =>
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.4 }}
       >
-        <Button onClick={onPrev} variant="ghost" size="icon" className="absolute left-0 mt-5 transform -translate-y-1/2 text-red-600 hover:bg-red-100">
+        <Button onClick={onPrev} variant="ghost" size="icon" className="text-red-600 hover:bg-red-100">
           <ArrowLeft className="h-6 w-6" />
         </Button>
         <Button onClick={onNext} className="bg-red-600 hover:bg-red-700 ml-auto">
@@ -305,7 +309,7 @@ function ConfirmationSection({
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.4 }}
       >
-        <Button onClick={onPrev} variant="ghost" size="icon" className="absolute left-0 mt-5 transform -translate-y-1/2 text-red-600 hover:bg-red-100">
+        <Button onClick={onPrev} variant="ghost" size="icon" className="text-red-600 hover:bg-red-100">
           <ArrowLeft className="h-6 w-6" />
         </Button>
         <Button

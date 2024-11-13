@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Progress } from "@/components/ui/progress"
@@ -15,21 +15,34 @@ export default function TransitionPage() {
   const [currentStep, setCurrentStep] = useState(0)
   const [agreed, setAgreed] = useState(false)
   const [transitionComplete, setTransitionComplete] = useState(false)
+  const progressBarRef = useRef<HTMLDivElement>(null)
+
+  const scrollToProgressBar = () => {
+    if (progressBarRef.current) {
+      progressBarRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      })
+    }
+  }
 
   const nextStep = () => {
     if (currentStep < steps.length - 1) {
       setCurrentStep(currentStep + 1)
+      scrollToProgressBar()
     }
   }
 
   const prevStep = () => {
     if (currentStep > 0) {
       setCurrentStep(currentStep - 1)
+      scrollToProgressBar()
     }
   }
 
   const handleTransition = () => {
     setTransitionComplete(true)
+    scrollToProgressBar()
   }
 
   const progressPercentage = ((currentStep + 1) / steps.length) * 100
@@ -37,7 +50,7 @@ export default function TransitionPage() {
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col">
       {/* Header */}
-      <header className="relative min-h-[400px] flex items-center justify-center overflow-hidden">
+      <header className="relative min-h-[300px] flex items-center justify-center overflow-hidden">
         <Image
           src="/family.jpg"
           alt="OCBC BonusMax hero image"
@@ -59,15 +72,15 @@ export default function TransitionPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.2 }}
         >
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-4">BonusMax</h1>
-          <p className="text-xl">
-            Welcome to OCBC BonusMax! Discover features designed to help you reach your financial goals faster and smarter.
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4">BonusMax</h1>
+          <p className="text-lg mb-8">
+          Welcome to OCBC BonusMax! Discover features designed to help you reach your financial goals faster and smarter.
           </p>
         </motion.div>
       </header>
 
       {/* Progress Bar */}
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 py-8" ref={progressBarRef}>
         <Progress value={progressPercentage} className="w-full h-2 mb-4" />
         <div className="flex justify-between mb-8">
           {steps.map((step, index) => (
@@ -127,7 +140,7 @@ function WelcomeSection({ onNext }: { onNext: () => void }) {
         transition={{ duration: 0.5, delay: 0.2 }}
       >
         <p className="text-lg md:text-xl mb-8 text-gray-700">
-          Get ready for an exciting journey with OCBC BonusMax! We&apos;re thrilled to enhance your banking experience with powerful features designed to supercharge your savings and rewards.
+        Get ready for an exciting journey with OCBC BonusMax! We&apos;re thrilled to enhance your banking experience with powerful features designed to supercharge your savings and rewards.
         </p>
       </motion.div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
@@ -224,7 +237,7 @@ function BenefitsSection({ onNext, onPrev }: { onNext: () => void; onPrev: () =>
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.4 }}
       >
-        <Button onClick={onPrev} variant="ghost" size="icon" className="absolute left-0 mt-5 transform -translate-y-1/2 text-red-600 hover:bg-red-100">
+        <Button onClick={onPrev} variant="ghost" size="icon" className="text-red-600 hover:bg-red-100">
           <ArrowLeft className="h-6 w-6" />
         </Button>
         <Button onClick={onNext} className="bg-red-600 hover:bg-red-700 ml-auto">
@@ -262,7 +275,7 @@ function ConfirmationSection({
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.1 }}
       >
-        Your account will be set up with ease. Start taking advantage of BonusMax&apos;s features right away to boost your savings and rewards.
+        Your account will be set up quickly. Start taking advantage of BonusMax&apos;s features right away to boost your savings and rewards.
       </motion.p>
       <motion.div 
         className="flex items-center space-x-2 mb-4"
@@ -278,25 +291,25 @@ function ConfirmationSection({
           I agree to the terms and conditions of the transition
         </label>
       </motion.div>
-      <motion.p 
+      <motion.div 
         className="text-sm text-gray-500 mb-6"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.3 }}
       >
-        By checking this box, you agree to the
-        <div className="text-blue-600 hover:underline">
+        <p>By checking this box, you agree to the</p>
+        <button className="text-blue-600 hover:underline">
           full terms and conditions
-        </div>
-        of the OCBC BonusMax account.
-      </motion.p>
+        </button>
+        <p>of the OCBC BonusMax account.</p>
+      </motion.div>
       <motion.div 
         className="flex justify-between"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.4 }}
       >
-        <Button onClick={onPrev} variant="ghost" size="icon" className="absolute left-0 mt-5 transform -translate-y-1/2 text-red-600 hover:bg-red-100">
+        <Button onClick={onPrev} variant="ghost" size="icon" className="text-red-600 hover:bg-red-100">
           <ArrowLeft className="h-6 w-6" />
         </Button>
         <Button
