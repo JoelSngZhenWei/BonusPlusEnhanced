@@ -44,10 +44,12 @@ export function BonusPlusAccount() {
     { date: "2024-07-25", desc: "Salary Credit", amount: 550, type: "credit", from: "7UPZ INTERNATIONAL PTE LTD ", to: "BonusMax Account", status: "approved" },
     { date: "2024-06-25", desc: "Salary Credit", amount: 550, type: "credit", from: "7UPZ INTERNATIONAL PTE LTD ", to: "BonusMax Account", status: "approved" },
     { date: "2024-05-25", desc: "Salary Credit", amount: 550, type: "credit", from: "7UPZ INTERNATIONAL PTE LTD ", to: "BonusMax Account", status: "approved" },
-    { date: "2024-05-10", desc: "Wedding Expense", amount: 10000, type: "debit", from: "BonusMax Account", to: "ARTIZ STUDIO", vendor: "Artiz Studio", remarks: "Marriage photoshoot, booking of services for wedding", status: "approved" },
+    { date: "2024-05-10", desc: "Cashback - Wedding Expense", amount: 120, type: "credit", from: "BonusMax Cashback", to: "BonusMax Account", status: "approved" },
+    { date: "2024-05-10", desc: "Wedding Expense", amount: 8000, type: "debit", from: "BonusMax Account", to: "ARTIZ STUDIO", vendor: "Artiz Studio", remarks: "Marriage photoshoot, booking of services for wedding", status: "approved" },
     { date: "2024-04-25", desc: "Salary Credit", amount: 550, type: "credit", from: "7UPZ INTERNATIONAL PTE LTD ", to: "BonusMax Account", status: "approved" },
     { date: "2024-03-25", desc: "Salary Credit", amount: 550, type: "credit", from: "7UPZ INTERNATIONAL PTE LTD ", to: "BonusMax Account", status: "approved" },
     { date: "2024-02-25", desc: "Salary Credit", amount: 550, type: "credit", from: "7UPZ INTERNATIONAL PTE LTD ", to: "BonusMax Account", status: "approved" },
+    { date: "2024-02-10", desc: "Wedding Expense - Cashback", amount: 150, type: "credit", from: "BonusMax Cashback", to: "BonusMax Account", status: "approved" },
     { date: "2024-02-10", desc: "Wedding Expense", amount: 10000, type: "debit", from: "BonusMax Account", to: "ELEGANT WEDDINGS", vendor: "Elegant Weddings", remarks: "Venue booking deposit", status: "approved" },
     { date: "2024-01-25", desc: "Salary Credit", amount: 550, type: "credit", from: "7UPZ INTERNATIONAL PTE LTD ", to: "BonusMax Account", status: "approved" },
     { date: "2023-12-25", desc: "Salary Credit", amount: 550, type: "credit", from: "7UPZ INTERNATIONAL PTE LTD ", to: "BonusMax Account", status: "approved" },
@@ -123,7 +125,7 @@ export function BonusPlusAccount() {
           </div>
           <div className="text-right">
             <span className="text-sm opacity-80">OCBC$ Earned</span>
-            <p className="text-2xl font-semibold mt-1">OCBC$880</p>
+            <p className="text-2xl font-semibold mt-1">OCBC$4,800</p>
           </div>
         </div>
       </motion.div>
