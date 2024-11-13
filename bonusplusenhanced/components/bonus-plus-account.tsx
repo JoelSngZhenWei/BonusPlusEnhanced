@@ -154,7 +154,7 @@ export function BonusPlusAccount() {
       <Dialog>
         <DialogTrigger asChild>
           <motion.div 
-            className="flex items-center gap-2 mt-6 cursor-pointer hover:bg-white/20 p-2 rounded-lg transition-colors"
+            className="flex items-center gap-2 mt-4 cursor-pointer hover:bg-white/20 p-2 rounded-lg transition-colors"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.6 }}
