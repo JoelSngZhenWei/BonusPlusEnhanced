@@ -98,7 +98,7 @@ export function BonusPlusAccount() {
       </div>
       
       <motion.div 
-        className="space-y-6"
+        className="space-y-3"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.6 }}
@@ -106,11 +106,11 @@ export function BonusPlusAccount() {
         <div>
           <span className="text-sm opacity-80">Available balance</span>
           <div className="flex items-baseline mt-1 font-extrabold">
-            <span className="text-lg mr-1">SGD</span>
+            <span className="text-xl mr-1">SGD</span>
             {showBalance ? (
               <>
-                <span className="text-4xl">86,413</span>
-                <span className="text-lg">.81</span>
+                <span className="text-5xl">86,413</span>
+                <span className="text-xl">.81</span>
               </>
             ) : (
               <span className="text-4xl font-bold">•••••••••</span>
@@ -118,17 +118,38 @@ export function BonusPlusAccount() {
           </div>
         </div>
         
-        <div className="flex justify-between items-center bg-white/10 rounded-xl p-4">
+        <div className="flex justify-between items-center bg-white/10 rounded-xl p-3">
           <div>
             <span className="text-sm opacity-80">Current Interest Rate</span>
-            <p className="text-2xl font-semibold mt-1">2.8% p.a.</p>
+            <p className="text-xl font-semibold mt-1">2.8% p.a.</p>
           </div>
           <div className="text-right">
             <span className="text-sm opacity-80">OCBC$ Earned</span>
-            <p className="text-2xl font-semibold mt-1">OCBC$4,800</p>
+            <p className="text-xl font-semibold mt-1">OCBC$4,800</p>
           </div>
         </div>
+
+          {/* New Cashback Pot Section */}
+          <div className="bg-white/10 rounded-xl p-3">
+            <span className="text-sm opacity-80">Cashback Earned</span>
+            <div className="flex items-baseline mt-1 font-extrabold">
+              <span className="text-lg mr-1">SGD</span>
+              {showBalance ? (
+                <>
+                  <span className="text-3xl">1,230</span>
+                  <span className="text-lg">.00</span>
+                </>
+              ) : (
+                <span className="text-3xl font-bold">•••••••</span>
+              )}
+            </div>
+            <p className="text-xs mt-1">
+              Earn 1.5% cashback on big ticket purchases.
+            </p>
+          </div>
       </motion.div>
+
+      
       
       <Dialog>
         <DialogTrigger asChild>
