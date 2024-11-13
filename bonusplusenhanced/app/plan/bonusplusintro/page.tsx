@@ -2,11 +2,9 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
 import Image from "next/image"
 import { BottomNav } from "@/components/bottom-nav"
 import { ArrowRightIcon, ChevronRightIcon } from "@radix-ui/react-icons"
-import { Parallax } from 'react-scroll-parallax'
 import { motion } from "framer-motion"
 import Link from 'next/link'
 
@@ -96,7 +94,7 @@ export default function BonusPlusLandingComponent() {
       <section className="bg-red-900 text-white py-10 px-4">
         <div className="max-w-6xl mx-auto">
           <motion.h2 
-            className="text-lg font-bold text-center mb-6"
+            className="text-2xl font-bold text-center mb-6"
             {...fadeInUp}
           >
             How BonusMax Works
@@ -124,42 +122,40 @@ export default function BonusPlusLandingComponent() {
               ))}
             </motion.div>
             <motion.div 
-              className="mt-8"
+              className="mt-12"
               {...fadeInUp}
               transition={{ delay: 0.6 }}
             >
-              <h3 className="text-lg font-semibold mb-4">Big Ticket Purchases</h3>
-              <ScrollArea className="w-full whitespace-nowrap rounded-md border border-red-400 p-2">
-                <div className="flex space-x-4">
-                  {[
-                    { name: "BTO", src: "/bto.jpg" },
-                    { name: "Car", src: "/car.jpg" },
-                    { name: "Wedding", src: "/wedding.jpg" },
-                    { name: "Renovations", src: "/payments.jpg" }
-                  ].map((item, index) => (
-                    <motion.div 
-                      key={index} 
-                      className="flex flex-col items-center"
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.6, delay: index * 0.1 }}
-                    >
-                      <div className="w-28 h-28 bg-white rounded-full overflow-hidden flex items-center justify-center">
-                        <Parallax className="w-32 h-32 relative" speed={-1.5}>
-                          <Image 
-                            src={item.src} 
-                            alt={item.name} 
-                            fill
-                            objectFit="cover"
-                          />
-                        </Parallax>
+              <h3 className="text-2xl font-semibold mb-8 text-center">Big Ticket Purchases</h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                {[
+                  { name: "Property", src: "/bto.jpg", description: "Your dream home" },
+                  { name: "Car", src: "/car.jpg", description: "Your perfect ride" },
+                  { name: "Wedding", src: "/wedding.jpg", description: "Your special day" },
+                  { name: "Renovations", src: "/payments.jpg", description: "Your ideal space" }
+                ].map((item, index) => (
+                  <motion.div 
+                    key={index} 
+                    className="flex flex-col items-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                  >
+                    <div className="w-32 h-32 bg-white rounded-full overflow-hidden flex items-center justify-center shadow-lg mb-4">
+                      <div className="w-36 h-36 relative">
+                        <Image 
+                          src={item.src} 
+                          alt={item.name} 
+                          fill
+                          objectFit="cover"
+                        />
                       </div>
-                      <span className="text-sm">{item.name}</span>
-                    </motion.div>
-                  ))}
-                </div>
-                <ScrollBar orientation="horizontal" />
-              </ScrollArea>
+                    </div>
+                    <h4 className="text-lg font-semibold mb-2">{item.name}</h4>
+                    <p className="text-sm text-red-200 text-center">{item.description}</p>
+                  </motion.div>
+                ))}
+              </div>
             </motion.div>
           </div>
         </div>
