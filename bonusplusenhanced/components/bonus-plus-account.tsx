@@ -37,21 +37,21 @@ export function BonusPlusAccount() {
   const [yearFilter, setYearFilter] = useState("all")
 
   const transactions = [
-    { date: "2024-10-25", desc: "Salary Credit", amount: 550, type: "credit", from: "7UPZ INTERNATIONAL PTE LTD OTHR", to: "BonusMax Account", status: "approved" },
+    { date: "2024-10-25", desc: "Salary Credit", amount: 550, type: "credit", from: "7UPZ INTERNATIONAL PTE LTD", to: "BonusMax Account", status: "approved" },
     { date: "2024-10-02", desc: "Car Downpayment", amount: 42000, type: "debit", from: "BonusMax Account", to: "TESLA MOTORS", vendor: "Tesla Motors", model: "Model X", remarks: "Initial downpayment for new car", status: "pending" },
-    { date: "2024-09-25", desc: "Salary Credit", amount: 550, type: "credit", from: "7UPZ INTERNATIONAL PTE LTD OTHR", to: "BonusMax Account", status: "approved" },
-    { date: "2024-08-25", desc: "Salary Credit", amount: 550, type: "credit", from: "7UPZ INTERNATIONAL PTE LTD OTHR", to: "BonusMax Account", status: "approved" },
-    { date: "2024-07-25", desc: "Salary Credit", amount: 550, type: "credit", from: "7UPZ INTERNATIONAL PTE LTD OTHR", to: "BonusMax Account", status: "approved" },
-    { date: "2024-06-25", desc: "Salary Credit", amount: 550, type: "credit", from: "7UPZ INTERNATIONAL PTE LTD OTHR", to: "BonusMax Account", status: "approved" },
-    { date: "2024-05-25", desc: "Salary Credit", amount: 550, type: "credit", from: "7UPZ INTERNATIONAL PTE LTD OTHR", to: "BonusMax Account", status: "approved" },
+    { date: "2024-09-25", desc: "Salary Credit", amount: 550, type: "credit", from: "7UPZ INTERNATIONAL PTE LTD", to: "BonusMax Account", status: "approved" },
+    { date: "2024-08-25", desc: "Salary Credit", amount: 550, type: "credit", from: "7UPZ INTERNATIONAL PTE LTD ", to: "BonusMax Account", status: "approved" },
+    { date: "2024-07-25", desc: "Salary Credit", amount: 550, type: "credit", from: "7UPZ INTERNATIONAL PTE LTD ", to: "BonusMax Account", status: "approved" },
+    { date: "2024-06-25", desc: "Salary Credit", amount: 550, type: "credit", from: "7UPZ INTERNATIONAL PTE LTD ", to: "BonusMax Account", status: "approved" },
+    { date: "2024-05-25", desc: "Salary Credit", amount: 550, type: "credit", from: "7UPZ INTERNATIONAL PTE LTD ", to: "BonusMax Account", status: "approved" },
     { date: "2024-05-10", desc: "Wedding Expense", amount: 10000, type: "debit", from: "BonusMax Account", to: "ARTIZ STUDIO", vendor: "Artiz Studio", remarks: "Marriage photoshoot, booking of services for wedding", status: "approved" },
-    { date: "2024-04-25", desc: "Salary Credit", amount: 550, type: "credit", from: "7UPZ INTERNATIONAL PTE LTD OTHR", to: "BonusMax Account", status: "approved" },
-    { date: "2024-03-25", desc: "Salary Credit", amount: 550, type: "credit", from: "7UPZ INTERNATIONAL PTE LTD OTHR", to: "BonusMax Account", status: "approved" },
-    { date: "2024-02-25", desc: "Salary Credit", amount: 550, type: "credit", from: "7UPZ INTERNATIONAL PTE LTD OTHR", to: "BonusMax Account", status: "approved" },
+    { date: "2024-04-25", desc: "Salary Credit", amount: 550, type: "credit", from: "7UPZ INTERNATIONAL PTE LTD ", to: "BonusMax Account", status: "approved" },
+    { date: "2024-03-25", desc: "Salary Credit", amount: 550, type: "credit", from: "7UPZ INTERNATIONAL PTE LTD ", to: "BonusMax Account", status: "approved" },
+    { date: "2024-02-25", desc: "Salary Credit", amount: 550, type: "credit", from: "7UPZ INTERNATIONAL PTE LTD ", to: "BonusMax Account", status: "approved" },
     { date: "2024-02-10", desc: "Wedding Expense", amount: 10000, type: "debit", from: "BonusMax Account", to: "ELEGANT WEDDINGS", vendor: "Elegant Weddings", remarks: "Venue booking deposit", status: "approved" },
-    { date: "2024-01-25", desc: "Salary Credit", amount: 550, type: "credit", from: "7UPZ INTERNATIONAL PTE LTD OTHR", to: "BonusMax Account", status: "approved" },
-    { date: "2023-12-25", desc: "Salary Credit", amount: 550, type: "credit", from: "7UPZ INTERNATIONAL PTE LTD OTHR", to: "BonusMax Account", status: "approved" },
-    { date: "2023-11-25", desc: "Salary Credit", amount: 550, type: "credit", from: "7UPZ INTERNATIONAL PTE LTD OTHR", to: "BonusMax Account", status: "approved" },
+    { date: "2024-01-25", desc: "Salary Credit", amount: 550, type: "credit", from: "7UPZ INTERNATIONAL PTE LTD ", to: "BonusMax Account", status: "approved" },
+    { date: "2023-12-25", desc: "Salary Credit", amount: 550, type: "credit", from: "7UPZ INTERNATIONAL PTE LTD ", to: "BonusMax Account", status: "approved" },
+    { date: "2023-11-25", desc: "Salary Credit", amount: 550, type: "credit", from: "7UPZ INTERNATIONAL PTE LTD ", to: "BonusMax Account", status: "approved" },
   ]
 
   const years = [...new Set(transactions.map(t => new Date(t.date).getFullYear()))].sort((a, b) => b - a)
