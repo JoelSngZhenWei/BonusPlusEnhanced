@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Progress } from "@/components/ui/progress"
@@ -15,6 +15,7 @@ export default function TransitionPage() {
   const [currentStep, setCurrentStep] = useState(0)
   const [agreed, setAgreed] = useState(false)
   const [transitionComplete, setTransitionComplete] = useState(false)
+  const progressBarRef = useRef<HTMLDivElement>(null)
 
   const nextStep = () => {
     if (currentStep < steps.length - 1) {
@@ -32,19 +33,27 @@ export default function TransitionPage() {
     setTransitionComplete(true)
   }
 
+  useEffect(() => {
+    if (progressBarRef.current) {
+      progressBarRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }, [currentStep])
+
   const progressPercentage = ((currentStep + 1) / steps.length) * 100
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col">
       {/* Header */}
-      <header className="relative min-h-[400px] flex items-center justify-center overflow-hidden">
-        <Image
-          src="/family.jpg"
-          alt="OCBC BonusMax hero image"
-          layout="fill"
-          objectFit="cover"
-          className="absolute inset-0 z-0"
-        />
+      <header className="relative h-[300px] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/family.jpg"
+            alt="OCBC BonusMax hero image"
+            layout="fill"
+            objectFit="cover"
+            priority
+          />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-r from-red-900/80 to-red-600/80 z-10"></div>
         <div className="absolute top-4 left-4 z-30">
           <Link href="/home">
@@ -59,15 +68,15 @@ export default function TransitionPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.2 }}
         >
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-4">BonusMax</h1>
-          <p className="text-xl">
-            Welcome to OCBC BonusMax! Your FRANK account upgrade will provide enhanced features designed to help you reach your financial goals.
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4">BonusMax</h1>
+          <p className="text-lg">
+            Welcome to the club! Your FRANK account upgrade will provide enhanced features designed to help you reach your financial goals.
           </p>
         </motion.div>
       </header>
 
       {/* Progress Bar */}
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 py-8" ref={progressBarRef}>
         <Progress value={progressPercentage} className="w-full h-2 mb-4" />
         <div className="flex justify-between mb-8">
           {steps.map((step, index) => (
@@ -278,18 +287,18 @@ function ConfirmationSection({
           I agree to the terms and conditions of the transition
         </label>
       </motion.div>
-      <motion.p 
+      <motion.div 
         className="text-sm text-gray-500 mb-6"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.3 }}
       >
-        By checking this box, you agree to the
-        <div className="text-blue-600 hover:underline">
+        <p>By checking this box, you agree to the</p>
+        <button className="text-blue-600 hover:underline">
           full terms and conditions
-        </div>
-        of the OCBC BonusMax account.
-      </motion.p>
+        </button>
+        <p>of the OCBC BonusMax account.</p>
+      </motion.div>
       <motion.div 
         className="flex justify-between"
         initial={{ opacity: 0, y: 20 }}

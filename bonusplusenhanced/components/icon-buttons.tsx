@@ -82,7 +82,7 @@ export function NotificationIcon({ isDark = false }: IconButtonProps) {
             {notifications.map((notification) => (
               <div 
                 key={notification.id} 
-                className={`mb-4 p-3 rounded-lg transition-all duration-300 clickable ${
+                className={`mb-4 p-3 rounded-lg  ${
                   notification.isPriority ? 'bg-pink-100' : 'bg-gray-100'
                 }`}
               >
@@ -93,7 +93,7 @@ export function NotificationIcon({ isDark = false }: IconButtonProps) {
                 {notification.demoTryMe && (
                   <div className="flex justify-center mt-3 mb-3">
                     <Link href="/transition">
-                      <Button className="text-lg font-bold bg-red-600 hover:bg-red-700 text-white">
+                      <Button className="text-lg font-bold bg-red-600 hover:bg-red-700 text-white transition-all duration-300 clickable">
                         Transition to BonusMax
                       </Button>
                     </Link>
@@ -101,7 +101,7 @@ export function NotificationIcon({ isDark = false }: IconButtonProps) {
                 )}
                 {notification.learnMore && (
                   <div className="mt-2">
-                    <Link href="/plan/bonusplusintro" className="text-sm text-blue-600 hover:underline">
+                    <Link href="/plan/bonusplusintro" className="text-sm text-blue-600 hover:underline transition-all duration-300 clickable">
                       Learn more
                     </Link>
                   </div>
