@@ -43,7 +43,7 @@ export default function Component() {
       {/* Hero Section */}
       <div className="relative">
         <Image
-          src="/BG_Home.png"
+          src="/mervin.png"
           alt="Background decoration"
           width={1206}
           height={1174}
