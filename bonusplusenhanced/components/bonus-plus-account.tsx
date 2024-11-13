@@ -54,6 +54,8 @@ export function BonusPlusAccount() {
     { date: "2024-01-25", desc: "Salary Credit", amount: 550, type: "credit", from: "7UPZ INTERNATIONAL PTE LTD ", to: "BonusMax Account", status: "approved" },
     { date: "2023-12-25", desc: "Salary Credit", amount: 550, type: "credit", from: "7UPZ INTERNATIONAL PTE LTD ", to: "BonusMax Account", status: "approved" },
     { date: "2023-11-25", desc: "Salary Credit", amount: 550, type: "credit", from: "7UPZ INTERNATIONAL PTE LTD ", to: "BonusMax Account", status: "approved" },
+    { date: "2023-10-10", desc: "Renovation Expense - Cashback", amount: 960, type: "credit", from: "BonusMax Cashback", to: "BonusMax Account", status: "approved" },
+    { date: "2023-10-10", desc: "Renovation Expense", amount: 64000, type: "debit", from: "BonusMax Account", to: "CASA INTERIOR DESIGN PTE LTD", vendor: "Casa Interior Design", remarks: "Renovation of 5 room flat", status: "approved" },
   ]
 
   const years = [...new Set(transactions.map(t => new Date(t.date).getFullYear()))].sort((a, b) => b - a)

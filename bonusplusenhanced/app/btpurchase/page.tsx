@@ -43,8 +43,8 @@ export default function BigTicketPurchasePage() {
 
   const getPurchaseDetailsInfo = () => {
     switch (purchaseCategory) {
-      case "Property Downpayment":
-        return "Please provide the property details and expected downpayment amount."
+      case "Property":
+        return "Please provide the property details and expected down payment amount."
       case "Wedding":
         return "Include details about the vendor and expected wedding date."
       case "Car":
